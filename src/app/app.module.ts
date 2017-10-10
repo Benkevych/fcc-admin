@@ -22,6 +22,11 @@ import { StuffsDetailsComponent } from './stuffs/details/details.component';
 import { StuffsEditComponent } from './stuffs/edit/edit.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
+import { SettingsListComponent } from './settings/settings-list/settings-list.component';
+import { GeneralComponent } from './settings/general/general.component';
+import { RulesComponent } from './settings/rules/rules.component';
+import { ShiftPackageComponent } from './settings/shift-package/shift-package.component';
+import { FloorPackageComponent } from './settings/floor-package/floor-package.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +46,11 @@ import { LoginComponent } from './login/login.component';
     StuffsEditComponent,
     SettingsComponent,
     LoginComponent,
+    SettingsListComponent,
+    GeneralComponent,
+    RulesComponent,
+    ShiftPackageComponent,
+    FloorPackageComponent,
   ],
   imports: [
     BrowserModule,
