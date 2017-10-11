@@ -27,6 +27,18 @@ import { GeneralComponent } from './settings/general/general.component';
 import { RulesComponent } from './settings/rules/rules.component';
 import { ShiftPackageComponent } from './settings/shift-package/shift-package.component';
 import { FloorPackageComponent } from './settings/floor-package/floor-package.component';
+import { BookingStatusComponent } from './booking/booking-settings/booking-status/booking-status.component';
+import { BookingDetailsComponent } from './booking/booking-settings/booking-details/booking-details.component';
+import { BookingEditComponent } from './booking/booking-settings/booking-edit/booking-edit.component';
+import { BookingMoreDetailsComponent } from './booking/booking-settings/booking-more-details/booking-more-details.component';
+import { BookingAddComponent } from './booking/booking-settings/booking-add/booking-add.component';
+import { StepDateComponent } from './booking/booking-settings/booking-add/step-date/step-date.component';
+import { StepGuestsComponent } from './booking/booking-settings/booking-add/step-guests/step-guests.component';
+import { StepTimeComponent } from './booking/booking-settings/booking-add/step-time/step-time.component';
+import { StepAccountComponent } from './booking/booking-settings/booking-add/step-account/step-account.component';
+import { StepConfirmComponent } from './booking/booking-settings/booking-add/step-confirm/step-confirm.component';
+import { BookingListComponent } from './booking/booking-settings/booking-list/booking-list.component';
+import { BookingStuffsListComponent } from './booking/booking-settings/booking-stuffs-list/booking-stuffs-list.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +63,18 @@ import { FloorPackageComponent } from './settings/floor-package/floor-package.co
     RulesComponent,
     ShiftPackageComponent,
     FloorPackageComponent,
+    BookingStatusComponent,
+    BookingDetailsComponent,
+    BookingEditComponent,
+    BookingMoreDetailsComponent,
+    BookingAddComponent,
+    StepDateComponent,
+    StepGuestsComponent,
+    StepTimeComponent,
+    StepAccountComponent,
+    StepConfirmComponent,
+    BookingListComponent,
+    BookingStuffsListComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +82,7 @@ import { FloorPackageComponent } from './settings/floor-package/floor-package.co
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
