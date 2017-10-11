@@ -1,9 +1,30 @@
 <div class="menu">
-  <nav>
-    <a routerLink="/booking">B</a>
-    <a routerLink="/guests">G</a>
-    <a routerLink="/stuffs">S</a>
-    <a routerLink="/settings">S</a>
-  </nav>
-  <a routerLink="/login">L</a>
+  <div class="menu__main-menu">
+    <a>
+      <img src="./assets/icons/dashboard.svg" alt="Dashboard">
+    </a>
+    <a routerLink="/booking">
+        <img src="./assets/icons/booking.svg" alt="Booking">
+    </a>
+    <a routerLink="/guests">
+      <img src="./assets/icons/guests.svg" alt="Guests">
+    </a>
+    <a routerLink="/stuffs">
+      <img src="./assets/icons/stuffs.svg" alt="Stuffs">
+  </a>
+    <a routerLink="/settings">
+      <img src="./assets/icons/settings.svg" alt="Settings">
+      </a>
+  </div>
+  <div class="menu__sub-menu">
+    <a>
+        <img src="./assets/icons/bell.svg" alt="Notifications">
+    </a>
+    <a routerLink="/login">
+      <img src="./assets/icons/profile.svg" alt="Profile">
+      </a>
+    <a>
+        <img src="./assets/icons/logout.svg" alt="Logout">
+    </a>
+  </div>
 </div>

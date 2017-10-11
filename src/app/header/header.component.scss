@@ -1,6 +1,66 @@
 .header {
-  width: 100%;
   height: 72px;
-  text-align: center;
-  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1A1D22;
+  border-bottom: 2px solid #121416;
+  color: white;
+  padding: 0 10px 0 31px;
+
+  &__title {
+    font-size: 18px;
+    color: #D8DEE8;
+    letter-spacing: 0;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    color: #7C8390;
+  }
+
+  &__addsorting {
+    width: 44px;
+    height: 44px;
+    background-color: #292F35;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  &__sorting {
+    display: flex;
+    margin-left: 35px;
+  }
+
+  &__sorting-item {
+    cursor: pointer;
+    min-width: 145px;
+    padding: 11px 17px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    color: #BEC4CD;
+    background-color: #1A1D22;
+    border: 1px solid #2F353A;
+    border-radius: 4px;
+    margin-right: 15px;
+  }
+
+  &__buttons {
+    height: 100%;
+    display: flex;
+
+    a {
+      width: 72px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
