@@ -15,3 +15,159 @@ body {
   color: white;
   background-color: #292F35;
 }
+
+.date-picker {
+  .dp-input-container {
+    margin-right: 14px;
+  }
+
+  .dp-picker-input {
+    cursor: pointer;
+    width: 145px;
+    padding: 11px 17px;
+    font-size: 15px;
+    color: #BEC4CD;
+    background-color: #1A1D22;
+    border: 1px solid #2F353A;
+    border-radius: 4px;
+    height: 22px;
+
+    &::placeholder {
+      color: #BEC4CD;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .dp-current-location-btn {
+    display: none;
+  }
+
+  dp-day-calendar {
+    display: inline-block;
+    position: absolute;
+    top: 13px;
+  }
+
+  .dp-day-calendar-container {
+    border: none;
+    background-color: #292F35;
+    border-radius: 4px;
+    box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+    padding-bottom: 20px;
+  }
+
+  .dp-calendar-wrapper {
+    border: none;
+    padding-left: 44px;
+    padding-right: 44px;
+  }
+
+  .dp-weekdays {
+    margin-bottom: 15px;
+    margin-top: 30px;
+  }
+
+  .dp-calendar-weekday {
+    border: none;
+    font-size: 15px;
+    color: #7C8390;
+    margin-left: 10px;
+    margin-right: 28px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .dp-selected {
+    background-color: #1C7C8D !important;
+  }
+
+  .dp-calendar-nav-container {
+    border: none;
+    border-radius: 4px;
+    padding: 18px 45px;
+    display: flex;
+    box-sizing: unset;
+    justify-content: space-between;
+    background-color: #2D343A;
+  }
+
+  .dp-calendar-nav-container-left {
+    left: unset;
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+  }
+
+  .dp-calendar-nav-container-right {
+    right: unset;
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+  }
+
+  .dp-calendar-nav-left {
+    background-color: #2D343A;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::before {
+      border-color: #D8DEE8;
+    }
+  }
+
+  .dp-calendar-nav-right {
+    background-color: #2D343A;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::before {
+      border-color: #D8DEE8;
+    }
+  }
+
+  .dp-nav-header {
+    position: unset;
+    top: unset;
+    left: unset;
+    transform: unset;
+    font-size: 18px;
+    color: #D8DEE8;
+  }
+
+  .dp-calendar-day {
+    margin-right: 16px;
+    margin-bottom: 16px;
+    background-color: #292F35;
+    color: #D8DEE8;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    width: 52px;
+    height: 52px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #1C7C8D;
+    }
+  }
+}

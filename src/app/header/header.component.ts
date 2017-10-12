@@ -11,10 +11,12 @@ import { IDatePickerConfig } from 'ng2-date-picker';
 export class HeaderComponent implements OnInit {
   title: string;
   subtitle: string;
+
   datePickerConfig: IDatePickerConfig = {
     firstDayOfWeek: 'su',
     monthFormat: 'MMMM YYYY',
-    disableKeypress: false,
+    closeOnSelect: true,
+    disableKeypress: true,
     allowMultiSelect: false,
     onOpenDelay: 0,
     weekDayFormat: 'dd',
@@ -22,7 +24,8 @@ export class HeaderComponent implements OnInit {
     showWeekNumbers: false,
     enableMonthSelector: false,
     yearFormat: 'YYYY',
-    showGoToCurrent: true,
+    format: "D, MMM D",
+    showGoToCurrent: false,
     dayBtnFormat: 'D',
     timeSeparator: ':',
     multipleYearsNavigateBy: 10
