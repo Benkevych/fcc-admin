@@ -6,11 +6,10 @@
     </span>
   </div>
   <div class="header__sorting">
-    <div class="header__sorting-item">
-      Friday, Aug 25
-      <img src="./assets/icons/drop-down.svg" alt="">
-    </div>
-    <div class="header__sorting-item">
+    <dp-date-picker [(ngModel)]="selectedDate" [theme]="'dp-material'" [config]="datePickerConfig"></dp-date-picker>
+
+
+    <div class="header__sorting-item dropdown">
       Dinner
       <img src="./assets/icons/drop-down.svg" alt="">
     </div>
@@ -22,6 +21,7 @@
       <img src="./assets/icons/plus.svg" alt="Add">
     </div>
   </div>
+
   <div class="header__buttons">
     <a>
       <img src="./assets/icons/timeline.svg" alt="Timeline">

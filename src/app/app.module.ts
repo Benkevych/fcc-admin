@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterLinkActive } from '@angular/router';
+import { DpDatePickerModule } from 'ng2-date-picker';
 
 import { appRoutes } from './app.routes';
 
@@ -80,7 +81,8 @@ import { BookingStuffsListComponent } from './booking/booking-settings/booking-s
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    DpDatePickerModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]
