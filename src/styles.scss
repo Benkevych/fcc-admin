@@ -48,7 +48,7 @@ body {
   dp-day-calendar {
     display: inline-block;
     position: absolute;
-    top: 8px;
+    top: 11px;
   }
 
   .dp-day-calendar-container {
@@ -104,6 +104,10 @@ body {
     transform: unset;
   }
 
+  .dp-calendar-week {
+    margin-bottom: 16px;
+  }
+
   .dp-calendar-nav-container-right {
     right: unset;
     position: unset;
@@ -148,11 +152,11 @@ body {
   }
 
   .dp-calendar-day {
+    line-height: 28px;
     margin-right: 16px;
-    margin-bottom: 16px;
     background-color: #292F35;
     color: #D8DEE8;
-    font-weight: 400;
+    font-weight: 200;
     border: none;
     border-radius: 50%;
     font-size: 20px;
