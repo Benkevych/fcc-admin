@@ -1,4 +1,4 @@
-<div class="header">
+<div id="header" class="header">
   <div class="header__title">
     Bookings
     <span class="header__subtitle">
@@ -6,14 +6,17 @@
     </span>
   </div>
   <div class="header__sorting">
-    <dp-date-picker [(ngModel)]="selectedDate" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
-    <div class="header__sorting-item">
-      Dinner
-      <img src="./assets/icons/drop-down.svg" alt="">
+    <div style="position: relative">
+      <dp-date-picker [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
+      <img class="header__sorting-item-arrow" src="./assets/icons/drop-down.svg" alt="">
     </div>
-    <div class="header__sorting-item">
-      All Floor
-      <img src="./assets/icons/drop-down.svg" alt="">
+    <div class="header-dropdown" style="position: relative">
+      <ng-select id="shift" [allowClear]="true" [items]="shifts" placeholder="Shift"></ng-select>
+      <img class="header__sorting-item-arrow" src="./assets/icons/drop-down.svg" alt="">
+    </div>
+    <div class="header-dropdown" style="position: relative">
+      <ng-select id="floor" [allowClear]="true" [items]="floors" placeholder="Floor"></ng-select>
+      <img class="header__sorting-item-arrow" src="./assets/icons/drop-down.svg" alt="">
     </div>
     <div class="header__addsorting">
       <img src="./assets/icons/plus.svg" alt="Add">
@@ -21,17 +24,23 @@
   </div>
 
   <div class="header__buttons">
-    <a>
+    <div class="header__button">
       <img src="./assets/icons/timeline.svg" alt="Timeline">
-    </a>
-    <a>
+    </div>
+
+    <div class="header__button">
       <img src="./assets/icons/table.svg" alt="Table">
-    </a>
-    <a>
+    </div>
+    <div class="header__button">
       <img src="./assets/icons/list.svg" alt="List">
-    </a>
-    <!-- <a>
+    </div>
+
+    <!-- <div class="header__button">
       <img src="./assets/icons/close.svg" alt="Timeline">
-    </a> -->
+    </div> -->
+  </div>
+  <div class="header__guest-buttons">
+    <div class="header__guest-btn header__guest-btn_export">Export</div>
+    <div class="header__guest-btn header__guest-btn_add"></div>
   </div>
 </div>

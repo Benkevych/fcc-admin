@@ -1,45 +1,41 @@
+@import "~styles/variables";
+@import "~styles/base";
 .menu {
   width: 72px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #1A1D22;
+  background-color: $dark-gray;
   min-height: 100%;
-  border-right: 2px solid #121416;
-
+  border-right: 2px solid $dark-gray-6;
   &__active-item {
-    border-left: 2px solid #1C7C8D !important;
+    border-left: 2px solid $mint !important;
   }
-
   &__sub-menu {
     a {
       &:first-child {
-        border-top: 1px solid #15181C;
+        border-top: 1px solid $dark-gray-8;
       }
     }
   }
-
   &__main-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-top: 2px;
   }
-
   a {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 72px;
-    border-bottom: 1px solid #15181C;
+    border-bottom: 1px solid $dark-gray-8;
     border-left: 2px solid transparent;
-
     img {
       margin-left: -2px;
     }
-
     &:hover {
-      border-left: 2px solid #1C7C8D;
+      border-left: 2px solid $mint;
     }
   }
 }

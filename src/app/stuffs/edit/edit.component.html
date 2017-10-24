@@ -1,3 +1,77 @@
-<p>
-  edit works!
-</p>
+<div id="staffEdit" class="staff-edit">
+  <div class="staff-edit__title">
+    <div class="staff-edit__thumbnail">
+      <img src="./assets/avatars/staff6.png" alt="">
+    </div>
+    <div>
+      <div class="staff-edit__title-text">Edit Stuff Member</div>
+      <div class="staff-edit__name">Thomas Sims</div>
+    </div>
+    <div class="staff-edit__buttons">
+      <div class="staff-edit__action-btn staff-edit__action-btn_lock"></div>
+      <div class="staff-edit__action-btn staff-edit__action-btn_delete"></div>
+      <div class="staff-edit__save-btn">Save</div>
+    </div>
+  </div>
+  <div class="staff-edit__content">
+    <div class="staff-edit__fields">
+      <div class="staff-edit__col-50">
+        <div class="staff-edit__field">
+          <div class="staff-edit__field-name">Full Name</div>
+          <input class="staff-edit__field-input" type="text">
+        </div>
+        <div class="staff-edit__field">
+          <div class="staff-edit__field-name">Email Address</div>
+          <input class="staff-edit__field-input" type="text">
+        </div>
+        <div class="staff-edit__field">
+          <div class="staff-edit__field-name">Role</div>
+          <div class="staff-edit__field-dropdown">
+            <ng-select [allowClear]="true" [items]="roles" placeholder="Role"></ng-select>
+          </div>
+        </div>
+      </div>
+      <div class="staff-edit__col-50">
+        <div class="staff-edit__field staff-edit__field_right">
+          <div class="staff-edit__field-name">Phone Number</div>
+          <input class="staff-edit__field-input" type="text">
+        </div>
+        <div class="staff-edit__field staff-edit__field_right">
+          <div class="staff-edit__field-name">Account Name</div>
+          <input class="staff-edit__field-input" type="text">
+        </div>
+      </div>
+    </div>
+    <div class="staff-edit__access-table-header">
+      <div class="staff-edit__access-table-col-name">View Only</div>
+      <div class="staff-edit__access-table-col-name">View & Edit</div>
+    </div>
+    <div class="staff-edit__access-table">
+      <div class="staff-edit__row">
+        <div class="staff-edit__access-name">Dashboard</div>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+      </div>
+      <div class="staff-edit__row">
+        <div class="staff-edit__access-name">Bookings</div>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+      </div>
+      <div class="staff-edit__row">
+        <div class="staff-edit__access-name">Guests</div>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+      </div>
+      <div class="staff-edit__row">
+        <div class="staff-edit__access-name">Stuffs</div>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+      </div>
+      <div class="staff-edit__row">
+        <div class="staff-edit__access-name">Settings</div>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+        <mat-slide-toggle class="staff-edit__access-toggle"></mat-slide-toggle>
+      </div>
+    </div>
+  </div>
+</div>

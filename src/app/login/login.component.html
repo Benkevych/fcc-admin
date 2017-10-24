@@ -1,3 +1,16 @@
-<p>
-  login works!
-</p>
+<div id="login" class="login">
+  <div class="login__header">Login to Panel
+    <div (click)="closeLogin()" class="login__close"></div>
+  </div>
+  <div class="login__container">
+    <div class="login__content">
+      <div class="login__inputs">
+        <input class="login__input" type="email" placeholder="Email Address">
+        <input class="login__input" type="password" placeholder="Password">
+      </div>
+      <button class="login__btn" type="button">Login</button>
+      <a class="login__forgot" href="">Forget Password?</a>
+    </div>
+
+  </div>
+</div>

@@ -1,3 +1,45 @@
-<p>
-  booking-details works!
-</p>
+<div class="booking-details">
+  <div>
+    <div class="booking-details__title">
+      <div class="booking-details__name">
+        Craig Barrett
+      </div>
+      <div class="booking-details__info">
+        <div class="booking-details__time">
+          07:45 PM
+        </div>
+        <div class="booking-details__guests">
+          7
+        </div>
+      </div>
+      <div (click)="toggleBookingSettings('hide')" class="booking-details__close">
+      </div>
+    </div>
+    <div class="booking-details__buttons">
+      <button (click)="toggleBookingStatus('show')" class="booking-details__button booking-details__button_status" type="button"
+        name="booking-status">Booked</button>
+      <button class="booking-details__button" type="button" name="move-table">Move Table</button>
+      <button class="booking-details__button" type="button" name="edit-booking">Edit Booking</button>
+    </div>
+    <div class="booking-details__owner">
+      <div class="booking-details__phone-number">
+        +97 (533) 720 1292
+      </div>
+      <div class="booking-details__email">
+        barretthegreat@gmail.com
+      </div>
+      <div class="booking-details__sub-menu">
+        <a href="">account</a>
+        <a href="">activity</a>
+        <a href="">analysis</a>
+        <a href="">chart</a>
+        <a href="">dashboard</a>
+        <a href="">data</a>
+        <a href="">graph</a>
+      </div>
+    </div>
+  </div>
+  <button (click)="toggleMoreDetails( $event)" class="booking-details__button booking-details__button_more-details" type="button"
+    name="more-details">More Details</button>
+
+</div>

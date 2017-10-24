@@ -1,0 +1,41 @@
+@import "~styles/variables";
+@import "~styles/base";
+.add-booking {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 100;
+  background-color: $dark-gray-3;
+  display: none;
+  &__title {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 31px;
+    @include font-style($color: $light-gray-2, $size: 18px, $lh: 72px, $ls: 0.2px);
+  }
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 26px;
+    background-image: url("./assets/icons/close.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  &__container {
+    width: 670px;
+    height: 100%;
+    overflow-y: scroll;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+  }
+}

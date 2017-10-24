@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, RouterLinkActive } from '@angular/router';
 import { DpDatePickerModule } from 'ng2-date-picker';
+import { SelectModule } from 'ng2-select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule, MatTableModule, MatSlideToggleModule } from '@angular/material';
 
 import { appRoutes } from './app.routes';
 
@@ -39,7 +42,8 @@ import { StepTimeComponent } from './booking/booking-settings/booking-add/step-t
 import { StepAccountComponent } from './booking/booking-settings/booking-add/step-account/step-account.component';
 import { StepConfirmComponent } from './booking/booking-settings/booking-add/step-confirm/step-confirm.component';
 import { BookingListComponent } from './booking/booking-settings/booking-list/booking-list.component';
-import { BookingStuffsListComponent } from './booking/booking-settings/booking-stuffs-list/booking-stuffs-list.component';
+import { NewBookingMenuComponent } from './booking/booking-settings/new-booking-menu/new-booking-menu.component';
+import { TableAssignComponent } from './booking/booking-settings/table-assign/table-assign.component';
 
 @NgModule({
   declarations: [
@@ -75,14 +79,20 @@ import { BookingStuffsListComponent } from './booking/booking-settings/booking-s
     StepAccountComponent,
     StepConfirmComponent,
     BookingListComponent,
-    BookingStuffsListComponent
+    NewBookingMenuComponent,
+    TableAssignComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes),
-    DpDatePickerModule
+    DpDatePickerModule,
+    SelectModule,
+    BrowserAnimationsModule,
+    MatTabsModule,
+    MatTableModule,
+    MatSlideToggleModule
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

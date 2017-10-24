@@ -11,5 +11,13 @@ export class BookingStatusComponent implements OnInit {
 
   ngOnInit() {
   }
+  toggleBookingStatus(action) {
+    if (action == "show") {
+      document.getElementById("bookingStatusMenu").style.left = "0";
+    }
+    else {
+      document.getElementById("bookingStatusMenu").style.left = "100%";
+    }
+  }
 
 }

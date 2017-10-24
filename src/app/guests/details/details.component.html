@@ -1,3 +1,111 @@
-<p>
-  guests details works!
-</p>
+<div id="guestView" class="guest-view">
+  <div class="guest-view__title">
+    <div>
+      <div class="guest-view__name">
+        Julia Hoffman
+      </div>
+      <div class="guest-view__id">
+        Guest ID:
+        <span>TPR57690</span>
+      </div>
+    </div>
+    <div class="guest-view__buttons">
+      <div class="guest-view__action-btn guest-view__action-btn_block"></div>
+      <div class="guest-view__action-btn guest-view__action-btn_delete"></div>
+      <div class="guest-view__edit-btn">Edit</div>
+    </div>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Guests Info">
+      <div class="guest-view__guest-info">
+        <div class="guest-view__col-50">
+          <div class="guest-view__guest-info-item guest-view__guest-info-item_name">
+            <div class="guest-view__guest-info-item-name">Full Name</div>
+            <div class="guest-view__guest-info-item-value">Craig Barrett</div>
+          </div>
+          <div class="guest-view__guest-info-item guest-view__guest-info-item_email">
+            <div class="guest-view__guest-info-item-name">Email Address</div>
+            <div class="guest-view__guest-info-item-value">barretthegreat@gmail.com</div>
+          </div>
+          <div class="guest-view__guest-info-item guest-view__guest-info-item_vip">
+            <div class="guest-view__guest-info-item-name">Is Vip</div>
+            <div class="guest-view__guest-info-item-value">Yes</div>
+          </div>
+        </div>
+        <div class="guest-view__col-50">
+          <div class="guest-view__guest-info-item guest-view__guest-info-item_phone">
+            <div class="guest-view__guest-info-item-name">Phone Number</div>
+            <div class="guest-view__guest-info-item-value">+97 (533) 720 1292</div>
+          </div>
+          <div class="guest-view__guest-info-item guest-view__guest-info-item_company">
+            <div class="guest-view__guest-info-item-name">Company</div>
+            <div class="guest-view__guest-info-item-value">Often Design</div>
+          </div>
+          <div class="guest-view__guest-info-item guest-view__guest-info-item_wechat">
+            <div class="guest-view__guest-info-item-name">WeChat</div>
+            <div class="guest-view__guest-info-item-value">Connected</div>
+          </div>
+        </div>
+      </div>
+      <div class="guest-view__guest-info-tags">
+        <div class="guest-view__guest-info-tag">account</div>
+        <div class="guest-view__guest-info-tag">data</div>
+        <div class="guest-view__guest-info-tag">chart</div>
+        <div class="guest-view__guest-info-tag">graph</div>
+        <div class="guest-view__guest-info-tag">activity</div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Previous Bookings">
+      <div class="guest-view__prev-bookings">
+        <div class="guest-view__col-30">
+          <div class="guest-view__prev-bookings-counter">
+            <div class="guest-view__prev-bookings-counter-name">Total visit</div>
+            <div class="guest-view__prev-bookings-counter-value">10</div>
+          </div>
+        </div>
+        <div class="guest-view__col-30">
+          <div class="guest-view__prev-bookings-counter">
+            <div class="guest-view__prev-bookings-counter-name">No shows</div>
+            <div class="guest-view__prev-bookings-counter-value">2</div>
+          </div>
+        </div>
+        <div class="guest-view__col-30">
+          <div class="guest-view__prev-bookings-counter">
+            <div class="guest-view__prev-bookings-counter-name">Cancellation</div>
+            <div class="guest-view__prev-bookings-counter-value">0</div>
+          </div>
+        </div>
+      </div>
+      <mat-table #table [(dataSource)]="dataSource">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>Booking ID</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.date}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="time">
+          <mat-header-cell *matHeaderCellDef>Time</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.time}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="guests">
+          <mat-header-cell *matHeaderCellDef>No of Guests</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.guests}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.status}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="link">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let booking">
+            <a href="{{booking.link}}">More</a>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-tab>
+  </mat-tab-group>
+</div>

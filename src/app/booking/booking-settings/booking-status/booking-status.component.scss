@@ -1,0 +1,124 @@
+@import "~styles/variables";
+@import "~styles/base";
+.booking-status {
+  width: 100%;
+  height: 100%;
+  background-color: $gray;
+  display: flex;
+  flex-direction: column;
+  padding: 37px 30px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  border-right: 2px solid $dark-gray-6;
+  transition: all 0.3s ease-in-out;
+  &__title {
+    padding-left: 34px;
+    padding-right: 34px;
+    padding-bottom: 38px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+  }
+  &__back {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -2px;
+    top: 3px;
+    background-image: url("./assets/icons/back.svg");
+    background-size: 20px 20px;
+    cursor: pointer;
+  }
+  &__name {
+    @include font-style($color: $light-gray-2, $size: 18px);
+    text-align: center;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    overflow-y: scroll;
+  }
+  &__radio {
+    display: none;
+    &:checked+label {
+      background-color: $mint;
+      &:before {
+        background-color: $mint;
+      }
+      &:after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: $light-gray-2;
+        position: absolute;
+        top: 21px;
+        right: 25px;
+        border-radius: 100%;
+      }
+    }
+  }
+  &__radio-icon {
+    position: absolute;
+    top: 19px;
+    left: 22px;
+    width: 18px;
+    height: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    &_booked {
+      background-image: url("./assets/icons/book.svg");
+    }
+    &_confirmed {
+      background-image: url("./assets/icons/confirmed.svg");
+    }
+    &_part-seat {
+      background-image: url("./assets/icons/part-seated.svg");
+      left: 20px;
+    }
+    &_seated {
+      background-image: url("./assets/icons/seated.svg");
+    }
+    &_waiting {
+      background-image: url("./assets/icons/waiting.svg");
+    }
+    &_check {
+      background-image: url("./assets/icons/check.svg");
+    }
+    &_no-show {
+      background-image: url("./assets/icons/no-show.svg");
+    }
+    &_cancel {
+      background-image: url("./assets/icons/cancel.svg");
+    }
+    &_refund {
+      background-image: url("./assets/icons/refund.svg");
+    }
+  }
+  &__radio+label {
+    display: block;
+    cursor: pointer;
+    @include font-style($color: $light-gray-2, $size: 16px);
+    background-color: $dark-gray-4;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 22px 16px 60px;
+    margin-bottom: 21px;
+    position: relative;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      right: 20px;
+      top: 16px;
+      width: 16px;
+      height: 16px;
+      border: 2px solid $light-gray-2;
+      border-radius: 100%;
+      background-color: $dark-gray-4;
+    }
+  }
+}

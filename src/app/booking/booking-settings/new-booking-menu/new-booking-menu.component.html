@@ -1,0 +1,18 @@
+<div id="NewBookingMenu" class="new-booking">
+  <div class="new-booking__title">
+    <div class="new-booking__table">
+      Table 30
+    </div>
+    <div class="new-booking__time">
+      Available at 07:30 PM
+    </div>
+    <div (click)="toggleNewBookingMenu('hide')" class="new-booking__close">
+
+    </div>
+  </div>
+  <div class="new-booking__buttons">
+    <button class="new-booking__button new-booking__button_green" type="button" name="add-booking">Add a Booking</button>
+    <button class="new-booking__button" type="button" name="block-table">Block Table</button>
+  </div>
+  <app-booking-add></app-booking-add>
+</div>

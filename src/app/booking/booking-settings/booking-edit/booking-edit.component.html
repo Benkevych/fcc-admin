@@ -1,3 +1,87 @@
-<p>
-  booking-edit works!
-</p>
+<div id="bookingEdit" class="booking-edit">
+  <div class="booking-edit__title">
+    <div>
+      <div class="booking-edit__name">
+        Edit Booking
+      </div>
+      <div class="booking-edit__info">
+        Current booking details
+      </div>
+    </div>
+    <div (click)="closeEditMenu()" class="booking-edit__save-btn">
+      Save
+    </div>
+  </div>
+  <div class="">
+    <div class="booking-edit__row">
+      <div class="booking-edit__input booking-edit__input_md">
+        <div class="booking-edit__input-label">Date</div>
+        <div class="booking-edit__input-dropdown">
+          <dp-date-picker [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
+        </div>
+      </div>
+      <div class="booking-edit__input booking-edit__input_md">
+        <div class="booking-edit__input-label">Time</div>
+        <div class="booking-edit__input-dropdown">
+          <dp-date-picker [(ngModel)]="selectedTime" [placeholder]="'Time...'" [theme]="'date-picker'" [mode]="'time'" [config]="timePickerConfig"></dp-date-picker>
+        </div>
+      </div>
+      <div class="booking-edit__input booking-edit__input_md">
+        <div class="booking-edit__input-label">Guests</div>
+        <div class="booking-edit__input-dropdown">
+          <ng-select [allowClear]="true" [items]="guests" placeholder="Guests..."></ng-select>
+        </div>
+      </div>
+
+    </div>
+    <div class="booking-edit__row">
+      <div class="booking-edit__input booking-edit__input_lg">
+        <div class="booking-edit__input-label">Status</div>
+        <div class="booking-edit__input-dropdown">
+          <ng-select class="booking-edit__status-select" [allowClear]="true" [items]="status" placeholder="Status..."></ng-select>
+        </div>
+      </div>
+      <div class="booking-edit__input booking-edit__input_sm">
+        <div class="booking-edit__input-label">Assign Table</div>
+        <div class="booking-edit__input-dropdown">
+          <ng-select [allowClear]="true" [items]="floors" placeholder="Floor..."></ng-select>
+        </div>
+      </div>
+      <div class="booking-edit__input booking-edit__input_sm">
+        <div class="booking-edit__input-label"></div>
+        <div class="booking-edit__input-dropdown">
+          <ng-select [allowClear]="true" [items]="tables" placeholder="Table..."></ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="booking-edit__row">
+      <div class="booking-edit__input booking-edit__input_md">
+        <div class="booking-edit__input-label">Shift</div>
+        <div class="booking-edit__input-dropdown">
+          <ng-select [allowClear]="true" [items]="shifts" placeholder="Shifts..."></ng-select>
+        </div>
+      </div>
+      <div class="booking-edit__input booking-edit__input_md">
+        <div class="booking-edit__input-label">Hours</div>
+        <div class="booking-edit__input-dropdown">
+          <ng-select [allowClear]="true" [items]="hours" placeholder="Hours..."></ng-select>
+        </div>
+      </div>
+      <div class="booking-edit__input booking-edit__input_md">
+        <div class="booking-edit__input-label">Referenced by</div>
+        <div class="booking-edit__input-dropdown booking-edit__input-dropdown_no-arrow">
+          <input class="booking-edit__text-input" type="text" name="" placeholder="Enter name...">
+        </div>
+      </div>
+    </div>
+    <div class="booking-edit__row">
+      <div class="booking-edit__input booking-edit__input_full">
+        <div class="booking-edit__input-label">Staff Note</div>
+        <div class="booking-edit__input-dropdown booking-edit__input-dropdown_no-arrow">
+          <textarea class="booking-edit__text-input booking-edit__text-input_textarea" name="" placeholder="Enter notes, if any..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

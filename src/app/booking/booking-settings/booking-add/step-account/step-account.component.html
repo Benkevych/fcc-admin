@@ -1,3 +1,56 @@
-<p>
-  step-account works!
-</p>
+<div class="step-account">
+  <div class="step-account__new">
+    <div class="step-account__new-label"> Name or Phone Number</div>
+    <input class="step-account__new-input" type="text" name="" value="">
+    <button (click)="showConfirm()" class="step-account__new-btn" type="button" name="button">Add As New Guest</button>
+  </div>
+  <div class="step-account__accounts">
+    <div class="step-account__account">
+      <div class="step-account__col-50">
+        <div class="step-account__account-info step-account__account-info_name">
+          <div class="step-account__account-info-label">Full Name</div>
+          <div class="step-account__account-info-value">Eugene Howard</div>
+        </div>
+        <div class="step-account__account-info step-account__account-info_email">
+          <div class="step-account__account-info-label">Email Address</div>
+          <div class="step-account__account-info-value">eugene-82@gmail.com</div>
+        </div>
+      </div>
+      <div class="step-account__col-50">
+        <div class="step-account__account-info step-account__account-info_phone step-account__account-info_right">
+          <div class="step-account__account-info-label">Phone Number</div>
+          <div class="step-account__account-info-value">(904) 882 8754</div>
+        </div>
+        <div class="step-account__account-info step-account__account-info_company step-account__account-info_right">
+          <div class="step-account__account-info-label">Company</div>
+          <div class="step-account__account-info-value">Often Design</div>
+        </div>
+      </div>
+    </div>
+    <div class="step-account__account">
+      <div class="step-account__col-50">
+        <div class="step-account__account-info step-account__account-info_name">
+          <div class="step-account__account-info-label">Full Name</div>
+          <div class="step-account__account-info-value">Craig Barrett</div>
+        </div>
+        <div class="step-account__account-info step-account__account-info_email">
+          <div class="step-account__account-info-label">Email Address</div>
+          <div class="step-account__account-info-value">barretthegreat@gmail.com</div>
+        </div>
+      </div>
+      <div class="step-account__col-50">
+        <div class="step-account__account-info step-account__account-info_phone step-account__account-info_right">
+          <div class="step-account__account-info-label">Phone Number</div>
+          <div class="step-account__account-info-value">+97 (533) 720 1292</div>
+        </div>
+        <div class="step-account__account-info step-account__account-info_company step-account__account-info_right">
+          <div class="step-account__account-info-label">Company</div>
+          <div class="step-account__account-info-value">Brownbox</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="bookingConfirm" class="step-account__confirm">
+    <app-step-confirm></app-step-confirm>
+  </div>
+</div>

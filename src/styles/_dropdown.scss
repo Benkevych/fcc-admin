@@ -1,0 +1,204 @@
+#shift {
+  .dropdown {
+    .dropdown-menu {
+      li {
+        &:first-child {
+          &::before {
+            content: 'Select Shift';
+            @include font-style($color: $light-gray-3, $size: 18px);
+            background-color: $dark-gray-2;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            height: 72px;
+            padding: 0 !important;
+            border-radius: 4px 4px 0 0;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: $dark-gray-2;
+            transform: rotate(45deg);
+            top: -4px;
+            left: 83px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#floor {
+  .dropdown {
+    .dropdown-menu {
+      li {
+        &:first-child {
+          &::before {
+            content: 'Select Floor';
+            @include font-style($color: $light-gray-3, $size: 18px);
+            background-color: $dark-gray-2;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            height: 72px;
+            padding: 0 !important;
+            border-radius: 4px 4px 0 0;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: $dark-gray-2;
+            transform: rotate(45deg);
+            top: -4px;
+            left: 83px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header-dropdown {
+  .dropdown {
+    &:focus {
+      outline: none !important;
+    }
+    .form-control {
+      @include font-style($color: $light-gray, $size: 15px);
+      cursor: pointer;
+      width: 145px;
+      min-width: 145px;
+      padding: 11px 17px;
+      display: flex;
+      justify-content: space-between;
+      background-color: $dark-gray;
+      border: 1px solid $dark-gray-7;
+      border-radius: 4px;
+      margin-right: 15px;
+      &::placeholder {
+        @include font-style($color: $light-gray, $size: 15px);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .dropdown-menu {
+      z-index: 100;
+      position: absolute;
+      background-color: $gray;
+      border-radius: 4px;
+      box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+      top: 58px;
+      list-style-type: none;
+      padding: 0;
+      min-width: 300px;
+      max-height: unset !important;
+      margin: 0;
+      overflow-x: visible !important;
+      li {
+        &:last-child {
+          a {
+            border-bottom: none;
+            border-radius: 0 0 4px 4px;
+          }
+        }
+      }
+    }
+    .active {
+      a {
+        background-color: $mint !important;
+      }
+    }
+    .dropdown-item {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      height: 72px;
+      padding: 0 !important;
+      border-bottom: 1px solid $dark-gray-5;
+      div {
+        @include font-style($color: $light-gray, $size: 18px);
+        max-height: fit-content;
+      }
+    }
+  }
+}
+
+#staffView,
+#bookingEdit {
+  .dropdown {
+    &:focus {
+      outline: none !important;
+    }
+    .form-control {
+      @include font-style($color: $light-gray, $size: 17px);
+      cursor: pointer;
+      width: 100%;
+      padding: 14px 17px;
+      display: flex;
+      justify-content: space-between;
+      background-color: $gray;
+      border: 1px solid $gray-2;
+      border-radius: 4px;
+      margin-right: 15px;
+      height: 56px;
+      box-sizing: border-box;
+      &::placeholder {
+        @include font-style($color: $light-gray, $size: 17px);
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .dropdown-menu {
+      z-index: 100;
+      position: absolute;
+      background-color: $gray;
+      border-radius: 4px;
+      box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+      top: 58px;
+      list-style-type: none;
+      padding: 0;
+      min-width: 100%;
+      margin: 0;
+      overflow-x: scroll;
+      max-height: 500px;
+      li {
+        &:last-child {
+          a {
+            border-bottom: none;
+            border-radius: 0 0 4px 4px;
+          }
+        }
+      }
+    }
+    .active {
+      a {
+        background-color: $mint !important;
+      }
+    }
+    .dropdown-item {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      height: 72px;
+      padding: 0 !important;
+      border-bottom: 1px solid $dark-gray-5;
+      div {
+        @include font-style($color: $light-gray, $size: 18px);
+        max-height: fit-content;
+      }
+    }
+  }
+  .booking-edit__status-select {
+    .dropdown {
+      .form-control {
+        padding-left: 60px;
+      }
+    }
+  }
+}

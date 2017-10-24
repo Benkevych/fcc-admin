@@ -1,4 +1,15 @@
 .booking {
-  display: flex;
-  flex-direction: row;
+  width: 100%;
+  height: 100%;
+
+  &__settings {
+    height: 100%;
+    width: 342px;
+    float: left;
+  }
+
+  &__view {
+    height: 100%;
+    width: auto;
+  }
 }

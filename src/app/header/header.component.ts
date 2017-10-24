@@ -11,6 +11,8 @@ import { IDatePickerConfig } from 'ng2-date-picker';
 export class HeaderComponent implements OnInit {
   title: string;
   subtitle: string;
+  shifts: Array<string> = ['Breakfast', 'Launch', 'Dinner'];
+  floors: Array<string> = ['All Floor', 'Main Lobby', 'Centre', 'Side Way', 'Terrace'];
 
   datePickerConfig: IDatePickerConfig = {
     firstDayOfWeek: 'su',
@@ -24,7 +26,7 @@ export class HeaderComponent implements OnInit {
     showWeekNumbers: false,
     enableMonthSelector: false,
     yearFormat: 'YYYY',
-    format: "D, MMM D",
+    format: "D MMM YYYY",
     showGoToCurrent: false,
     dayBtnFormat: 'D',
     timeSeparator: ':',

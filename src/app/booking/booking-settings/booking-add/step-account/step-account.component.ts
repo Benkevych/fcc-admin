@@ -11,5 +11,7 @@ export class StepAccountComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showConfirm() {
+    document.getElementById("bookingConfirm").style.display = "block";
+  }
 }

@@ -1,3 +1,170 @@
-<p>
-  booking-more-details works!
-</p>
+<div id="moreDetailsView" class="more-details">
+  <div class="more-details__title">
+    <div>
+      <div class="more-details__name">
+        Craig Barrett
+      </div>
+      <div class="more-details__id">
+        Booking ID:
+        <span>TPR57690</span>
+      </div>
+    </div>
+    <div (click)="showEditMenu()" class="more-details__edit-btn">
+      Edit
+    </div>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Booking Info">
+      <div class="more-details__booking-info">
+        <div class="more-details__col-50">
+          <div class="more-details__booking-info-item more-details__booking-info-item_date">
+            <div class="more-details__booking-info-item-name">Date</div>
+            <div class="more-details__booking-info-item-value">Friday, Aug 25</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_guests">
+            <div class="more-details__booking-info-item-name">Guests</div>
+            <div class="more-details__booking-info-item-value">7</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_shifts">
+            <div class="more-details__booking-info-item-name">Shifts</div>
+            <div class="more-details__booking-info-item-value">Dinner</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_tables">
+            <div class="more-details__booking-info-item-name">Assigned Tables</div>
+            <div class="more-details__booking-info-item-value">Centre, T35</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_method">
+            <div class="more-details__booking-info-item-name">Payment Method</div>
+            <div class="more-details__booking-info-item-value">Alipay</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_guest-notes">
+            <div class="more-details__booking-info-item-name">Notes By Guest</div>
+            <div class="more-details__booking-info-item-value">I like everything, that’s tasty</div>
+          </div>
+        </div>
+        <div class="more-details__col-50">
+          <div class="more-details__booking-info-item more-details__booking-info-item_time">
+            <div class="more-details__booking-info-item-name">Time</div>
+            <div class="more-details__booking-info-item-value">07:45 PM</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_status">
+            <div class="more-details__booking-info-item-name">Status</div>
+            <div class="more-details__booking-info-item-value">Booked</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_hours">
+            <div class="more-details__booking-info-item-name">Hours</div>
+            <div class="more-details__booking-info-item-value">1h 30m</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_deposit">
+            <div class="more-details__booking-info-item-name">Deposit</div>
+            <div class="more-details__booking-info-item-value">950 RMB</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_reference">
+            <div class="more-details__booking-info-item-name">Referenced By</div>
+            <div class="more-details__booking-info-item-value">Issac Yanez</div>
+          </div>
+          <div class="more-details__booking-info-item more-details__booking-info-item_stuff-notes">
+            <div class="more-details__booking-info-item-name">Notes By Stuff</div>
+            <div class="more-details__booking-info-item-value">He like everything, if it’s tasty</div>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Guests Info">
+      <div class="more-details__guest-info">
+        <div class="more-details__col-50">
+          <div class="more-details__guest-info-item more-details__guest-info-item_name">
+            <div class="more-details__guest-info-item-name">Full Name</div>
+            <div class="more-details__guest-info-item-value">Craig Barrett</div>
+          </div>
+          <div class="more-details__guest-info-item more-details__guest-info-item_email">
+            <div class="more-details__guest-info-item-name">Email Address</div>
+            <div class="more-details__guest-info-item-value">barretthegreat@gmail.com</div>
+          </div>
+          <div class="more-details__guest-info-item more-details__guest-info-item_vip">
+            <div class="more-details__guest-info-item-name">Is Vip</div>
+            <div class="more-details__guest-info-item-value">Yes</div>
+          </div>
+        </div>
+        <div class="more-details__col-50">
+          <div class="more-details__guest-info-item more-details__guest-info-item_phone">
+            <div class="more-details__guest-info-item-name">Phone Number</div>
+            <div class="more-details__guest-info-item-value">+97 (533) 720 1292</div>
+          </div>
+          <div class="more-details__guest-info-item more-details__guest-info-item_company">
+            <div class="more-details__guest-info-item-name">Company</div>
+            <div class="more-details__guest-info-item-value">Often Design</div>
+          </div>
+          <div class="more-details__guest-info-item more-details__guest-info-item_wechat">
+            <div class="more-details__guest-info-item-name">WeChat</div>
+            <div class="more-details__guest-info-item-value">Connected</div>
+          </div>
+        </div>
+      </div>
+      <div class="more-details__guest-info-tags">
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_vip">vip</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_mvp">mvp</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_gluten-free">Gluten free</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_vegetarian">Vegetarian</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_pescatarian">Pescatarian</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_smoker">Smoker</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_allergies">Allergies</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_blogger">Blogger</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_birthday">Birthday</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_anniversary">Anniversary</div>
+        <div class="more-details__guest-info-tag more-details__guest-info-tag_window-seat">Window seat</div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Previous Bookings">
+      <div class="more-details__prev-bookings">
+        <div class="more-details__col-30">
+          <div class="more-details__prev-bookings-counter">
+            <div class="more-details__prev-bookings-counter-name">Total visit</div>
+            <div class="more-details__prev-bookings-counter-value">10</div>
+          </div>
+        </div>
+        <div class="more-details__col-30">
+          <div class="more-details__prev-bookings-counter">
+            <div class="more-details__prev-bookings-counter-name">No shows</div>
+            <div class="more-details__prev-bookings-counter-value">2</div>
+          </div>
+        </div>
+        <div class="more-details__col-30">
+          <div class="more-details__prev-bookings-counter">
+            <div class="more-details__prev-bookings-counter-name">Cancellation</div>
+            <div class="more-details__prev-bookings-counter-value">0</div>
+          </div>
+        </div>
+      </div>
+      <mat-table #table [(dataSource)]="dataSource">
+        <ng-container matColumnDef="id">
+          <mat-header-cell *matHeaderCellDef>Booking ID</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.id}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.date}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="time">
+          <mat-header-cell *matHeaderCellDef>Time</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.time}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="guests">
+          <mat-header-cell *matHeaderCellDef>No of Guests</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.guests}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="status">
+          <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.status}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="link">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let booking"> <a href="{{booking.link}}">More</a></mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-tab>
+  </mat-tab-group>
+  <app-booking-edit id="editBookingView" class="booking-edit"></app-booking-edit>
+</div>

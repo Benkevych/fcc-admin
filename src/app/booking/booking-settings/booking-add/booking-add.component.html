@@ -1,3 +1,28 @@
-<p>
-  booking-add works!
-</p>
+<div id="addBooking" class="add-booking">
+  <div style="position: relative">
+    <div class="add-booking__title">Book a Table</div>
+    <div (click)="closeAddBooking()" class="add-booking__close-btn"></div>
+  </div>
+  <mat-tab-group>
+    <mat-tab label="Date">
+      <div class="add-booking__container">
+        <app-step-date></app-step-date>
+      </div>
+    </mat-tab>
+    <mat-tab label="Guests">
+      <div class="add-booking__container">
+        <app-step-guests></app-step-guests>
+      </div>
+    </mat-tab>
+    <mat-tab label="Time">
+      <div class="add-booking__container">
+        <app-step-time></app-step-time>
+      </div>
+    </mat-tab>
+    <mat-tab label="Account">
+      <div class="add-booking__container">
+        <app-step-account></app-step-account>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
