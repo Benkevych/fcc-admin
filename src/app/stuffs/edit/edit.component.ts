@@ -11,5 +11,8 @@ export class StuffsEditComponent implements OnInit {
 
   ngOnInit() {
   }
+  hideStaffEdit() {
+    document.getElementById("staffEdit").style.display = "none";
+  }
 
 }

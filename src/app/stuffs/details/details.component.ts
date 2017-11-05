@@ -11,5 +11,7 @@ export class StuffsDetailsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showStaffEdit() {
+    document.getElementById("staffEdit").style.display = "flex";
+  }
 }

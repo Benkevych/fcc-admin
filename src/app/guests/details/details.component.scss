@@ -10,6 +10,9 @@
   left: calc(74px + 342px);
   width: calc(100% - 74px - 342px);
   height: calc(100% - 74px);
+  &__close {
+    display: none;
+  }
   &__title {
     display: flex;
     justify-content: space-between;
@@ -38,10 +41,10 @@
     background-position: center;
     background-repeat: no-repeat;
     &_block {
-      background-image: url("./assets/icons/block.svg");
+      background-image: url("/assets/icons/block.svg");
     }
     &_delete {
-      background-image: url("./assets/icons/delete.svg");
+      background-image: url("/assets/icons/delete.svg");
     }
   }
   &__edit-btn {
@@ -91,32 +94,32 @@
     }
     &_name {
       &:before {
-        background-image: url("./assets/icons/info-name.svg");
+        background-image: url("/assets/icons/info-name.svg");
       }
     }
     &_email {
       &:before {
-        background-image: url("./assets/icons/info-email.svg");
+        background-image: url("/assets/icons/info-email.svg");
       }
     }
     &_vip {
       &:before {
-        background-image: url("./assets/icons/info-vip.svg");
+        background-image: url("/assets/icons/info-vip.svg");
       }
     }
     &_phone {
       &:before {
-        background-image: url("./assets/icons/info-phone.svg");
+        background-image: url("/assets/icons/info-phone.svg");
       }
     }
     &_company {
       &:before {
-        background-image: url("./assets/icons/info-company.svg");
+        background-image: url("/assets/icons/info-company.svg");
       }
     }
     &_wechat {
       &:before {
-        background-image: url("./assets/icons/info-wechat.svg");
+        background-image: url("/assets/icons/info-wechat.svg");
       }
     }
   }
@@ -153,57 +156,57 @@
     }
     &_vip {
       &:before {
-        background-image: url("./assets/icons/tag-vip.svg");
+        background-image: url("/assets/icons/tag-vip.svg");
       }
     }
     &_mvp {
       &:before {
-        background-image: url("./assets/icons/tag-mvp.svg");
+        background-image: url("/assets/icons/tag-mvp.svg");
       }
     }
     &_gluten-free {
       &:before {
-        background-image: url("./assets/icons/tag-gluten-free.svg");
+        background-image: url("/assets/icons/tag-gluten-free.svg");
       }
     }
     &_vegetarian {
       &:before {
-        background-image: url("./assets/icons/tag-vegetarian.svg");
+        background-image: url("/assets/icons/tag-vegetarian.svg");
       }
     }
     &_pescatarian {
       &:before {
-        background-image: url("./assets/icons/tag-pescatarian.svg");
+        background-image: url("/assets/icons/tag-pescatarian.svg");
       }
     }
     &_smoker {
       &:before {
-        background-image: url("./assets/icons/tag-smoker.svg");
+        background-image: url("/assets/icons/tag-smoker.svg");
       }
     }
     &_allergies {
       &:before {
-        background-image: url("./assets/icons/tag-alergies.svg");
+        background-image: url("/assets/icons/tag-alergies.svg");
       }
     }
     &_blogger {
       &:before {
-        background-image: url("./assets/icons/tag-blogger.svg");
+        background-image: url("/assets/icons/tag-blogger.svg");
       }
     }
     &_birthday {
       &:before {
-        background-image: url("./assets/icons/tag-birthday.svg");
+        background-image: url("/assets/icons/tag-birthday.svg");
       }
     }
     &_anniversary {
       &:before {
-        background-image: url("./assets/icons/tag-anniversary.svg");
+        background-image: url("/assets/icons/tag-anniversary.svg");
       }
     }
     &_window-seat {
       &:before {
-        background-image: url("./assets/icons/tag-window-seat.svg");
+        background-image: url("/assets/icons/tag-window-seat.svg");
       }
     }
   }
@@ -266,5 +269,83 @@
   }
   .mat-cell {
     @include font-style($color: $light-gray-2, $size: 15px, $weight: 200);
+  }
+}
+
+@media #{$mobile} {
+  .guest-view {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    padding: 10px 5px;
+    &__title {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
+    &__title-info {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-around;
+    }
+    &__close {
+      display: block;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      background-image: url("/assets/icons/close.svg");
+    }
+    &__buttons {
+      margin-top: 5px;
+    }
+    &__guest-info-item {
+      margin-top: 25px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__guest-info-item-value {
+      overflow-wrap: break-word;
+    }
+    &__col-30 {
+      align-items: center;
+    }
+    &__prev-bookings {
+      margin-top: 20px;
+    }
+    &__prev-bookings-counter-value {
+      text-align: center;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .guest-view {
+    padding: 10px 5px;
+    top: 56px;
+    left: 342px;
+    width: calc(100% - 342px);
+    height: calc(100% - 56px);
+    &__buttons {
+      margin-top: 5px;
+    }
+    &__guest-info-item {
+      margin-top: 25px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__guest-info-item-value {
+      overflow-wrap: break-word;
+    }
+    &__col-30 {
+      align-items: center;
+    }
+    &__prev-bookings {
+      margin-top: 20px;
+    }
+    &__prev-bookings-counter-value {
+      text-align: center;
+    }
   }
 }

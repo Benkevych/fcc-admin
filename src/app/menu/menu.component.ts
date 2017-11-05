@@ -11,5 +11,7 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showLogin() {
+    document.getElementById("login").style.display = "block";
+  }
 }

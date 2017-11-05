@@ -1,0 +1,113 @@
+<div id="floorMenu" class="floor-menu">
+  <div class="floor-menu__floor-info">
+    <div class="floor-menu__title">
+      <div class="floor-menu__text">Floor Packages</div>
+      <div class="floor-menu__desc">Edit or create floor package</div>
+      <div (click)="closeFloorPackageSettings()" class="floor-menu__close"></div>
+    </div>
+    <div class="floor-menu__content">
+      <div class="floor-menu__floor">
+        <div class="floor-menu__floor-name-label">Package Name</div>
+        <div class="floor-menu__floor-name">Weekend Party</div>
+        <div class="floor-menu__btn floor-menu__btn_accent">Set As Default</div>
+        <div class="floor-menu__btn floor-menu__btn_mobile-view">Show View</div>
+        <div (click)="showFloorPackageEdit()">Edit Package</div>
+      </div>
+      <div class="floor-menu__btn">Duplicate</div>
+    </div>
+  </div>
+  <div id="floorPackageEdit" class="floor-menu__floor-edit">
+    <div class="floor-menu__title">
+      <div class="floor-menu__text">Floor Packages</div>
+      <div class="floor-menu__desc">Edit or create floor package</div>
+      <div (click)="closeFloorPackageEdit()" class="floor-menu__close"></div>
+    </div>
+    <div class="floor-menu__content">
+      <div class="floor-menu__floor">
+        <div class="floor-menu__floor-name-label">Package Name</div>
+        <input class="floor-menu__input" type="text">
+        <div (click)="closeFloorPackageEdit()" class="floor-menu__btn floor-menu__btn_accent">Save</div>
+        <div class="floor-menu__publish-status">
+          <div class="floor-menu__publish-status-info">
+            <div class="floor-menu__publish-status-text">Publish Package</div>
+            <div class="floor-menu__publish-status-desc">Switch on to publish</div>
+          </div>
+          <mat-slide-toggle class="floor-menu__publish-status-switch"></mat-slide-toggle>
+        </div>
+      </div>
+      <div class="floor-menu__btn floor-menu__btn_red">Delete</div>
+    </div>
+  </div>
+  <div id="floorMenuTableEdit" class="floor-menu__table-edit">
+    <div class="floor-menu__title">
+      <div class="floor-menu__text">Floor Packages</div>
+      <div class="floor-menu__desc">Edit or create floor package</div>
+      <div (click)="closeTableEdit()" class="floor-menu__close"></div>
+    </div>
+    <div class="floor-menu__content">
+      <div class="floor-menu__fields">
+        <div (click)="toggleConfirm('show')" class="floor-menu__btn floor-menu__btn_green">Save & Close - T35</div>
+        <div class="floor-menu__row">
+          <div class="floor-menu__field">
+            <div class="floor-menu__field-name">Number</div>
+            <div class="floor-menu__field-dropdown">
+              <ng-select [items]="numbers"></ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="floor-menu__row">
+          <div class="floor-menu__col">
+            <div class="floor-menu__field">
+              <div class="floor-menu__field-name">Seat</div>
+              <div class="floor-menu__field-dropdown">
+                <ng-select [items]="seat"></ng-select>
+              </div>
+            </div>
+          </div>
+          <div class="floor-menu__col">
+            <div class="floor-menu__field">
+              <div class="floor-menu__field-name">Seatable</div>
+              <div class="floor-menu__field-dropdown">
+                <ng-select [items]="seateble"></ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="floor-menu__row">
+          <div class="floor-menu__field">
+            <div class="floor-menu__field-name">Style</div>
+            <div class="floor-menu__table-styles">
+              <input id="style1" class="floor-menu__table-style floor-menu__table-style_square" type="radio" name="tableStyle" checked>
+              <label for="style1"></label>
+              <input id="style2" class="floor-menu__table-style floor-menu__table-style_round" type="radio" name="tableStyle">
+              <label for="style2"></label>
+            </div>
+          </div>
+        </div>
+        <div class="floor-menu__publish-status">
+          <div class="floor-menu__publish-status-info">
+            <div class="floor-menu__publish-status-text">Allow Online Booking</div>
+            <div class="floor-menu__publish-status-desc">Switch on to allow</div>
+          </div>
+          <mat-slide-toggle class="floor-menu__publish-status-switch"></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+    <div id="floorMenuTableConfirm" class="floor-menu__confirm">
+      <div class="floor-menu__content">
+        <div>
+          <div class="floor-menu__confirm-title">Confirm?
+            <div (click)="toggleConfirm('hide')" class="floor-menu__back-btn"></div>
+          </div>
+          <div class="floor-menu__confirm-text">Are you sure want to make “
+            <span>Weekend Party</span>” as default package?</div>
+          <div class="floor-menu__buttons">
+            <div (click)="tableConfirm()" class="floor-menu__btn floor-menu__btn_accent">Yes, Make It</div>
+            <div (click)="toggleConfirm('hide')" class="floor-menu__btn">Cancel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

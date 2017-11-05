@@ -1,0 +1,12 @@
+  .floor-view {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    background-image: url("/assets/images/floor-bg.png");
+    background-size: cover;
+    background-position: -1px -2px;
+  }

@@ -1,9 +1,16 @@
 @import "~styles/variables";
 @import "~styles/base";
-
 .booking-settings {
-  width: 100%;
+  width: 342px;
   height: 100%;
   position: relative;
   overflow: hidden;
+  display: none;
+}
+
+@media #{$mobile} {
+  .booking-settings {
+    width: 100vw;
+    height: 100%;
+  }
 }

@@ -7,9 +7,9 @@ import { DpDatePickerModule } from 'ng2-date-picker';
 import { SelectModule } from 'ng2-select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule, MatTableModule, MatSlideToggleModule } from '@angular/material';
+import { CalendarModule } from 'angular-calendar';
 
 import { appRoutes } from './app.routes';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
@@ -44,6 +44,9 @@ import { StepConfirmComponent } from './booking/booking-settings/booking-add/ste
 import { BookingListComponent } from './booking/booking-settings/booking-list/booking-list.component';
 import { NewBookingMenuComponent } from './booking/booking-settings/new-booking-menu/new-booking-menu.component';
 import { TableAssignComponent } from './booking/booking-settings/table-assign/table-assign.component';
+import { ShiftPackageMenuComponent } from './settings/shift-package-menu/shift-package-menu.component';
+import { FloorPackageMenuComponent } from './settings/floor-package-menu/floor-package-menu.component';
+import { RulesMenuComponent } from './settings/rules-menu/rules-menu.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +83,10 @@ import { TableAssignComponent } from './booking/booking-settings/table-assign/ta
     StepConfirmComponent,
     BookingListComponent,
     NewBookingMenuComponent,
-    TableAssignComponent
+    TableAssignComponent,
+    ShiftPackageMenuComponent,
+    FloorPackageMenuComponent,
+    RulesMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -92,7 +98,8 @@ import { TableAssignComponent } from './booking/booking-settings/table-assign/ta
     BrowserAnimationsModule,
     MatTabsModule,
     MatTableModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    CalendarModule.forRoot()
   ],
   providers: [AppComponent],
   bootstrap: [AppComponent]

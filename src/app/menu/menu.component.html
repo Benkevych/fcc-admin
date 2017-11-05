@@ -1,30 +1,40 @@
-<div class="menu">
+<div id="menu" class="menu">
   <div class="menu__main-menu">
-    <a routerLink="/dashboard" routerLinkActive="menu__active-item">
-      <img src="./assets/icons/dashboard.svg" alt="Dashboard">
+    <div class="menu__mobile-header">
+      <div class="menu__mobile-header-title">Menu</div>
+      <div class="menu__mobile-header-close"></div>
+    </div>
+    <a routerLinkActive="menu__active-item">
+      <img src="/assets/icons/dashboard.svg" alt="Dashboard">
+      <div class="menu__item-text">Dashboard</div>
     </a>
     <a routerLink="/booking" routerLinkActive="menu__active-item">
-        <img src="./assets/icons/booking.svg" alt="Booking">
+      <img src="/assets/icons/booking.svg" alt="Booking">
+      <div class="menu__item-text">Booking</div>
     </a>
     <a routerLink="/guests" routerLinkActive="menu__active-item">
-      <img src="./assets/icons/guests.svg" alt="Guests">
+      <img src="/assets/icons/guests.svg" alt="Guests">
+      <div class="menu__item-text">Guests</div>
     </a>
     <a routerLink="/stuffs" routerLinkActive="menu__active-item">
-      <img src="./assets/icons/stuffs.svg" alt="Stuffs">
-  </a>
+      <img src="/assets/icons/stuffs.svg" alt="Stuffs">
+      <div class="menu__item-text">Stuffs</div>
+    </a>
     <a routerLink="/settings" routerLinkActive="menu__active-item">
-      <img src="./assets/icons/settings.svg" alt="Settings">
-      </a>
+      <img src="/assets/icons/settings.svg" alt="Settings">
+      <div class="menu__item-text">Settings</div>
+    </a>
+    <div (click)="showLogin()">login</div>
   </div>
   <div class="menu__sub-menu">
     <a routerLink="/notifications" routerLinkActive="menu__active-item">
-        <img src="./assets/icons/bell.svg" alt="Notifications">
+      <img src="/assets/icons/bell.svg" alt="Notifications">
     </a>
-    <a routerLink="/login" routerLinkActive="menu__active-item">
-      <img src="./assets/icons/profile.svg" alt="Profile">
-      </a>
+    <a routerLinkActive="menu__active-item">
+      <img src="/assets/icons/profile.svg" alt="Profile">
+    </a>
     <a routerLink="/logout" routerLinkActive="menu__active-item">
-        <img src="./assets/icons/logout.svg" alt="Logout">
+      <img src="/assets/icons/logout.svg" alt="Logout">
     </a>
   </div>
 </div>

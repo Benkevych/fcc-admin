@@ -11,5 +11,16 @@ export class SettingsListComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showFloorPackageSettings() {
+    document.getElementById("floorMenu").style.display = "flex";
+    document.getElementById("floorPackageView").style.display = "flex";
+  }
+  showShiftPackageSettings() {
+    document.getElementById("shiftMenu").style.display = "flex";
+    document.getElementById("shiftView").style.display = "flex";
+  }
+  showRulesSettings() {
+    document.getElementById("rulesMenu").style.display = "flex";
+    document.getElementById("rulesView").style.display = "flex";
+  }
 }

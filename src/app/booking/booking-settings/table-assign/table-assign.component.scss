@@ -1,16 +1,15 @@
 @import "~styles/variables";
 @import "~styles/base";
 .table-assign {
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
+  width: 342px;
   height: 100%;
-  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
   border-right: 2px solid $dark-gray-6;
   background-color: $gray;
   overflow-y: scroll;
-  transition: all 0.3s ease-in-out;
+  z-index: 1;
+  display: none;
   &__title {
     padding: 25px 30px 28px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -23,7 +22,7 @@
     height: 20px;
     right: 29px;
     top: 39px;
-    background-image: url("./assets/icons/close.svg");
+    background-image: url("/assets/icons/close.svg");
     background-size: 20px 20px;
   }
   &__text {
@@ -111,5 +110,14 @@
     &_active {
       background-color: $mint;
     }
+  }
+}
+
+@media #{$mobile} {
+  .table-assign {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }

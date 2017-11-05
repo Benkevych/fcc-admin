@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../app.component';
 import { IDatePickerConfig } from 'ng2-date-picker';
 
 
@@ -12,8 +11,8 @@ export class HeaderComponent implements OnInit {
   title: string;
   subtitle: string;
   shifts: Array<string> = ['Breakfast', 'Launch', 'Dinner'];
-  floors: Array<string> = ['All Floor', 'Main Lobby', 'Centre', 'Side Way', 'Terrace'];
-
+  floors: Array<string> = ['All Floor', 'Main Lobby', 'Centre', 'Side Way', 'Terrace', 'Main Lobby', 'Centre', 'Side Way', 'Terrace', 'Main Lobby', 'Centre', 'Side Way', 'Terrace'];
+  additems: Array<string> = ['Normal Booking', 'Walk - In'];
   datePickerConfig: IDatePickerConfig = {
     firstDayOfWeek: 'su',
     monthFormat: 'MMMM YYYY',
@@ -32,12 +31,33 @@ export class HeaderComponent implements OnInit {
     timeSeparator: ':',
     multipleYearsNavigateBy: 10
   };
-  constructor(private app: AppComponent) {
+  constructor() {
+    this.title = "Title";
+    this.subtitle = " - subtitle"
   }
 
   ngOnInit() {
-    this.title = this.app.title;
-    this.subtitle = this.app.subtitle;
   }
+  setTitle(title, subtitle) {
+    this.title = title;
+    this.subtitle = subtitle;
+    console.log(this.title + this.subtitle);
 
+  }
+  showFloorView() {
+    document.getElementById("timelineView").style.display = "none";
+    document.getElementById("floorView").style.display = "flex";
+    document.getElementById("NewBookingMenu").style.display = "none";
+
+    document.getElementById("timelineMenu").style.display = "none";
+
+  }
+  showTimelineView() {
+    document.getElementById("floorView").style.display = "none";
+    document.getElementById("timelineView").style.display = "flex";
+    document.getElementById("timelineMenu").style.display = "none";
+  }
+  showBookingsList() {
+
+  }
 }

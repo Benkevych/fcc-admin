@@ -14,10 +14,10 @@ export class TableAssignComponent implements OnInit {
 
   toggleTableAssignMenu(action) {
     if (action == "hide") {
-      document.getElementById("tableAssignMenu").style.left = "-100%";
+      document.getElementById("tableAssignMenu").style.display = "none";
     }
     else {
-      document.getElementById("tableAssignMenu").style.left = "0";
+      document.getElementById("tableAssignMenu").style.display = "block";
     }
   }
 

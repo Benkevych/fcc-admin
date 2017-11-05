@@ -1,3 +1,19 @@
-<p>
-  settings-list works!
-</p>
+<div class="settings-list">
+  <div class="settings-list__item settings-list__item_general">
+    <div class="settings-list__item-name">General</div>
+    <div class="settings-list__item-desc">Booking app settings</div>
+  </div>
+  <div (click)="showRulesSettings()" class="settings-list__item settings-list__item_rules">
+    <div class="settings-list__item-name">Rules</div>
+    <div class="settings-list__item-desc">Set or block dates</div>
+  </div>
+  <div (click)="showShiftPackageSettings()" class="settings-list__item settings-list__item_shift">
+    <div class="settings-list__item-name">Shift Packages</div>
+    <div class="settings-list__item-desc">Edit or apply shift packages </div>
+  </div>
+  <div (click)="showFloorPackageSettings()" class="settings-list__item settings-list__item_floor">
+    <div class="settings-list__item-name">Floor Packages</div>
+    <div class="settings-list__item-desc">Edit or create floor packages </div>
+  </div>
+
+</div>

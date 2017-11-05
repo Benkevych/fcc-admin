@@ -1,0 +1,234 @@
+@import "~styles/variables";
+@import "~styles/base";
+.rules-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 340px;
+  background-color: $gray;
+  border-right: 2px solid $dark-gray-6;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  &__title {
+    padding: 25px 30px 28px 70px;
+    background-color: $dark-gray-2;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 39px;
+      left: 29px;
+      width: 20px;
+      height: 20px;
+      background-image: url("/assets/icons/settings-rules.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+  &__calendar-btn {
+    display: none;
+  }
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 29px;
+    top: 39px;
+    background-image: url("/assets/icons/close.svg");
+    background-size: 20px 20px;
+  }
+  &__text {
+    @include font-style($color: $light-gray-2, $size: 18px)
+  }
+  &__desc {
+    @include font-style($color: $light-gray-3, $size: 15px)
+  }
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: $gray;
+    overflow-y: scroll;
+  }
+  &__item {
+    padding: 19px 30px 20px 29px;
+    border-bottom: 1px solid $dark-gray-5;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      background-color: $dark-gray-2;
+    }
+  }
+  &__color {
+    top: 35px;
+    right: 30px;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    &_orange {
+      background-color: $orange;
+    }
+    &_green {
+      background-color: $green;
+    }
+    &_violet {
+      background-color: $violet;
+    }
+    &_red {
+      background-color: $red;
+    }
+  }
+  &__item-name {
+    @include font-style($color: $light-gray-2, $size: 18px);
+  }
+  &__item-date {
+    @include font-style($color: $light-gray-3, $size: 15px);
+  }
+}
+
+.rules-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 342px;
+  box-sizing: border-box;
+  padding: 25px 30px;
+  background-color: $gray;
+  border-right: 2px solid $dark-gray-6;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  display: none;
+  &__title {
+    padding-left: 40px;
+    padding-bottom: 27px;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  &__back {
+    position: absolute;
+    top: 18px;
+    left: -1px;
+    width: 20px;
+    height: 20px;
+    background-image: url("/assets/icons/back.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+  &__name {
+    @include font-style($color: $light-gray-2, $size: 18px)
+  }
+  &__date {
+    @include font-style($color: $light-gray-3, $size: 15px)
+  }
+  &__color {
+    top: 15px;
+    right: -2px;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    &_orange {
+      background-color: $orange;
+    }
+    &_green {
+      background-color: $green;
+    }
+    &_violet {
+      background-color: $violet;
+    }
+    &_red {
+      background-color: $red;
+    }
+  }
+  &__content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  &__field {
+    display: flex;
+    flex-direction: column;
+    margin-top: 31px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__field-label {
+    text-transform: uppercase;
+    @include font-style($color: $light-gray-3, $size: 13px, $weight: 500, $ls: 0.2px);
+  }
+  &__field-text {
+    @include font-style($color: $light-gray-2, $size: 17px);
+    margin-top: 1px;
+    &_shift {
+      margin-top: 10px;
+      line-height: 29px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+  }
+  &__btn {
+    width: 100%;
+    border-radius: 4px;
+    @include font-style($color: $light-gray-2, $size: 16px, $lh: 56px);
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: $dark-gray-4;
+    margin-top: 20px;
+    &:first-child {
+      margin-top: 0;
+    }
+    &_red {
+      border: 1px solid $red;
+      @include font-style($color: $red);
+      background-color: $gray;
+    }
+  }
+}
+
+@media #{$mobile} {
+  .rules-menu {
+    position: fixed;
+    top: 54px;
+    width: 100%;
+    height: calc(100% - 56px);
+    &__calendar-btn {
+      display: block;
+      cursor: pointer;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 75px;
+      top: 39px;
+      background-image: url("/assets/icons/calendar.svg");
+      background-size: 20px 20px;
+    }
+  }
+  .rules-item {
+    width: 100%;
+    height: unset;
+    &__buttons {
+      margin-top: 10px;
+    }
+  }
+}

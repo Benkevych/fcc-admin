@@ -48,7 +48,6 @@ const data: Element[] = [
 export class ExampleDataSource extends DataSource<any> {
   /** Connect function called by the table to retrieve one stream containing the data to render. */
   connect(): Observable<Element[]> {
-    console.log("data");
     return Observable.of(data);
   }
 

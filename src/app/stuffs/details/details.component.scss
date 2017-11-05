@@ -19,6 +19,9 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
   }
+  &__close {
+    display: none;
+  }
   &__thumbnail {
     position: absolute;
     top: 3px;
@@ -81,27 +84,27 @@
     }
     &_name {
       &:before {
-        background-image: url("./assets/icons/info-name.svg");
+        background-image: url("/assets/icons/info-name.svg");
       }
     }
     &_email {
       &:before {
-        background-image: url("./assets/icons/info-email.svg");
+        background-image: url("/assets/icons/info-email.svg");
       }
     }
     &_role {
       &:before {
-        background-image: url("./assets/icons/info-role.svg");
+        background-image: url("/assets/icons/info-role.svg");
       }
     }
     &_phone {
       &:before {
-        background-image: url("./assets/icons/info-phone.svg");
+        background-image: url("/assets/icons/info-phone.svg");
       }
     }
     &_acc-name {
       &:before {
-        background-image: url("./assets/icons/info-acc-name.svg");
+        background-image: url("/assets/icons/info-acc-name.svg");
       }
     }
   }
@@ -112,5 +115,83 @@
   &__staff-info-item-value {
     @include font-style($color: $light-gray-2, $size: 17px, $weight: 300, $ls: 0.2px);
     margin-top: 2px;
+  }
+}
+
+@media #{$mobile} {
+  .staff-view {
+    display: none;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100vw;
+    padding: 10px 5px;
+    &__title {
+      padding-bottom: 10px;
+      justify-content: space-around;
+      padding-left: 35px;
+    }
+    &__close {
+      display: block;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      background-image: url("/assets/icons/close.svg");
+    }
+    &__buttons {
+      margin-top: 5px;
+    }
+    &__staff-info-item {
+      margin-top: 25px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__staff-info-item-value {
+      overflow-wrap: break-word;
+    }
+    &__col-30 {
+      align-items: center;
+    }
+    &__prev-bookings {
+      margin-top: 20px;
+    }
+    &__prev-bookings-counter-value {
+      text-align: center;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .staff-view {
+    padding: 10px 5px;
+    top: 56px;
+    left: 342px;
+    width: calc(100% - 342px);
+    height: calc(100% - 56px);
+    &__title {
+      padding-bottom: 10px;
+      justify-content: space-between;
+      padding-left: 55px;
+    }
+    &__buttons {
+      margin-top: 5px;
+    }
+    &__staff-info-item {
+      margin-top: 25px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__staff-info-item-value {
+      overflow-wrap: break-word;
+    }
+    &__col-30 {
+      align-items: center;
+    }
+    &__prev-bookings {
+      margin-top: 20px;
+    }
+    &__prev-bookings-counter-value {
+      text-align: center;
+    }
   }
 }

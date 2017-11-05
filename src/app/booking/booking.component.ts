@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-booking',
@@ -12,6 +13,10 @@ export class BookingComponent implements OnInit {
   }
 
   ngOnInit() {
+    var header = new HeaderComponent();
+    header.setTitle("Bookings", " - Timeline");
   }
+
+
 
 }

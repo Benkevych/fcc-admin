@@ -10,7 +10,7 @@ import {
 })
 export class BookingDetailsComponent implements OnInit {
   bookingStatusMenu;
-  bookingSettingsMenu;
+  timelineMenu;
   bookingMoreDetails;
   NewBookingMenu;
   moreDetailsDisplayed = false;
@@ -19,7 +19,7 @@ export class BookingDetailsComponent implements OnInit {
   ngOnInit() { }
   ngAfterViewInit() {
     this.bookingStatusMenu = document.getElementById("bookingStatusMenu");
-    this.bookingSettingsMenu = document.getElementById("bookingSettingsMenu");
+    this.timelineMenu = document.getElementById("timelineMenu");
     this.bookingMoreDetails = document.getElementById("moreDetailsView");
     this.NewBookingMenu = document.getElementById("newBooking");
 
@@ -33,9 +33,9 @@ export class BookingDetailsComponent implements OnInit {
   }
   toggleBookingSettings(action) {
     if (action == "show") {
-      this.bookingSettingsMenu.style.display = "block";
+      this.timelineMenu.style.display = "block";
     } else {
-      this.bookingSettingsMenu.style.display = "none";
+      this.timelineMenu.style.display = "none";
     }
   }
   toggleNewBookingMenu(action) {

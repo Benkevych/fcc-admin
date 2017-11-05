@@ -1,3 +1,35 @@
-<p>
-  general works!
-</p>
+<div id="generalSettings" class="general-settings-view">
+  <div class="general-settings-view__fields">
+    <div class="general-settings-view__col-50">
+      <div class="general-settings-view__field">
+        <div class="general-settings-view__field-name">Booking App Timer</div>
+        <div class="general-settings-view__field-dropdown">
+          <ng-select [items]="timers" placeholder=""></ng-select>
+        </div>
+      </div>
+      <div class="general-settings-view__field">
+        <div class="general-settings-view__field-name">Min No of People / Booking</div>
+        <div class="general-settings-view__field-dropdown">
+          <ng-select [items]="minGuests" placeholder=""></ng-select>
+        </div>
+      </div>
+    </div>
+    <div class="general-settings-view__col-50">
+      <div class="general-settings-view__field general-settings-view__field_right">
+        <div class="general-settings-view__field-name">Max No of People / Booking</div>
+        <div class="general-settings-view__field-dropdown">
+          <ng-select [items]="maxGuests" placeholder=""></ng-select>
+        </div>
+      </div>
+      <div class="general-settings-view__field general-settings-view__field_right">
+        <div class="general-settings-view__field-name">Days Before Advance Booking Allowed</div>
+        <div class="general-settings-view__field-dropdown">
+          <ng-select [items]="daysAllowed" placeholder=""></ng-select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="general-settings-view__save-btn">Save</div>
+
+</div>

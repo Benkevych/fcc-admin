@@ -11,5 +11,7 @@ export class StepConfirmComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  closeAddBooking() {
+    document.getElementById("addBooking").style.display = "none";
+  }
 }

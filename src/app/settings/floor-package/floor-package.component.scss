@@ -1,0 +1,92 @@
+// @import "~styles/fonts";
+@import "~styles/variables";
+@import "~styles/base";
+.floor-package-view {
+  position: absolute;
+  width: calc(100% - 342px);
+  left: 342px;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: $dark-gray-3;
+  display: none;
+  flex-direction: column;
+  display: none;
+  &__header {
+    display: flex;
+    padding: 26px 29px 31px;
+    position: relative;
+  }
+  &__dropdown-arrow {
+    position: absolute;
+    right: 21px;
+    top: 40%;
+    pointer-events: none;
+  }
+  &__dropdown {
+    position: relative;
+    width: 220px;
+    margin-right: 22px;
+  }
+  &__close-btn {
+    display: none;
+  }
+  &__zoom-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 100px;
+    background-color: $dark-gray-2;
+    margin-right: 16px;
+    cursor: pointer;
+    background-position: center;
+    background-size: 18px 18px;
+    background-repeat: no-repeat;
+    &_plus {
+      background-image: url("~assets/icons/plus.svg");
+    }
+    &_minus {
+      background-image: url("~assets/icons/minus.svg");
+    }
+  }
+  &__view-container {
+    height: 100%;
+    box-sizing: border-box;
+    overflow: scroll;
+    background-image: url("/assets/images/floor-bg.png");
+    background-position: -1px -2px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media #{$mobile} {
+  .floor-package-view {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 56px);
+    top: 56px;
+    left: 0;
+    z-index: 3;
+    &__header {
+      padding: 15px;
+      align-items: center;
+    }
+    &__dropdown {
+      width: 160px;
+    }
+    &__zoom-btn {
+      width: 35px;
+      height: 35px;
+    }
+    &__close-btn {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 25px;
+      top: 25px;
+      background-image: url("/assets/icons/close.svg");
+      background-size: 20px 20px;
+    }
+  }
+}

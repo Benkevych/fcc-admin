@@ -12,6 +12,7 @@
     <div (click)="showEditMenu()" class="more-details__edit-btn">
       Edit
     </div>
+    <div class="more-details__close"></div>
   </div>
   <mat-tab-group>
     <mat-tab label="Booking Info">
@@ -159,7 +160,9 @@
         </ng-container>
         <ng-container matColumnDef="link">
           <mat-header-cell *matHeaderCellDef></mat-header-cell>
-          <mat-cell *matCellDef="let booking"> <a href="{{booking.link}}">More</a></mat-cell>
+          <mat-cell *matCellDef="let booking">
+            <a href="{{booking.link}}">More</a>
+          </mat-cell>
         </ng-container>
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>

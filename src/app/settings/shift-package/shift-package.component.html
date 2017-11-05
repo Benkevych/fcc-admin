@@ -1,3 +1,191 @@
-<p>
-  shift-package works!
-</p>
+<div id="shiftView" class="shift-view">
+
+  <div class="shift-view__close-btn"></div>
+  <div class="shift-view__shifts">
+    <div class="shift-view__shift">
+      <div class="shift-view__col-50">
+        <div class="shift-view__info-item shift-view__info-item_shift">
+          <div class="shift-view__info-item-name">Shifts</div>
+          <div class="shift-view__info-item-value">Launch</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_floor">
+          <div class="shift-view__info-item-name">Floor Package</div>
+          <div class="shift-view__info-item-value">Default</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_deposit">
+          <div class="shift-view__info-item-name">Deposit</div>
+          <div class="shift-view__info-item-value">100 RMB</div>
+        </div>
+      </div>
+      <div class="shift-view__col-50">
+        <div class="shift-view__info-item shift-view__info-item_time">
+          <div class="shift-view__info-item-name">Time</div>
+          <div class="shift-view__info-item-value">11:00 AM, 11:30 AM</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_avg-time">
+          <div class="shift-view__info-item-name">Avg Time Per Booking</div>
+          <div class="shift-view__info-item-value">1h 30m</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_status">
+          <div class="shift-view__info-item-name">Status</div>
+          <mat-slide-toggle class="shift-view__info-item-toggle" disabled></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+    <div class="shift-view__shift">
+      <div class="shift-view__col-50">
+        <div class="shift-view__info-item shift-view__info-item_shift">
+          <div class="shift-view__info-item-name">Shifts</div>
+          <div class="shift-view__info-item-value">Dinner</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_floor">
+          <div class="shift-view__info-item-name">Floor Package</div>
+          <div class="shift-view__info-item-value">Default</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_deposit">
+          <div class="shift-view__info-item-name">Deposit</div>
+          <div class="shift-view__info-item-value">100 RMB</div>
+        </div>
+      </div>
+      <div class="shift-view__col-50">
+        <div class="shift-view__info-item shift-view__info-item_time">
+          <div class="shift-view__info-item-name">Time</div>
+          <div class="shift-view__info-item-value">05:00 PM, 05:30 PM</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_avg-time">
+          <div class="shift-view__info-item-name">Avg Time Per Booking</div>
+          <div class="shift-view__info-item-value">1h 30m</div>
+        </div>
+        <div class="shift-view__info-item shift-view__info-item_status">
+          <div class="shift-view__info-item-name">Status</div>
+          <mat-slide-toggle class="shift-view__info-item-toggle" disabled></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div id="shiftEdit" class="shift-edit">
+
+  <div class="shoft-rdit__close-btn"></div>
+  <div class="shift-edit__title">
+    <div>
+      <div class="shift-edit__name">Create Shift</div>
+      <div class="shift-edit__desc">Create Shift package</div>
+    </div>
+    <div class="shift-edit__add-btn">Add a Shift</div>
+  </div>
+  <div class="shift-edit__shifts">
+    <div class="shift-edit__shift">
+      <div class="shift-edit__row">
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Shift</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="shifts"></ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Time Slots</div>
+            <div class="shift-edit__field-time">
+              <div class="shift-edit__time">11:00 AM
+                <div class="shift-edit__time-delete"></div>
+              </div>
+              <div class="shift-edit__time">11:30 AM
+                <div class="shift-edit__time-delete"></div>
+              </div>
+              <div class="shift-edit__add-time-btn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shift-edit__row">
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Floor Package</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="floors"></ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Avg Time Per Booking</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="times"></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shift-edit__row">
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Deposit Amount</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="deposits"></ng-select>
+            </div>
+          </div>
+        </div>
+        <mat-slide-toggle class="shift-edit__shift-status"></mat-slide-toggle>
+      </div>
+    </div>
+    <div class="shift-edit__shift">
+      <div class="shift-edit__row">
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Shift</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="shifts"></ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Time Slots</div>
+            <div class="shift-edit__field-time">
+              <div class="shift-edit__time">11:00 AM
+                <div class="shift-edit__time-delete"></div>
+              </div>
+              <div class="shift-edit__time">11:30 AM
+                <div class="shift-edit__time-delete"></div>
+              </div>
+              <div class="shift-edit__add-time-btn"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shift-edit__row">
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Floor Package</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="floors"></ng-select>
+            </div>
+          </div>
+        </div>
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Avg Time Per Booking</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="times"></ng-select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shift-edit__row">
+        <div class="shift-edit__col-50">
+          <div class="shift-edit__field">
+            <div class="shift-edit__field-name">Deposit Amount</div>
+            <div class="shift-edit__field-dropdown">
+              <ng-select [items]="deposits"></ng-select>
+            </div>
+          </div>
+        </div>
+
+        <mat-slide-toggle class="shift-edit__shift-status"></mat-slide-toggle>
+      </div>
+    </div>
+  </div>
+</div>

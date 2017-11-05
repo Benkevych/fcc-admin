@@ -5,7 +5,7 @@
     <button (click)="showConfirm()" class="step-account__new-btn" type="button" name="button">Add As New Guest</button>
   </div>
   <div class="step-account__accounts">
-    <div class="step-account__account">
+    <div (click)="showConfirm()" class="step-account__account">
       <div class="step-account__col-50">
         <div class="step-account__account-info step-account__account-info_name">
           <div class="step-account__account-info-label">Full Name</div>
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="step-account__account">
+    <div (click)="showConfirm()" class="step-account__account">
       <div class="step-account__col-50">
         <div class="step-account__account-info step-account__account-info_name">
           <div class="step-account__account-info-label">Full Name</div>

@@ -1,5 +1,8 @@
 #addBooking {
   .date-picker {
+    .dp-popup {
+      background: none;
+    }
     background-color: $gray;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -132,6 +135,9 @@
 
 #header {
   .date-picker {
+    .dp-popup {
+      background: none;
+    }
     .dp-input-container {
       margin-right: 14px;
     }
@@ -276,7 +282,16 @@
 }
 
 #bookingEdit {
+  dp-date-picker {
+    width: 100%;
+  }
   .date-picker {
+    .dp-popup {
+      background: none;
+    }
+    .dp-popup {
+      background: none;
+    }
     dp-time-select {
       position: absolute;
       top: 11px;
@@ -318,12 +333,13 @@
     .dp-picker-input {
       @include font-style($color: $light-gray, $size: 15px);
       cursor: pointer;
-      width: 244px;
+      box-sizing: border-box;
+      height: 56px;
+      width: 100%;
       padding: 16px 17px;
       background-color: $gray;
       border: 1px solid $gray-2;
       border-radius: 4px;
-      height: 22px;
       &::placeholder {
         @include font-style($color: $light-gray);
       }
@@ -450,6 +466,192 @@
       }
       &:hover {
         background-color: $mint;
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  #header {
+    .date-picker {
+      width: 100%;
+      .dp-popup {
+        background: none;
+      }
+      .dp-input-container {
+        margin-right: 0;
+        width: 100%;
+      }
+      .dp-picker-input {
+        width: 100%;
+        height: 46px;
+        box-sizing: border-box;
+      }
+      dp-day-calendar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .dp-day-calendar-container {
+        height: 100%;
+      }
+      .dp-calendar-wrapper {
+        padding: 0 5px;
+        margin-top: 50px;
+      }
+      .dp-weekdays {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .dp-calendar-weekday {
+        margin-right: 0;
+        width: 35px;
+      }
+      .dp-calendar-day {
+        width: 35px;
+        height: 35px;
+        margin-right: 0;
+      }
+      .dp-calendar-week {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  #bookingEdit {
+    .date-picker {
+      .dp-popup {
+        background: none;
+      }
+      dp-time-select {
+        position: absolute;
+        top: 11px;
+        left: -6px;
+        border-radius: 4px;
+        box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+        width: 100vw;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          background-color: $dark-gray-2;
+          transform: rotate(45deg);
+          top: -4px;
+          left: 44px;
+        }
+      }
+      .dp-time-select-display-hours,
+      .dp-time-select-display-meridiem,
+      .dp-time-select-display-minutes,
+      .dp-time-select-separator {
+        @include font-style($color: $light-gray-2, $size: 18px);
+      }
+      .dp-time-select-control-down,
+      .dp-time-select-control-up {
+        background-color: $dark-gray-2;
+        border: none;
+        &:before {
+          border-color: $light-gray-2;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .dp-time-select-controls {
+        border-radius: 4px;
+        background-color: $dark-gray-2;
+        padding: 20px;
+      }
+      width: 100%;
+      .dp-picker-input {
+        height: 56px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      dp-day-calendar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .dp-day-calendar-container {
+        height: 100%;
+      }
+      .dp-calendar-wrapper {
+        padding: 0 5px;
+        margin-top: 50px;
+      }
+      .dp-weekdays {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .dp-calendar-weekday {
+        margin-right: 0;
+        width: 35px;
+      }
+      .dp-calendar-day {
+        width: 35px;
+        height: 35px;
+        margin-right: 0;
+      }
+      .dp-calendar-week {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  #addBooking {
+    .date-picker {
+      .dp-day-calendar-container {
+        padding-bottom: 0;
+      }
+      .dp-calendar-wrapper {
+        padding: 0;
+      }
+      .dp-calendar-nav-container {
+        padding: 20px 20px;
+      }
+      .dp-weekdays {
+        padding: 0;
+        justify-content: space-around;
+      }
+      .dp-calendar-weekday {
+        margin-right: 0;
+      }
+      .dp-calendar-day {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  #header {
+    .date-picker {
+      width: 100%;
+      .dp-popup {
+        background: none;
+      }
+      .dp-input-container {
+        margin-right: 0;
+        width: 100%;
+      }
+      .dp-picker-input {
+        width: 100%;
+        height: 46px;
+        box-sizing: border-box;
+      }
+      dp-day-calendar {
+        width: auto;
       }
     }
   }

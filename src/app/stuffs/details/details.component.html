@@ -1,13 +1,14 @@
 <div id="staffView" class="staff-view">
   <div class="staff-view__title">
     <div class="staff-view__thumbnail">
-      <img src="./assets/avatars/staff6.png" alt="">
+      <img src="/assets/avatars/staff6.png" alt="">
     </div>
     <div>
       <div class="staff-view__name">Thomas Sims</div>
       <div class="staff-view__role">Waiter</div>
     </div>
-    <div class="staff-view__edit-btn">Edit</div>
+    <div (click)="showStaffEdit()" class="staff-view__edit-btn">Edit</div>
+    <div class="staff-view__close"></div>
   </div>
   <div class="staff-view__staff-info">
     <div class="staff-view__col-50">

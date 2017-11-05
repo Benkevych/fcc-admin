@@ -1,0 +1,59 @@
+<div id="rulesMenu" class="rules-menu">
+  <div class="rules-menu__title">
+    <div class="rules-menu__text">Rules</div>
+    <div class="rules-menu__desc">Set or block dates</div>
+    <div class="rules-menu__calendar-btn"></div>
+    <div (click)="closeRulesSettings()" class="rules-menu__close"></div>
+  </div>
+  <div class="rules-menu__list">
+    <div (click)="showRulesItem()" class="rules-menu__item">
+      <div class="rules-menu__color rules-menu__color_green"></div>
+      <div class="rules-menu__item-name">New Year</div>
+      <div class="rules-menu__item-date">August 03, 04</div>
+    </div>
+    <div (click)="showRulesItem()" class="rules-menu__item">
+      <div class="rules-menu__color rules-menu__color_violet"></div>
+      <div class="rules-menu__item-name">General Close</div>
+      <div class="rules-menu__item-date">August 07</div>
+    </div>
+    <div (click)="showRulesItem()" class="rules-menu__item">
+      <div class="rules-menu__color rules-menu__color_red"></div>
+      <div class="rules-menu__item-name">Wik Festival</div>
+      <div class="rules-menu__item-date">August 15</div>
+    </div>
+  </div>
+</div>
+<div id="rulesItem" class="rules-item">
+  <div class="rules-item__title">
+    <div (click)="closeRulesEdit()" class="rules-item__back"></div>
+    <div class="rules-item__name">General Close</div>
+    <div class="rules-item__date">August 07</div>
+    <div class="rules-item__color rules-item__color_violet"></div>
+  </div>
+  <div class="rules-item__content">
+    <div class="rules-item__info">
+      <div class="rules-item__field">
+        <div class="rules-item__field-label">Start</div>
+        <div class="rules-item__field-text">August 07, 10:00 AM</div>
+      </div>
+      <div class="rules-item__field">
+        <div class="rules-item__field-label">End</div>
+        <div class="rules-item__field-text">August 07, 11:00 PM</div>
+      </div>
+      <div class="rules-item__field">
+        <div class="rules-item__field-label">Repeat</div>
+        <div class="rules-item__field-text">Every Year</div>
+      </div>
+      <div class="rules-item__field">
+        <div class="rules-item__field-label">Shift Package</div>
+        <div class="rules-item__field-text rules-item__field-text_shift">Lunch: 11:00 AM, 11:30 AM
+          <br>ATB: 1h 30m
+          <br>Floor Package: Default</div>
+      </div>
+    </div>
+    <div class="rules-item__buttons">
+      <div class="rules-item__btn">Edit</div>
+      <div class="rules-item__btn rules-item__btn_red">Delete</div>
+    </div>
+  </div>
+</div>

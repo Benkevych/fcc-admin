@@ -33,6 +33,9 @@
     cursor: pointer;
     margin-right: 9px;
   }
+  &__close {
+    display: none;
+  }
   &__booking-info {
     display: flex;
     padding-top: 40px;
@@ -69,62 +72,62 @@
     }
     &_date {
       &:before {
-        background-image: url("./assets/icons/info-calendar.svg");
+        background-image: url("/assets/icons/info-calendar.svg");
       }
     }
     &_guests {
       &:before {
-        background-image: url("./assets/icons/info-guests.svg");
+        background-image: url("/assets/icons/info-guests.svg");
       }
     }
     &_shifts {
       &:before {
-        background-image: url("./assets/icons/info-shifts.svg");
+        background-image: url("/assets/icons/info-shifts.svg");
       }
     }
     &_tables {
       &:before {
-        background-image: url("./assets/icons/info-tables.svg");
+        background-image: url("/assets/icons/info-tables.svg");
       }
     }
     &_method {
       &:before {
-        background-image: url("./assets/icons/info-payment.svg");
+        background-image: url("/assets/icons/info-payment.svg");
       }
     }
     &_guest-notes {
       &:before {
-        background-image: url("./assets/icons/info-guest-notes.svg");
+        background-image: url("/assets/icons/info-guest-notes.svg");
       }
     }
     &_time {
       &:before {
-        background-image: url("./assets/icons/info-time.svg");
+        background-image: url("/assets/icons/info-time.svg");
       }
     }
     &_status {
       &:before {
-        background-image: url("./assets/icons/info-status.svg");
+        background-image: url("/assets/icons/info-status.svg");
       }
     }
     &_hours {
       &:before {
-        background-image: url("./assets/icons/info-hours.svg");
+        background-image: url("/assets/icons/info-hours.svg");
       }
     }
     &_deposit {
       &:before {
-        background-image: url("./assets/icons/info-deposit.svg");
+        background-image: url("/assets/icons/info-deposit.svg");
       }
     }
     &_reference {
       &:before {
-        background-image: url("./assets/icons/info-reference.svg");
+        background-image: url("/assets/icons/info-reference.svg");
       }
     }
     &_stuff-notes {
       &:before {
-        background-image: url("./assets/icons/info-stuff-notes.svg");
+        background-image: url("/assets/icons/info-stuff-notes.svg");
       }
     }
   }
@@ -160,32 +163,32 @@
     }
     &_name {
       &:before {
-        background-image: url("./assets/icons/info-name.svg");
+        background-image: url("/assets/icons/info-name.svg");
       }
     }
     &_email {
       &:before {
-        background-image: url("./assets/icons/info-email.svg");
+        background-image: url("/assets/icons/info-email.svg");
       }
     }
     &_vip {
       &:before {
-        background-image: url("./assets/icons/info-vip.svg");
+        background-image: url("/assets/icons/info-vip.svg");
       }
     }
     &_phone {
       &:before {
-        background-image: url("./assets/icons/info-phone.svg");
+        background-image: url("/assets/icons/info-phone.svg");
       }
     }
     &_company {
       &:before {
-        background-image: url("./assets/icons/info-company.svg");
+        background-image: url("/assets/icons/info-company.svg");
       }
     }
     &_wechat {
       &:before {
-        background-image: url("./assets/icons/info-wechat.svg");
+        background-image: url("/assets/icons/info-wechat.svg");
       }
     }
   }
@@ -223,57 +226,57 @@
     }
     &_vip {
       &:before {
-        background-image: url("./assets/icons/tag-vip.svg");
+        background-image: url("/assets/icons/tag-vip.svg");
       }
     }
     &_mvp {
       &:before {
-        background-image: url("./assets/icons/tag-mvp.svg");
+        background-image: url("/assets/icons/tag-mvp.svg");
       }
     }
     &_gluten-free {
       &:before {
-        background-image: url("./assets/icons/tag-gluten-free.svg");
+        background-image: url("/assets/icons/tag-gluten-free.svg");
       }
     }
     &_vegetarian {
       &:before {
-        background-image: url("./assets/icons/tag-vegetarian.svg");
+        background-image: url("/assets/icons/tag-vegetarian.svg");
       }
     }
     &_pescatarian {
       &:before {
-        background-image: url("./assets/icons/tag-pescatarian.svg");
+        background-image: url("/assets/icons/tag-pescatarian.svg");
       }
     }
     &_smoker {
       &:before {
-        background-image: url("./assets/icons/tag-smoker.svg");
+        background-image: url("/assets/icons/tag-smoker.svg");
       }
     }
     &_allergies {
       &:before {
-        background-image: url("./assets/icons/tag-alergies.svg");
+        background-image: url("/assets/icons/tag-alergies.svg");
       }
     }
     &_blogger {
       &:before {
-        background-image: url("./assets/icons/tag-blogger.svg");
+        background-image: url("/assets/icons/tag-blogger.svg");
       }
     }
     &_birthday {
       &:before {
-        background-image: url("./assets/icons/tag-birthday.svg");
+        background-image: url("/assets/icons/tag-birthday.svg");
       }
     }
     &_anniversary {
       &:before {
-        background-image: url("./assets/icons/tag-anniversary.svg");
+        background-image: url("/assets/icons/tag-anniversary.svg");
       }
     }
     &_window-seat {
       &:before {
-        background-image: url("./assets/icons/tag-window-seat.svg");
+        background-image: url("/assets/icons/tag-window-seat.svg");
       }
     }
   }
@@ -295,8 +298,7 @@
   .mat-table {
     margin-top: 8px;
     background-color: $gray;
-    overflow-y: scroll;
-    height: 100%;
+    overflow-x: scroll;
   }
   .mat-header-row,
   .mat-row {
@@ -345,6 +347,251 @@
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 2;
   display: none;
+}
+
+@media #{$mobile} {
+  .more-details {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px 5px;
+    &__edit-btn {
+      margin-right: 0;
+      @include font-style( $size: 14px);
+      padding: 6px 19px;
+      height: 32px;
+    }
+    &__title {
+      margin-bottom: 5px;
+      padding: 0 10px;
+      padding-bottom: 15px;
+    }
+    &__close {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+      background-image: url("~assets/icons/close.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    &__booking-info {
+      padding-top: 15px;
+    }
+    &__booking-info-item {
+      padding-left: 30px;
+      margin-top: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__booking-info-item-name {
+      @include font-style( $size: 10px);
+    }
+    &__booking-info-item-value {
+      @include font-style( $size: 14px, $ls: 0);
+      margin-top: 0;
+      overflow-wrap: break-word
+    }
+    &__booking-info-item {
+      &::before {
+        width: 18px;
+        height: 18px;
+        top: 8px;
+      }
+    }
+    &__guest-info {
+      padding-top: 15px;
+    }
+    &__guest-info-item {
+      padding-left: 30px;
+      margin-top: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__guest-info-item-name {
+      @include font-style( $size: 10px);
+    }
+    &__guest-info-item-value {
+      @include font-style( $size: 14px, $ls: 0);
+      margin-top: 0;
+      overflow-wrap: break-word
+    }
+    &__guest-info-item {
+      &::before {
+        width: 18px;
+        height: 18px;
+        top: 8px;
+      }
+    }
+    &__guest-info-tags {
+      margin-top: 20px;
+      overflow-y: scroll;
+    }
+    &__guest-info-tag {
+      padding: 4px 6px 4px 26px;
+      &:before {
+        width: 14px;
+        height: 14px;
+        left: 8px;
+        top: 6px;
+      }
+    }
+    &__prev-bookings {
+      margin-top: 15px;
+    }
+    &__prev-bookings-counter-value {
+      text-align: center;
+    }
+    .mat-row {
+      padding: 10px 0;
+      min-width: fit-content;
+    }
+    .mat-header-row {
+      padding: 0;
+    }
+    .mat-cell,
+    .mat-header-cell {
+      @include font-style( $size: 12px);
+    }
+    .mat-column-id {
+      min-width: 85px;
+      max-width: 85px;
+    }
+    .mat-column-date {
+      min-width: 150px;
+      max-width: 150px;
+    }
+    .mat-column-time {
+      min-width: 85px;
+      max-width: 85px;
+    }
+    .mat-column-guests {
+      min-width: 45px;
+      max-width: 45px;
+    }
+    .mat-column-status {
+      min-width: 65px;
+      max-width: 65px;
+    }
+    .mat-column-link {
+      min-width: 30px;
+      max-width: 30px;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .more-details {
+    top: 56px;
+    left: 342px;
+    width: calc(100% - 342px);
+    height: calc(100% - 56px);
+    padding: 20px 10px;
+    &__booking-info {
+      padding-top: 15px;
+    }
+    &__booking-info-item {
+      padding-left: 30px;
+      margin-top: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__booking-info-item-name {
+      @include font-style( $size: 10px);
+    }
+    &__booking-info-item-value {
+      @include font-style( $size: 14px, $ls: 0);
+      margin-top: 0;
+      overflow-wrap: break-word
+    }
+    &__booking-info-item {
+      &::before {
+        width: 18px;
+        height: 18px;
+        top: 8px;
+      }
+    }
+    &__guest-info {
+      padding-top: 15px;
+    }
+    &__guest-info-item {
+      padding-left: 30px;
+      margin-top: 20px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    &__guest-info-item-name {
+      @include font-style( $size: 10px);
+    }
+    &__guest-info-item-value {
+      @include font-style( $size: 14px, $ls: 0);
+      margin-top: 0;
+      overflow-wrap: break-word
+    }
+    &__guest-info-item {
+      &::before {
+        width: 18px;
+        height: 18px;
+        top: 8px;
+      }
+    }
+    &__guest-info-tags {
+      margin-top: 20px;
+      overflow-y: scroll;
+    }
+    &__guest-info-tag {
+      padding: 4px 6px 4px 26px;
+      &:before {
+        width: 14px;
+        height: 14px;
+        left: 8px;
+        top: 6px;
+      }
+    }
+    &__prev-bookings {
+      margin-top: 15px;
+    }
+    &__prev-bookings-counter-value {
+      text-align: center;
+    }
+    .mat-row {
+      padding: 10px 0;
+      min-width: fit-content;
+    }
+    .mat-header-row {
+      padding: 0;
+    }
+    .mat-cell,
+    .mat-header-cell {
+      @include font-style( $size: 12px);
+    }
+    .mat-column-id {
+      min-width: 85px;
+      max-width: 85px;
+    }
+    .mat-column-date {
+      min-width: 150px;
+      max-width: 150px;
+    }
+    .mat-column-time {
+      min-width: 85px;
+      max-width: 85px;
+    }
+    .mat-column-guests {
+      min-width: 45px;
+      max-width: 45px;
+    }
+    .mat-column-status {
+      min-width: 65px;
+      max-width: 65px;
+    }
+    .mat-column-link {
+      min-width: 30px;
+      max-width: 30px;
+    }
+  }
 }

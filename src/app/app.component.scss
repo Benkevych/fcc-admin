@@ -1,4 +1,15 @@
+@import "~styles/variables";
+@import "~styles/base";
 .content {
   height: 100%;
   display: flex;
+}
+
+@media #{$mobile} {
+  .content {
+    height: 100vh;
+    overflow: scroll;
+    padding-bottom: 40px;
+    position: relative;
+  }
 }

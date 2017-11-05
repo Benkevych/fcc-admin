@@ -13,10 +13,14 @@ export class NewBookingMenuComponent implements OnInit {
   }
   toggleNewBookingMenu(action) {
     if (action == "show") {
-      document.getElementById("NewBookingMenu").style.left = "0";
+      document.getElementById("NewBookingMenu").style.display = "flex";
     }
     else {
-      document.getElementById("NewBookingMenu").style.left = "-100%";
+      document.getElementById("NewBookingMenu").style.display = "none";
     }
+  }
+  showAddBooking() {
+    document.getElementById("addBooking").style.display = "block";
+
   }
 }

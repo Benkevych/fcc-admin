@@ -1,0 +1,42 @@
+<div id="shiftMenu" class="shift-menu">
+  <div class="shift-menu__shift-info">
+    <div class="shift-menu__title">
+      <div class="shift-menu__text">Shift Packages</div>
+      <div class="shift-menu__desc">Edit or create shift package</div>
+      <div (click)="closeShiftPackageSettings()" class="shift-menu__close"></div>
+    </div>
+    <div class="shift-menu__content">
+      <div class="shift-menu__shift">
+        <div class="shift-menu__shift-name-label">Package Name</div>
+        <div class="shift-menu__shift-name">Weekend Party</div>
+        <div class="shift-menu__btn shift-menu__btn_accent">Set As Default</div>
+        <div class="shift-menu__btn shift-menu__btn_mobile-view">Show View</div>
+        <div (click)="showShiftEdit()">show shift edit</div>
+      </div>
+      <div class="shift-menu__btn">Duplicate</div>
+    </div>
+  </div>
+  <div id="shiftEditMenu" class="shift-menu__shift-edit">
+    <div class="shift-menu__title">
+      <div class="shift-menu__text">Shift Packages</div>
+      <div class="shift-menu__desc">Edit or create shift package</div>
+      <div (click)="closeShiftEdit()" class="shift-menu__close"></div>
+    </div>
+    <div class="shift-menu__content">
+      <div class="shift-menu__shift">
+        <div class="shift-menu__shift-name-label">Package Name</div>
+        <input class="shift-menu__input" type="text">
+        <div (click)="closeShiftEdit()" class="shift-menu__btn shift-menu__btn_accent">Save</div>
+        <div class="shift-menu__btn shift-menu__btn_mobile-view">Show View</div>
+        <div class="shift-menu__publish-status">
+          <div class="shift-menu__publish-status-info">
+            <div class="shift-menu__publish-status-text">Publish Package</div>
+            <div class="shift-menu__publish-status-desc">Switch on to publish</div>
+          </div>
+          <mat-slide-toggle class="shift-menu__publish-status-switch"></mat-slide-toggle>
+        </div>
+      </div>
+      <div class="shift-menu__btn shift-menu__btn_red">Delete</div>
+    </div>
+  </div>
+</div>

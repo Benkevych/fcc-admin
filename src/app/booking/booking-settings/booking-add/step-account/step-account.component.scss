@@ -22,7 +22,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 101%;
     background-color: $dark-gray-3;
     display: none;
   }
@@ -95,22 +95,22 @@
     }
     &_name {
       &:before {
-        background-image: url("./assets/icons/info-name.svg");
+        background-image: url("/assets/icons/info-name.svg");
       }
     }
     &_email {
       &:before {
-        background-image: url("./assets/icons/info-email.svg");
+        background-image: url("/assets/icons/info-email.svg");
       }
     }
     &_phone {
       &:before {
-        background-image: url("./assets/icons/info-phone.svg");
+        background-image: url("/assets/icons/info-phone.svg");
       }
     }
     &_company {
       &:before {
-        background-image: url("./assets/icons/info-company.svg");
+        background-image: url("/assets/icons/info-company.svg");
       }
     }
   }
@@ -121,5 +121,24 @@
   &__account-info-value {
     @include font-style($color: $light-gray-2, $size: 17px);
     margin-top: 2px;
+  }
+}
+
+@media #{$mobile} {
+  .step-account {
+    &__account {
+      padding: 20px 10px;
+    }
+    &__account-info {
+      &_right {
+        padding-left: 45px;
+        &:before {
+          left: 0;
+        }
+      }
+    }
+    &__account-info-value {
+      overflow-wrap: break-word;
+    }
   }
 }

@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "~styles/fonts"; // @import "compass";
+@import "~styles/fonts";
 @import "~styles/variables";
 @import "~styles/base";
 @import "~styles/datepicker";
 @import "~styles/dropdown";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/angular-calendar/dist/css/angular-calendar.css";
 html {
   height: 100vh;
 }
@@ -17,10 +18,20 @@ body {
   display: flex;
   flex-direction: column;
   background-color: $gray;
+  @include font-style($color: $gray-3, $size: 16px);
 }
 
-app-booking {
-  width: 100%;
+app-booking,
+app-settings,
+app-general {
+  width: calc(100% - 74px);
+}
+
+#floorView {
+  overflow: hidden;
+  .canvas-container {
+    height: 100% !important;
+  }
 }
 
 #moreDetailsView,
@@ -149,32 +160,36 @@ app-booking {
   .mat-ink-bar {
     background-color: $mint !important;
   }
-  #mat-tab-label-1-0 {
+  #mat-tab-label-0-0 {
     &:before {
       left: 51px;
-      background-image: url("./assets/icons/calendar.svg");
+      background-image: url("/assets/icons/calendar.svg");
     }
   }
-  #mat-tab-label-1-1 {
+  #mat-tab-label-0-1 {
     &:before {
       left: 44px;
-      background-image: url("./assets/icons/info-guests.svg");
+      background-image: url("/assets/icons/info-guests.svg");
     }
   }
-  #mat-tab-label-1-2 {
+  #mat-tab-label-0-2 {
     &:before {
       left: 50px;
-      background-image: url("./assets/icons/info-time.svg");
+      background-image: url("/assets/icons/info-time.svg");
     }
   }
-  #mat-tab-label-1-3 {
+  #mat-tab-label-0-3 {
     &:before {
       left: 39px;
-      background-image: url("./assets/icons/profile.svg");
+      background-image: url("/assets/icons/profile.svg");
     }
   }
 }
 
+#floorMenu,
+#shiftEdit,
+#shiftView,
+#shiftMenu,
 #staffEdit {
   .mat-slide-toggle-label {
     height: 100%;
@@ -205,9 +220,385 @@ app-booking {
   }
   .mat-slide-toggle-thumb-container {
     top: 0;
+    cursor: pointer;
   }
   .mat-slide-toggle-thumb {
     height: 28px;
     width: 28px
+  }
+}
+
+#rulesView {
+  .cal-month-view {
+    .cal-day-view {
+      display: flex;
+      height: 100%;
+    }
+    .cal-hour-rows {
+      height: 100%;
+      overflow-y: scroll;
+    }
+    .cal-days {
+      border: none;
+    }
+    .cal-open-day-events {
+      display: none;
+    }
+    .cal-day-cell {
+      min-height: 132px;
+    }
+    .cal-day-cell:not(:last-child) {
+      border-right: 1px solid $gray-2;
+    }
+    .cal-cell-row {
+      border-bottom: 1px solid $gray-2;
+      &:hover {
+        background-color: unset;
+      }
+    }
+    .cal-today {
+      background-color: unset;
+    }
+    .cal-out-month {
+      .cal-cell-top,
+      .cal-events,
+      .cal-day-number {
+        display: none;
+      }
+    }
+    .cal-has-events {
+      cursor: default;
+    }
+    .cal-cell {
+      background-color: unset !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 10px;
+      padding-bottom: 15px;
+      &:hover {
+        background-color: unset;
+      }
+    }
+    .cal-events {
+      margin: 0;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .cal-event {
+      width: 100%;
+      height: 30px;
+      text-align: center;
+      border-radius: 100px;
+      margin: 2px 0;
+      @include font-style($color: $white, $size: 13px, $lh: 30px);
+      overflow: hidden;
+      text-overflow: clip;
+      cursor: pointer;
+    }
+    .cal-day-number {
+      margin: 0;
+      margin-right: 10px;
+      text-align: right;
+      @include font-style($color: $light-gray-2, $size: 16px);
+    }
+    .cal-header .cal-cell {
+      padding: 0 23px;
+      text-align: right;
+      text-transform: uppercase;
+      @include font-style($color: $light-gray-3, $size: 14px);
+      &:hover {
+        background-color: $dark-gray-2;
+      }
+    }
+    .cal-header {
+      height: 64px;
+      align-items: center;
+      background-color: $dark-gray-2;
+      &:hover {
+        background-color: $dark-gray-2;
+      }
+    }
+  }
+  .cal-week-view {
+    .cal-day-headers {
+      margin: none;
+      border: none;
+    }
+    .cal-header:not(:last-child) {
+      border-right: 1px solid $gray-2;
+    }
+    .cal-starts-within-week {
+      .cal-event {
+        border-top-left-radius: 100px;
+        border-bottom-left-radius: 100px;
+      }
+    }
+    .cal-ends-within-week {
+      .cal-event {
+        border-top-right-radius: 100px;
+        border-bottom-right-radius: 100px;
+      }
+    }
+    .cal-event {
+      text-align: center;
+      a {
+        @include font-style($color: $light-gray-2, $size: 13px);
+        text-decoration: none;
+      }
+    }
+    .cal-header,
+    .cal-weekend {
+      @include font-style($color: $light-gray-2, $size: 14px);
+      align-items: center;
+      background-color: $dark-gray-2;
+      &:hover {
+        background-color: $dark-gray-2;
+      }
+      span {
+        @include font-style($color: $light-gray-2, $size: 14px);
+      }
+    }
+  }
+  .cal-day-view {
+    .cal-event {
+      text-align: center;
+      border-radius: 0px;
+      .cal-event-title {
+        @include font-style($color: $light-gray-2, $size: 16px);
+        text-decoration: none;
+      }
+    }
+    .cal-hour-rows {
+      box-sizing: border-box;
+      border: none;
+    }
+    .cal-hour-segment {
+      border: none;
+      &:hover {
+        background-color: initial;
+      }
+    }
+    .cal-time {
+      @include font-style($color: $light-gray-2, $size: 16px);
+    }
+    .cal-hour:nth-child(odd) {
+      background-color: $dark-gray-2;
+    }
+  }
+}
+
+@media #{$mobile} {
+  #rulesView {
+    .cal-month-view {
+      .cal-header {
+        height: 40px;
+        justify-content: space-around;
+        .cal-cell {
+          padding: 0;
+          text-align: center;
+          @include font-style( $size: 12px);
+        }
+      }
+      .cal-cell {
+        padding: 0;
+        text-align: center;
+      }
+      .cal-day-cell {
+        height: 45px;
+        width: 20px;
+        padding-bottom: 0;
+        padding: 5px;
+        min-height: unset !important;
+        ;
+      }
+      .cal-day-number {
+        margin-right: 0;
+        @include font-style( $size: 12px);
+      }
+      .cal-events {
+        flex-direction: row;
+      }
+      .cal-event {
+        width: 10px;
+        height: 10px;
+        margin: 1px;
+        @include font-style($color: transparent);
+      }
+      .cal-open-day-events {
+        display: block;
+        box-shadow: none;
+        padding: 10px;
+        background-color: $dark-gray-2;
+      }
+      .cal-event-title {
+        @include font-style($color: $light-gray-3, $size: 14px);
+        text-decoration: none;
+      }
+    }
+    .cal-week-view {
+      .cal-event {
+        padding: 0 5px;
+        a {
+          @include font-style($size: 12px);
+        }
+      }
+      .cal-header {
+        display: flex;
+        justify-content: center;
+        b {
+          display: none;
+        }
+        span {
+          @include font-style($size: 12px);
+        }
+      }
+    }
+  }
+  app-booking,
+  app-settings,
+  app-general,
+  app-shift-package {
+    width: 100%;
+  }
+  #moreDetailsView {
+    .mat-tab-label {
+      padding: 0px 10px !important;
+      text-align: center !important;
+      margin-right: 0 !important;
+      height: 100% !important;
+    }
+    .mat-tab-header {
+      height: 48px;
+    }
+    .mat-tab-body-content {
+      height: 78vh;
+      overflow-y: scroll;
+    }
+  }
+  #floorMenu {
+    .mat-tab-label {
+      padding: 14px 0;
+    }
+  }
+  #guestView {
+    .mat-tab-header {
+      height: 50px;
+    }
+    .mat-tab-label {
+      height: 100% !important;
+      width: fit-content;
+      padding: 10px !important;
+      margin-right: 0 !important;
+    }
+  }
+  #addBooking {
+    .mat-tab-header-pagination-chevron {
+      border-color: $gray-8;
+    }
+    .mat-tab-group {
+      height: calc(100% - 56px);
+    }
+    .mat-tab-label {
+      height: 50px;
+      width: 130px;
+      padding: 0px 0 0 45px;
+      &:before {
+        top: 15px;
+      }
+    }
+    #mat-tab-label-0-0 {
+      &:before {
+        left: 25px;
+      }
+    }
+    #mat-tab-label-0-1 {
+      &:before {
+        left: 25px;
+      }
+    }
+    #mat-tab-label-0-2 {
+      &:before {
+        left: 25px;
+      }
+    }
+    #mat-tab-label-0-3 {
+      &:before {
+        left: 20px;
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  app-booking,
+  app-settings {
+    width: 100%;
+  }
+  #rulesView {
+    .cal-month-view {
+      .cal-header {
+        height: 40px;
+        justify-content: space-around;
+        .cal-cell {
+          padding: 0;
+          text-align: center;
+          @include font-style( $size: 12px);
+        }
+      }
+      .cal-cell {
+        padding: 0;
+        text-align: center;
+      }
+      .cal-day-cell {
+        height: 45px;
+        width: 20px;
+        padding-bottom: 0;
+        padding: 5px;
+        min-height: unset !important;
+        ;
+      }
+      .cal-day-number {
+        margin-right: 0;
+        @include font-style( $size: 12px);
+      }
+      .cal-events {
+        flex-direction: row;
+      }
+      .cal-event {
+        width: 10px;
+        height: 10px;
+        margin: 1px;
+        @include font-style($color: transparent);
+      }
+      .cal-open-day-events {
+        display: block;
+        box-shadow: none;
+        padding: 10px;
+        background-color: $dark-gray-2;
+      }
+      .cal-event-title {
+        @include font-style($color: $light-gray-3, $size: 14px);
+        text-decoration: none;
+      }
+    }
+    .cal-week-view {
+      .cal-event {
+        padding: 0 5px;
+        a {
+          @include font-style($size: 12px);
+        }
+      }
+      .cal-header {
+        display: flex;
+        justify-content: center;
+        b {
+          display: none;
+        }
+        span {
+          @include font-style($size: 12px);
+        }
+      }
+    }
   }
 }

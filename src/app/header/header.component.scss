@@ -8,6 +8,10 @@
   background-color: $dark-gray;
   border-bottom: 2px solid $dark-gray-6;
   color: $white;
+  &__menu-btn,
+  &__sorting-btn {
+    display: none;
+  }
   &__title {
     @include font-style($color: $light-gray, $size: 18px, $weight: 700, $ls: 0);
     margin-left: 31px;
@@ -15,20 +19,9 @@
   &__subtitle {
     @include font-style($color: $light-gray-3, $size: 18px, $weight: 400);
   }
-  &__addsorting {
-    width: 44px;
-    height: 44px;
-    background-color: $gray;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
   &__sorting {
     display: flex;
     margin-left: 35px;
-    display: none;
   }
   &__sorting-item {
     @include font-style($color: $light-gray, $size: 15px);
@@ -52,13 +45,13 @@
     height: 100%;
     display: flex;
     margin-right: 10px;
-    display: none;
   }
   &__guest-buttons {
     height: 100%;
     display: flex;
     margin-right: 30px;
     align-items: center;
+    display: none;
   }
   &__guest-btn {
     @include font-style($color: $light-gray, $size: 15px);
@@ -81,7 +74,7 @@
         left: 18px;
         width: 20px;
         height: 20px;
-        background-image: url("./assets/icons/cloud-down.svg");
+        background-image: url("/assets/icons/cloud-down.svg");
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -90,7 +83,7 @@
     &_add {
       width: 20px;
       padding: 12px;
-      background-image: url("./assets/icons/plus.svg");
+      background-image: url("/assets/icons/plus.svg");
       background-size: 20px 20px;
       background-repeat: no-repeat;
       background-position: center;
@@ -107,6 +100,154 @@
     overflow: hidden;
     img {
       width: 100%;
+    }
+  }
+}
+
+@media #{$mobile} {
+  .header {
+    height: 56px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    &__menu-btn {
+      cursor: pointer;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-image: url("~assets/icons/menu-hamburger.svg");
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &__sorting-btn {
+      cursor: pointer;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-image: url("~assets/icons/sorting.svg");
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &__sorting {
+      // display: flex;
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 56px;
+      width: 100vw;
+      flex-direction: column;
+      margin-left: 0;
+      background-color: $dark-gray;
+      padding: 10px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    &__sorting-item {
+      margin-top: 5px;
+    }
+    &__buttons {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 40px;
+      width: 100vw;
+      z-index: 1;
+      display: flex;
+      justify-content: space-around;
+      background-color: $dark-gray;
+    }
+    &__button {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 10px;
+      cursor: pointer;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      margin-left: 0;
+    }
+    &__sorting-item-arrow {
+      right: 15px;
+      top: unset;
+      bottom: 20px;
+    }
+  }
+}
+
+@media #{$tablet} {
+  .header {
+    height: 56px;
+    justify-content: space-between;
+    box-sizing: border-box;
+    &__menu-btn {
+      cursor: pointer;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-image: url("~assets/icons/menu-hamburger.svg");
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &__sorting-btn {
+      cursor: pointer;
+      display: block;
+      width: 50px;
+      height: 50px;
+      background-image: url("~assets/icons/sorting.svg");
+      background-size: 26px 26px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &__sorting {
+      // display: flex;
+      display: none;
+      position: fixed;
+      left: 0;
+      top: 56px;
+      width: 100vw;
+      flex-direction: column;
+      margin-left: 0;
+      background-color: $dark-gray;
+      padding: 10px;
+      box-sizing: border-box;
+      z-index: 10;
+    }
+    &__sorting-item {
+      margin-top: 5px;
+    }
+    &__buttons {
+      align-items: center;
+    }
+    &__button {
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 10px;
+      cursor: pointer;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &__title {
+      margin-left: 0;
+    }
+    &__sorting-item-arrow {
+      right: 15px;
+      top: unset;
+      bottom: 20px;
     }
   }
 }

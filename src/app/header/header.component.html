@@ -1,42 +1,45 @@
 <div id="header" class="header">
+  <div class="header__menu-btn"></div>
   <div class="header__title">
-    Bookings
+    {{title}}
     <span class="header__subtitle">
-      - Timeline
+      {{subtitle}}
     </span>
   </div>
-  <div class="header__sorting">
+
+  <div id="bookingSorting" class="header__sorting">
     <div style="position: relative">
       <dp-date-picker [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
-      <img class="header__sorting-item-arrow" src="./assets/icons/drop-down.svg" alt="">
+      <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
     </div>
     <div class="header-dropdown" style="position: relative">
       <ng-select id="shift" [allowClear]="true" [items]="shifts" placeholder="Shift"></ng-select>
-      <img class="header__sorting-item-arrow" src="./assets/icons/drop-down.svg" alt="">
+      <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
     </div>
     <div class="header-dropdown" style="position: relative">
       <ng-select id="floor" [allowClear]="true" [items]="floors" placeholder="Floor"></ng-select>
-      <img class="header__sorting-item-arrow" src="./assets/icons/drop-down.svg" alt="">
+      <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
     </div>
-    <div class="header__addsorting">
-      <img src="./assets/icons/plus.svg" alt="Add">
+    <div class="header-dropdown-add">
+      <ng-select id="addItem" [allowClear]="true" [items]="additems"></ng-select>
     </div>
   </div>
+  <div class="header__sorting-btn"></div>
+  <div id="bookingViewButtons" class="header__buttons">
 
-  <div class="header__buttons">
-    <div class="header__button">
-      <img src="./assets/icons/timeline.svg" alt="Timeline">
+    <div (click)="showTimelineView()" class="header__button">
+      <img src="/assets/icons/timeline.svg" alt="Timeline">
     </div>
 
-    <div class="header__button">
-      <img src="./assets/icons/table.svg" alt="Table">
+    <div (click)="showFloorView()" class="header__button">
+      <img src="/assets/icons/table.svg" alt="Table">
     </div>
-    <div class="header__button">
-      <img src="./assets/icons/list.svg" alt="List">
+    <div (click)="showBookingsList()" class="header__button">
+      <img src="/assets/icons/list.svg" alt="List">
     </div>
 
     <!-- <div class="header__button">
-      <img src="./assets/icons/close.svg" alt="Timeline">
+      <img src="/assets/icons/close.svg" alt="Timeline">
     </div> -->
   </div>
   <div class="header__guest-buttons">
