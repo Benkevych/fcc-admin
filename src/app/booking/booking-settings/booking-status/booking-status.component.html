@@ -1,30 +1,37 @@
-<div id="bookingStatusMenu" class="booking-status">
+<div [ngStyle]="{'display':statusState == true ?'flex':'none'}" id="bookingStatusMenu" class="booking-status">
   <div class="booking-status__title">
     <div class="booking-status__name">
       Update Status
     </div>
-    <div (click)="toggleBookingStatus('hide')" class="booking-status__back">
-
-    </div>
+    <button (click)="closeBookingStatus()" class="booking-status__back icon-back"></button>
   </div>
   <div class="booking-status__buttons">
     <input id="booked" class="booking-status__radio" type="radio" name="status" checked>
-    <label for="booked"><div class="booking-status__radio-icon booking-status__radio-icon_booked"></div>Booked</label>
+    <label for="booked">
+      <div class="booking-status__radio-icon icon-booked"></div>Booked</label>
     <input id="confirmed" class="booking-status__radio" type="radio" name="status">
-    <label for="confirmed"><div class="booking-status__radio-icon booking-status__radio-icon_confirmed"></div>Confirmed</label>
+    <label for="confirmed">
+      <div class="booking-status__radio-icon icon-confirmed"></div>Confirmed</label>
     <input id="part-seat" class="booking-status__radio" type="radio" name="status">
-    <label for="part-seat"><div class="booking-status__radio-icon booking-status__radio-icon_part-seat"></div>Partially Seated</label>
+    <label for="part-seat">
+      <div class="booking-status__radio-icon icon-part-seated"></div>Partially Seated</label>
     <input id="seated" class="booking-status__radio" type="radio" name="status">
-    <label for="seated"><div class="booking-status__radio-icon booking-status__radio-icon_seated"></div>Seated</label>
+    <label for="seated">
+      <div class="booking-status__radio-icon icon-seated"></div>Seated</label>
     <input id="waiting" class="booking-status__radio" type="radio" name="status">
-    <label for="waiting"><div class="booking-status__radio-icon booking-status__radio-icon_waiting"></div>Waiting in Bar</label>
+    <label for="waiting">
+      <div class="booking-status__radio-icon icon-waiting"></div>Waiting in Bar</label>
     <input id="check" class="booking-status__radio" type="radio" name="status">
-    <label for="check"><div class="booking-status__radio-icon booking-status__radio-icon_check"></div>Got the Check</label>
+    <label for="check">
+      <div class="booking-status__radio-icon icon-check"></div>Got the Check</label>
     <input id="no-show" class="booking-status__radio" type="radio" name="status">
-    <label for="no-show"><div class="booking-status__radio-icon booking-status__radio-icon_no-show"></div>No Show</label>
+    <label for="no-show">
+      <div class="booking-status__radio-icon icon-no-show"></div>No Show</label>
     <input id="cancel" class="booking-status__radio" type="radio" name="status">
-    <label for="cancel"><div class="booking-status__radio-icon booking-status__radio-icon_cancel"></div>Cancel</label>
+    <label for="cancel">
+      <div class="booking-status__radio-icon icon-cancel"></div>Cancel</label>
     <input id="refund" class="booking-status__radio" type="radio" name="status">
-    <label for="refund"><div class="booking-status__radio-icon booking-status__radio-icon_refund"></div>Cancel & Refund</label>
+    <label for="refund">
+      <div class="booking-status__radio-icon icon-refund"></div>Cancel & Refund</label>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div id="login" class="login">
+<div [ngStyle]="{'display':loginState == true?'block':'none'}" class="login">
   <div class="login__header">Login to Panel
     <div (click)="closeLogin()" class="login__close"></div>
   </div>

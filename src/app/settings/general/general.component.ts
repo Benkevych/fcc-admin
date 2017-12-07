@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList } from '@angular/core';
 
+import { SelectComponent } from "ng2-select/ng2-select";
 @Component({
   selector: 'app-general',
   templateUrl: './general.component.html',
@@ -11,7 +12,18 @@ export class GeneralComponent implements OnInit {
   maxGuests: Array<string> = ["10 Guests", "15 Guests", "20 Guests", "100 Guests"];
   daysAllowed: Array<string> = ["7 Days", "30 Days", "60 Days", "90 Days"];
   constructor() { }
+  @ViewChildren(SelectComponent) selectElements: QueryList<SelectComponent>;
 
+  public closeOtherSelects(element) {
+    if (element.optionsOpened == true) {
+      let elementsToclose = this.selectElements.filter(function (el: any) {
+        return (el != element && el.optionsOpened == true)
+      });
+      elementsToclose.forEach(function (e: SelectComponent) {
+        e.clickedOutside();
+      })
+    }
+  }
   ngOnInit() {
   }
 

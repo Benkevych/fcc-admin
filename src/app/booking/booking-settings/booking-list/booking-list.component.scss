@@ -4,13 +4,12 @@
   width: 342px;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   background-color: $gray;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   border-right: 2px solid $dark-gray-6;
-  display: none;
   &__search {
     width: 100%;
     position: relative;
@@ -44,7 +43,7 @@
   &__bookings {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &__group-title {
     display: flex;
@@ -76,7 +75,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
     border-radius: 50%;
     &_gray {
       background-color: $gray-5;
@@ -153,7 +152,7 @@
   &__staffs {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &__staffs-item {
     padding: 18px 30px 20px 87px;
@@ -189,7 +188,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
     border-radius: 50%;
     img {
       width: 100%;
@@ -215,7 +214,12 @@
 
 @media #{$mobile} {
   .floor-menu {
-    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: calc(100% - 40px);
     &__search-input {
       padding: 10px 20px 10px 40px;
     }

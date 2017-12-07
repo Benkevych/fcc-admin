@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { Subscription } from 'rxjs/Subscription';
+import { ActionsService } from '../../../actions.service';
 
 
 @Component({
@@ -12,17 +14,20 @@ import 'rxjs/add/observable/of';
 export class BookingMoreDetailsComponent implements OnInit {
   displayedColumns;
   dataSource;
-  bookingEditMenu;
-  constructor() { }
+  moreDetailsState = false;
+  moreDetailsStateSubscription: Subscription;
+  constructor(private actions: ActionsService) {
+    this.moreDetailsStateSubscription = this.actions.getMoreDetailsState().subscribe(obj => { this.moreDetailsState = obj.state; });
+  }
   ngOnInit() {
     this.displayedColumns = ['id', 'date', 'time', 'guests', 'status', 'link'];
     this.dataSource = new ExampleDataSource();
   }
-  ngAfterViewInit() {
-    this.bookingEditMenu = document.getElementById("editBookingView");
-  }
   showEditMenu() {
-    this.bookingEditMenu.style.display = "block";
+    this.actions.toggleBookingEditState(true);
+  }
+  closeMoreDetails() {
+    this.actions.toggleMoreDetailsState(false);
   }
 
 
@@ -40,10 +45,13 @@ const data: Element[] = [
   { id: "TPR93783", date: "Monday, Jul 8, 2017", time: "06:30 PM", guests: 4, status: "Finish", link: "#" },
   { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
   { id: "TPR09345", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
+  { id: "TPR93783", date: "Monday, Jul 8, 2017", time: "06:30 PM", guests: 4, status: "Finish", link: "#" },
+  { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
+  { id: "TPR09345", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
+  { id: "TPR93783", date: "Monday, Jul 8, 2017", time: "06:30 PM", guests: 4, status: "Finish", link: "#" },
+  { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
+  { id: "TPR00000", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
 ];
-
-
-
 
 export class ExampleDataSource extends DataSource<any> {
   /** Connect function called by the table to retrieve one stream containing the data to render. */

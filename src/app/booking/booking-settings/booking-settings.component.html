@@ -1,4 +1,4 @@
-<div id="timelineMenu" class="booking-settings">
+<div [ngStyle]="{'display':state == true ?'flex':'none'}" class="booking-settings">
   <app-booking-details></app-booking-details>
   <app-booking-status></app-booking-status>
   <app-booking-more-details></app-booking-more-details>

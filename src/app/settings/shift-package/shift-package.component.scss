@@ -8,8 +8,7 @@
   box-sizing: border-box;
   background-color: $gray;
   padding: 38px 32px;
-  overflow-y: scroll;
-  display: none;
+  overflow-y: auto;
   &__close-btn {
     display: none;
   }
@@ -41,47 +40,17 @@
     padding-left: 44px;
     position: relative;
     &::before {
-      content: '';
       position: absolute;
       left: 0;
       top: 11px;
       width: 20px;
       height: 20px;
-      background-repeat: no-repeat;
-      background-size: contain;
+      font-size: 20px;
+      line-height: 20px;
+      color: $gray-8;
     }
     &:first-child {
       margin-top: 0;
-    }
-    &_shift {
-      &::before {
-        background-image: url("/assets/icons/settings-shift.svg");
-      }
-    }
-    &_floor {
-      &::before {
-        background-image: url("/assets/icons/settings-floor.svg");
-      }
-    }
-    &_deposit {
-      &::before {
-        background-image: url("/assets/icons/info-deposit.svg");
-      }
-    }
-    &_time {
-      &::before {
-        background-image: url("/assets/icons/info-time.svg");
-      }
-    }
-    &_avg-time {
-      &::before {
-        background-image: url("/assets/icons/info-hours.svg");
-      }
-    }
-    &_status {
-      &::before {
-        background-image: url("/assets/icons/info-status.svg");
-      }
     }
   }
   &__info-item-name {
@@ -106,10 +75,9 @@
   box-sizing: border-box;
   background-color: $gray;
   padding: 25px 30px;
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 1;
   flex-direction: column;
-  display: none;
   &__close-btn {
     display: none;
   }
@@ -134,6 +102,7 @@
     background-color: $mint;
     border-radius: 4px;
     cursor: pointer;
+    border: none;
   }
   &__shifts {
     width: 100%;
@@ -144,7 +113,7 @@
   &__shift {
     width: 100%;
     box-sizing: border-box;
-    padding: 27px 10px 38px 29px;
+    padding: 30px 10px 38px 29px;
     background-color: $dark-gray-2;
     border-radius: 4px;
     margin-top: 31px;
@@ -194,6 +163,10 @@
       background-repeat: no-repeat;
     }
   }
+  &__field-input {
+    margin-top: 13px;
+    margin-right: 21px;
+  }
   &__field-time {
     margin-top: 13px;
     display: flex;
@@ -215,27 +188,49 @@
     right: 24px;
     width: 14px;
     height: 14px;
-    background-image: url("/assets/icons/close.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    font-size: 14px;
+    line-height: 14px;
+    color: $gray-8;
+    border: none;
+    padding: 0;
+    background: none;
     cursor: pointer;
   }
   &__add-time-btn {
     cursor: pointer;
-    width: 18px;
-    height: 18px;
-    padding: 18px 18px 20px 20px;
-    background-image: url("/assets/icons/plus-mint.svg");
-    background-size: 18px 18px;
-    background-position: center;
-    background-repeat: no-repeat;
+    width: 58px;
+    height: 58px;
+    padding: 0;
     border: 1px solid $gray-2;
     border-radius: 100px;
+    background: none;
+    font-size: 18px;
+    line-height: 18px;
+    color: $mint;
   }
   &__shift-status {
     position: absolute;
     right: 31px;
     bottom: 31px;
+  }
+  &__text-input {
+    font-family: 'Heebo';
+    font-size: 17px;
+    color: #BEC4CD;
+    padding: 14px 17px;
+    background-color: $dark-gray-2;
+    border: 1px solid #3A4149;
+    border-radius: 4px;
+    height: 56px;
+    width: 100%;
+    box-sizing: border-box;
+    &::placeholder {
+      @include font-style($color: $light-gray, $size: 17px);
+      opacity: 0.2;
+    }
+    &:focus {
+      outline: none;
+    }
   }
 }
 
@@ -257,8 +252,11 @@
       height: 20px;
       right: 25px;
       top: 25px;
-      background-image: url("/assets/icons/close.svg");
-      background-size: 20px 20px;
+      font-size: 2px;
+      line-height: 20px;
+      color: $gray-8;
+      border: none;
+      background: none;
       z-index: 1;
     }
   }
@@ -279,13 +277,16 @@
       height: 20px;
       right: 15px;
       top: 15px;
-      background-image: url("/assets/icons/close.svg");
-      background-size: 20px 20px;
+      font-size: 20px;
+      line-height: 20px;
+      color: $gray-8;
+      background: none;
+      border: none;
       z-index: 1;
     }
     &__title {
       padding: 0 15px;
-      padding-bottom: 10px;
+      padding-bottom: 30px;
     }
     &__shifts {
       margin-top: 20px;
@@ -300,7 +301,8 @@
     &__col-50 {
       width: 100%;
     }
-    &__field-dropdown {
+    &__field-dropdown,
+    &__field-input {
       margin-right: 0;
     }
     &__shift-status {
@@ -330,7 +332,8 @@
     &__col-50 {
       width: 100%;
     }
-    &__field-dropdown {
+    &__field-dropdown,
+    &__field-input {
       margin-right: 0;
     }
     &__shift-status {

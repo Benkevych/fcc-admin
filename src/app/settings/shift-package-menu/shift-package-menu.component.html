@@ -1,33 +1,33 @@
-<div id="shiftMenu" class="shift-menu">
+<div [ngStyle]="{'display':shiftPackageState == true?'flex':'none'}" id="shiftMenu" class="shift-menu">
   <div class="shift-menu__shift-info">
-    <div class="shift-menu__title">
+    <div class="shift-menu__title icon-shifts">
       <div class="shift-menu__text">Shift Packages</div>
       <div class="shift-menu__desc">Edit or create shift package</div>
-      <div (click)="closeShiftPackageSettings()" class="shift-menu__close"></div>
+      <button (click)="closeShiftPackageSettings()" class="shift-menu__close icon-close"></button>
     </div>
     <div class="shift-menu__content">
       <div class="shift-menu__shift">
         <div class="shift-menu__shift-name-label">Package Name</div>
         <div class="shift-menu__shift-name">Weekend Party</div>
-        <div class="shift-menu__btn shift-menu__btn_accent">Set As Default</div>
-        <div class="shift-menu__btn shift-menu__btn_mobile-view">Show View</div>
+        <button class="shift-menu__btn shift-menu__btn_accent">Set As Default</button>
+        <button class="shift-menu__btn shift-menu__btn_mobile-view">Show View</button>
         <div (click)="showShiftEdit()">show shift edit</div>
       </div>
-      <div class="shift-menu__btn">Duplicate</div>
+      <button class="shift-menu__btn">Duplicate</button>
     </div>
   </div>
-  <div id="shiftEditMenu" class="shift-menu__shift-edit">
-    <div class="shift-menu__title">
+  <div [ngStyle]="{'display':shiftPackageEditState == true?'flex':'none'}" id="shiftEditMenu" class="shift-menu__shift-edit">
+    <div class="shift-menu__title icon-shifts">
       <div class="shift-menu__text">Shift Packages</div>
       <div class="shift-menu__desc">Edit or create shift package</div>
-      <div (click)="closeShiftEdit()" class="shift-menu__close"></div>
+      <div (click)="closeShiftEdit()" class="shift-menu__close icon-close "></div>
     </div>
     <div class="shift-menu__content">
       <div class="shift-menu__shift">
         <div class="shift-menu__shift-name-label">Package Name</div>
         <input class="shift-menu__input" type="text">
-        <div (click)="closeShiftEdit()" class="shift-menu__btn shift-menu__btn_accent">Save</div>
-        <div class="shift-menu__btn shift-menu__btn_mobile-view">Show View</div>
+        <button (click)="closeShiftEdit()" class="shift-menu__btn shift-menu__btn_accent">Save</button>
+        <button class="shift-menu__btn shift-menu__btn_mobile-view">Show View</button>
         <div class="shift-menu__publish-status">
           <div class="shift-menu__publish-status-info">
             <div class="shift-menu__publish-status-text">Publish Package</div>
@@ -36,7 +36,7 @@
           <mat-slide-toggle class="shift-menu__publish-status-switch"></mat-slide-toggle>
         </div>
       </div>
-      <div class="shift-menu__btn shift-menu__btn_red">Delete</div>
+      <button class="shift-menu__btn shift-menu__btn_red">Delete</button>
     </div>
   </div>
 </div>

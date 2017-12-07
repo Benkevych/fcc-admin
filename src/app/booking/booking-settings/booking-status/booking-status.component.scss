@@ -10,7 +10,7 @@
   box-sizing: border-box;
   position: absolute;
   top: 0;
-  left: 100%;
+  left: 0;
   border-right: 2px solid $dark-gray-6;
   transition: all 0.3s ease-in-out;
   &__title {
@@ -26,9 +26,12 @@
     height: 20px;
     left: -2px;
     top: 3px;
-    background-image: url("/assets/icons/back.svg");
-    background-size: 20px 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 20px;
     cursor: pointer;
+    color: $light-gray-3;
   }
   &__name {
     @include font-style($color: $light-gray-2, $size: 18px);
@@ -38,7 +41,7 @@
     display: flex;
     flex-direction: column;
     padding: 30px 0;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &__radio {
     display: none;
@@ -65,36 +68,8 @@
     left: 22px;
     width: 18px;
     height: 18px;
-    background-repeat: no-repeat;
-    background-position: center;
-    &_booked {
-      background-image: url("/assets/icons/book.svg");
-    }
-    &_confirmed {
-      background-image: url("/assets/icons/confirmed.svg");
-    }
-    &_part-seat {
-      background-image: url("/assets/icons/part-seated.svg");
-      left: 20px;
-    }
-    &_seated {
-      background-image: url("/assets/icons/seated.svg");
-    }
-    &_waiting {
-      background-image: url("/assets/icons/waiting.svg");
-    }
-    &_check {
-      background-image: url("/assets/icons/check.svg");
-    }
-    &_no-show {
-      background-image: url("/assets/icons/no-show.svg");
-    }
-    &_cancel {
-      background-image: url("/assets/icons/cancel.svg");
-    }
-    &_refund {
-      background-image: url("/assets/icons/refund.svg");
-    }
+    font-size: 18px;
+    line-height: 18px;
   }
   &__radio+label {
     display: block;

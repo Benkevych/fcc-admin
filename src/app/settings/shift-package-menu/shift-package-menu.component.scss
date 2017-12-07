@@ -8,24 +8,21 @@
   width: 340px;
   background-color: $gray;
   border-right: 2px solid $dark-gray-6;
-  overflow: hidden;
-  display: flex;
+  overflow: auto;
   flex-direction: column;
-  display: none;
   &__title {
     padding: 25px 30px 28px 70px;
     background-color: $dark-gray-2;
     position: relative;
     &:before {
-      content: '';
       position: absolute;
       top: 39px;
       left: 29px;
       width: 20px;
       height: 20px;
-      background-image: url("/assets/icons/settings-shift.svg");
-      background-size: contain;
-      background-repeat: no-repeat;
+      font-size: 20px;
+      line-height: 20px;
+      color: $gray-8;
     }
   }
   &__close {
@@ -35,8 +32,11 @@
     height: 20px;
     right: 29px;
     top: 39px;
-    background-image: url("/assets/icons/close.svg");
-    background-size: 20px 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 20px;
+    color: $gray-8;
   }
   &__text {
     @include font-style($color: $light-gray-2, $size: 18px)
@@ -55,7 +55,7 @@
     width: 100%;
     box-sizing: border-box;
     background-color: $gray;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   &__shift-info,
   &__shift-edit {
@@ -68,7 +68,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    display: none;
   }
   &__shift-name-label {
     text-transform: uppercase;
@@ -107,6 +106,7 @@
     border-radius: 4px;
     background-color: $dark-gray-4;
     cursor: pointer;
+    border: none;
     &_accent {
       background-color: $mint;
     }

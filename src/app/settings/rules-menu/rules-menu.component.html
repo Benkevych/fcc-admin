@@ -1,9 +1,9 @@
-<div id="rulesMenu" class="rules-menu">
-  <div class="rules-menu__title">
+<div [ngStyle]="{'display':rulesState == true?'flex':'none'}" id="rulesMenu" class="rules-menu">
+  <div class="rules-menu__title icon-rules">
     <div class="rules-menu__text">Rules</div>
     <div class="rules-menu__desc">Set or block dates</div>
-    <div class="rules-menu__calendar-btn"></div>
-    <div (click)="closeRulesSettings()" class="rules-menu__close"></div>
+    <button class="rules-menu__calendar-btn icon-calendar"></button>
+    <button (click)="closeRulesSettings()" class="rules-menu__close icon-close"></button>
   </div>
   <div class="rules-menu__list">
     <div (click)="showRulesItem()" class="rules-menu__item">
@@ -23,9 +23,9 @@
     </div>
   </div>
 </div>
-<div id="rulesItem" class="rules-item">
+<div [ngStyle]="{'display':rulesItemState == true?'flex':'none'}" id="rulesItem" class="rules-item">
   <div class="rules-item__title">
-    <div (click)="closeRulesEdit()" class="rules-item__back"></div>
+    <button (click)="closeRulesEdit()" class="rules-item__back icon-back"></button>
     <div class="rules-item__name">General Close</div>
     <div class="rules-item__date">August 07</div>
     <div class="rules-item__color rules-item__color_violet"></div>
@@ -52,8 +52,8 @@
       </div>
     </div>
     <div class="rules-item__buttons">
-      <div class="rules-item__btn">Edit</div>
-      <div class="rules-item__btn rules-item__btn_red">Delete</div>
+      <button class="rules-item__btn">Edit</button>
+      <button class="rules-item__btn rules-item__btn_red">Delete</button>
     </div>
   </div>
 </div>

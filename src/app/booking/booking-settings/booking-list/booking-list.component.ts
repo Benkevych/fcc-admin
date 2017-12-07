@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-booking-list',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./booking-list.component.scss']
 })
 export class BookingListComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit() {
   }
-
+  ngAfterViewInit() {
+  }
 }

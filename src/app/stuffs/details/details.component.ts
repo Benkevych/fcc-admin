@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ActionsService } from '../../actions.service';
 @Component({
   selector: 'app-stuffs-details',
   templateUrl: './details.component.html',
@@ -7,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StuffsDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private actions: ActionsService) { }
 
   ngOnInit() {
   }
   showStaffEdit() {
-    document.getElementById("staffEdit").style.display = "flex";
+    this.actions.toggleStuffEditState(true);
   }
 }

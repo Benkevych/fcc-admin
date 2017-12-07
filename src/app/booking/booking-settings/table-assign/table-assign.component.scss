@@ -4,15 +4,14 @@
   width: 342px;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   border-right: 2px solid $dark-gray-6;
   background-color: $gray;
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 1;
-  display: none;
   &__title {
     padding: 25px 30px 28px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid $dark-gray-13;
     position: relative;
   }
   &__close {
@@ -34,7 +33,7 @@
   &__staffs {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-bottom: 1px solid $dark-gray-5;
   }
   &__staffs-item {
@@ -74,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow: auto;
     border-radius: 50%;
     img {
       width: 100%;

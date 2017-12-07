@@ -3,10 +3,8 @@
 .new-booking {
   width: 342px;
   height: 100%;
-  overflow: hidden;
-  display: none;
+  overflow: auto;
   background-color: $gray;
-  display: none;
   flex-direction: column;
   padding: 26px 30px;
   box-sizing: border-box;
@@ -25,8 +23,12 @@
     height: 20px;
     right: -1px;
     top: 13px;
-    background-image: url("/assets/icons/close.svg");
-    background-size: 20px 20px;
+    color: $gray-8;
+    font-size: 20px;
+    line-height: 20px;
+    border: none;
+    background: none;
+    padding: 0;
   }
   &__table {
     @include font-style($color: $light-gray-2, $size: 18px)
@@ -60,7 +62,9 @@
   .new-booking {
     position: fixed;
     width: 100vw;
-    overflow-y: scroll;
+    z-index: 3;
+    overflow-y: auto;
     border-right: none;
+    height: calc(100vh - 94px);
   }
 }

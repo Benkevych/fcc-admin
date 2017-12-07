@@ -1,5 +1,5 @@
 <div id="header" class="header">
-  <div class="header__menu-btn"></div>
+  <button (click)="toggleMobileMenu()" class="header__menu-btn"></button>
   <div class="header__title">
     {{title}}
     <span class="header__subtitle">
@@ -7,43 +7,47 @@
     </span>
   </div>
 
-  <div id="bookingSorting" class="header__sorting">
+  <div [ngStyle]="{'display':page == 'bookings'?mobileSortingState?'flex':'none':'none'}" id="bookingSorting" class="header__sorting">
     <div style="position: relative">
-      <dp-date-picker [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
+      <dp-date-picker #date1 (opened)="closeOtherCalendars(date1)" [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
       <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
     </div>
-    <div class="header-dropdown" style="position: relative">
-      <ng-select id="shift" [allowClear]="true" [items]="shifts" placeholder="Shift"></ng-select>
+    <div class="header-dropdown">
+      <ng-select #select1 (opened)="closeOtherSelects(select1)" id="shift" [allowClear]="true" [items]="shifts" placeholder="Shift"></ng-select>
       <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
     </div>
-    <div class="header-dropdown" style="position: relative">
-      <ng-select id="floor" [allowClear]="true" [items]="floors" placeholder="Floor"></ng-select>
+    <div class="header-dropdown">
+      <ng-select #select2 (opened)="closeOtherSelects(select2)" id="floor" [allowClear]="true" [items]="floors" placeholder="Floor"></ng-select>
       <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
     </div>
     <div class="header-dropdown-add">
-      <ng-select id="addItem" [allowClear]="true" [items]="additems"></ng-select>
+      <ng-select #select3 (opened)="closeOtherSelects(select3)" id="addItem" [allowClear]="true" [items]="additems"></ng-select>
     </div>
   </div>
-  <div class="header__sorting-btn"></div>
-  <div id="bookingViewButtons" class="header__buttons">
+  <div class="header__row">
+    <button [ngStyle]="{'display':page == 'bookings'?'flex':'none'}" (click)="toggleSorting()" class="header__sorting-btn"></button>
+    <div [ngStyle]="{'display':page == 'bookings'?'flex':'none'}" id="bookingViewButtons" class="header__buttons">
 
-    <div (click)="showTimelineView()" class="header__button">
-      <img src="/assets/icons/timeline.svg" alt="Timeline">
+      <button (click)="changeView('timeline')" class="header__button icon-timeline" [ngClass]="{'header__button_active':view == 'timeline'}">
+      </button>
+      <button (click)="changeView('floor')" class="header__button icon-table" [ngClass]="{'header__button_active':view == 'floor'}">
+      </button>
+      <button (click)="toggleBookingsList()" class="header__button icon-list" [ngClass]="{'header__button_active': bookingsListState}">
+      </button>
     </div>
-
-    <div (click)="showFloorView()" class="header__button">
-      <img src="/assets/icons/table.svg" alt="Table">
-    </div>
-    <div (click)="showBookingsList()" class="header__button">
-      <img src="/assets/icons/list.svg" alt="List">
-    </div>
-
-    <!-- <div class="header__button">
-      <img src="/assets/icons/close.svg" alt="Timeline">
-    </div> -->
   </div>
-  <div class="header__guest-buttons">
-    <div class="header__guest-btn header__guest-btn_export">Export</div>
-    <div class="header__guest-btn header__guest-btn_add"></div>
+  <div [ngStyle]="{'display':page == 'guests' ?'flex':'none'}" class="header__guest-buttons">
+    <button class="header__guest-btn header__guest-btn_export icon-export">Export</button>
+    <button class="header__guest-btn header__guest-btn_add icon-plus"></button>
+  </div>
+  <div [ngStyle]="{'display':page == 'stuffs' ?'flex':'none'}" class="header__stuff-buttons">
+    <button class="header__stuff-btn header__stuff-btn_add icon-plus"></button>
+  </div>
+  <div [ngStyle]="{'display':page != 'settings' ? 'none': shiftPackageState?'flex': rulesState? 'flex': floorPackageState?'flex':'none'}" class="header__settings-buttons">
+    <div class="header-dropdown header-dropdown-settings">
+      <ng-select [allowClear]="true" [items]="shifts" placeholder="Package"></ng-select>
+      <img class="header__sorting-item-arrow" src="/assets/icons/drop-down.svg" alt="">
+    </div>
+    <button class="header__settings-btn header__settings-btn_add icon-plus"></button>
   </div>
 </div>

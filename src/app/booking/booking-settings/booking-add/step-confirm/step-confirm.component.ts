@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionsService } from '../../../../actions.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-step-confirm',
@@ -7,11 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepConfirmComponent implements OnInit {
 
-  constructor() { }
+  constructor(private actions: ActionsService) {
+
+  }
 
   ngOnInit() {
   }
   closeAddBooking() {
-    document.getElementById("addBooking").style.display = "none";
+    this.actions.toggleAddBookingState(false);
   }
 }

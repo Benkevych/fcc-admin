@@ -1,44 +1,64 @@
-<div class="booking-details">
-  <div>
-    <div class="booking-details__title">
-      <div class="booking-details__name">
-        Craig Barrett
-      </div>
-      <div class="booking-details__info">
-        <div class="booking-details__time">
-          07:45 PM
-        </div>
-        <div class="booking-details__guests">
-          7
-        </div>
-      </div>
-      <div (click)="toggleBookingSettings('hide')" class="booking-details__close">
-      </div>
+<div class="booking-details" [ngClass]="{'booking-details_floor':view == 'floor'}">
+  <div class="booking-details__header" [ngStyle]="{'display':view == 'floor' ?'block':'none'}">
+    <div class="booking-details__name">
+      Current Party
     </div>
-    <div class="booking-details__buttons">
-      <button (click)="toggleBookingStatus('show')" class="booking-details__button booking-details__button_status" type="button"
-        name="booking-status">Booked</button>
-      <button class="booking-details__button" type="button" name="move-table">Move Table</button>
-      <button class="booking-details__button" type="button" name="edit-booking">Edit Booking</button>
+    <div class="booking-details__time">
+      Table 5
     </div>
-    <div class="booking-details__owner">
-      <div class="booking-details__phone-number">
-        +97 (533) 720 1292
-      </div>
-      <div class="booking-details__email">
-        barretthegreat@gmail.com
-      </div>
-      <div class="booking-details__sub-menu">
-        <a href="">account</a>
-        <a href="">activity</a>
-        <a href="">analysis</a>
-        <a href="">chart</a>
-        <a href="">dashboard</a>
-        <a href="">data</a>
-        <a href="">graph</a>
-      </div>
-    </div>
+    <button (click)="closeBookingSettings()" class="booking-details__close booking-details__close_floor icon-close">
+    </button>
   </div>
-  <button (click)="toggleMoreDetails( $event)" class="booking-details__button booking-details__button_more-details" type="button"
-    name="more-details">More Details</button>
+  <div class="booking-details__content">
+    <div>
+      <div class="booking-details__title icon-badge">
+        <div class="booking-details__name">
+          Craig Barrett
+        </div>
+        <div class="booking-details__info">
+          <div class="booking-details__time">
+            07:45 PM
+          </div>
+          <div class="booking-details__guests icon-person">
+            7
+          </div>
+        </div>
+        <button (click)="closeBookingSettings()" class="booking-details__close icon-close" [ngStyle]="{'display':view == 'timeline' ?'block':'none'}">
+        </button>
+      </div>
+      <div class=" booking-details__buttons ">
+        <button (click)="showBookingStatus() " class="booking-details__button booking-details__button_status icon-booked " type="button " name="booking-status ">Booked</button>
+        <button class="booking-details__button " type="button " name="move-table ">Move Table</button>
+        <button class="booking-details__button " type="button " name="edit-booking " [ngClass]="{ 'booking-details__button_close':bookingEditState} ">{{bookingEditState ? 'Close Edit Booking' : 'Edit Booking'}}</button>
+      </div>
+      <div class="booking-details__owner ">
+        <div class="booking-details__phone-number ">
+          +97 (533) 720 1292
+        </div>
+        <div class="booking-details__email ">
+          barretthegreat@gmail.com
+        </div>
+        <div class="booking-details__sub-menu ">
+          <a href=" ">account</a>
+          <a href=" ">activity</a>
+          <a href=" ">analysis</a>
+          <a href=" ">chart</a>
+          <a href=" ">dashboard</a>
+          <a href=" ">data</a>
+          <a href=" ">graph</a>
+        </div>
+      </div>
+    </div>
+    <button (click)="toggleMoreDetails($event) " class="booking-details__button booking-details__button_more-details " type="button " name="more-details " [ngClass]="{ 'booking-details__button_close':moreDetailsState} ">{{moreDetailsState ? 'Less Details' : 'More Details'}}</button>
+  </div>
+  <div class="booking-details__footer" [ngStyle]="{'display':view == 'floor' ?'block':'none'}">
+    <div class="booking-details__name">
+      Upcoming Party
+    </div>
+    <div class="booking-details__time">
+      08:30 PM
+    </div>
+    <button class="booking-details__close booking-details__close_floor icon-arrow-right">
+    </button>
+  </div>
 </div>

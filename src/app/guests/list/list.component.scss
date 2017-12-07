@@ -5,19 +5,18 @@
   width: 340px;
   background-color: $gray;
   border-right: 2px solid $dark-gray-6;
-  overflow: hidden;
+  overflow: auto;
   &__search {
     width: 100%;
     position: relative;
     &::before {
-      content: '';
       position: absolute;
-      top: 29px;
-      left: 29px;
+      top: 26px;
+      left: 26px;
       width: 20px;
       height: 20px;
-      background-image: url("/assets/icons/search.svg");
-      background-repeat: no-repeat;
+      font-size: 20px;
+      line-height: 20px;
       pointer-events: none;
     }
   }
@@ -43,8 +42,8 @@
     @include font-style($color: $light-gray-4, $size: 13px);
   }
   &__guests {
-    overflow-y: scroll;
-    height: calc(100% - 72px - 57px);
+    overflow-y: auto;
+    height: calc(100% - 150px);
     padding-bottom: 20px;
   }
   &__guest {
@@ -74,6 +73,9 @@
     position: fixed;
     width: 100%;
     height: calc(100% - 56px);
+    &__guests {
+      height: calc(100% - 101px);
+    }
     &__search-input {
       padding: 10px 25px 10px 40px;
     }
@@ -81,6 +83,8 @@
       &:before {
         top: 13px;
         left: 14px;
+        font-size: 16px;
+        line-height: 16px;
       }
     }
   }

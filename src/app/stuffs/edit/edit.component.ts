@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActionsService } from '../../actions.service';
+import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-stuffs-edit',
   templateUrl: './edit.component.html',
@@ -7,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StuffsEditComponent implements OnInit {
   roles: Array<string> = ["Waiter", "Admin", "God"];
-  constructor() { }
+  stuffEditState: boolean = false;
+  stuffEditStateSubscription: Subscription;
+  constructor(private actions: ActionsService) {
+    this.stuffEditStateSubscription = this.actions.getStuffEditState().subscribe(obj => { this.stuffEditState = obj.state });
+  }
 
   ngOnInit() {
   }
   hideStaffEdit() {
-    document.getElementById("staffEdit").style.display = "none";
+    this.actions.toggleStuffEditState(false);
   }
 
 }

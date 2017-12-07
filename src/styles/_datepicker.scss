@@ -19,7 +19,7 @@
     }
     .dp-calendar-wrapper {
       border: none;
-      padding: 0 50px;
+      padding: 0 35px;
     }
     .dp-weekdays {
       padding: 0 25px;
@@ -44,7 +44,7 @@
       padding: 27px 30px;
       display: flex;
       box-sizing: unset;
-      justify-content: space-between;
+      justify-content: center;
       background-color: $gray;
       button {
         display: none;
@@ -84,6 +84,7 @@
       background-color: $dark-gray-2;
       border: none;
       margin-top: 5px;
+      margin-right: 35px;
       &:focus {
         outline: none;
       }
@@ -135,6 +136,12 @@
 
 #header {
   .date-picker {
+    .dp-nav-btns-container {
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
     .dp-popup {
       background: none;
     }
@@ -199,7 +206,7 @@
       padding: 18px 30px;
       display: flex;
       box-sizing: unset;
-      justify-content: space-between;
+      justify-content: center;
       background-color: $dark-gray-2;
       &::before {
         content: '';
@@ -233,6 +240,7 @@
       background-color: $dark-gray-2;
       border: none;
       margin-top: 5px;
+      margin-left: 30px;
       &:focus {
         outline: none;
       }
@@ -244,6 +252,7 @@
       background-color: $dark-gray-2;
       border: none;
       margin-top: 5px;
+      margin-right: 35px;
       &:focus {
         outline: none;
       }
@@ -280,12 +289,97 @@
     }
   }
 }
-
+#shiftEdit{
+  dp-date-picker {
+    width: 100%;
+  }
+  .date-picker {
+    width: 58px;
+    height: 58px;
+    .dp-input-container{
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      cursor: pointer;
+      border: 1px solid $gray-2;
+      color: $mint;
+      &:before{
+        font-family: 'fcc-icons';
+        content: '\e903';
+        font-size: 20px;
+        line-height: 20px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .dp-popup {
+      background: none;
+    }
+    .dp-popup {
+      background: none;
+    }
+    dp-time-select {
+      width: 165px;
+      height: 130px;
+      position: absolute;
+      top: 11px;
+      left: -55px;
+      border-radius: 4px;
+      box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+    }
+    .dp-time-select-display-hours,
+    .dp-time-select-display-meridiem,
+    .dp-time-select-display-minutes,
+    .dp-time-select-separator {
+      @include font-style($color: $light-gray-2, $size: 18px);
+    }
+    .dp-time-select-control-down,
+    .dp-time-select-control-up {
+      background-color: $dark-gray-2;
+      border: none;
+      &:before {
+        border-color: $light-gray-2;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+    .dp-time-select-controls {
+      border-radius: 4px;
+      background-color: $dark-gray-2;
+      padding: 20px;
+    }
+    .dp-picker-input {
+      // cursor: pointer;
+      // box-sizing: border-box;
+      // height: 58px;
+      // width: 58px;
+      // border-radius: 50%;
+      // &:focus {
+      //   outline: none;
+      // }
+      display: none;
+    }
+    .dp-current-location-btn {
+      display: none;
+    }
+  }
+}
 #bookingEdit {
   dp-date-picker {
     width: 100%;
   }
   .date-picker {
+    .dp-nav-btns-container {
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
     .dp-popup {
       background: none;
     }
@@ -389,7 +483,7 @@
       padding: 18px 30px;
       display: flex;
       box-sizing: unset;
-      justify-content: space-between;
+      justify-content: center;
       background-color: $dark-gray-2;
       &::before {
         content: '';
@@ -408,6 +502,7 @@
       top: unset;
       left: unset;
       transform: unset;
+      margin-left: 10px;
     }
     .dp-calendar-week {
       margin-bottom: 14px;
@@ -418,6 +513,7 @@
       top: unset;
       left: unset;
       transform: unset;
+      margin-right: 20px;
     }
     .dp-calendar-nav-left {
       background-color: $dark-gray-2;
@@ -651,7 +747,147 @@
         box-sizing: border-box;
       }
       dp-day-calendar {
-        width: auto;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .dp-day-calendar-container {
+        height: 100%;
+      }
+      .dp-calendar-wrapper {
+        padding: 0 5px;
+        margin-top: 50px;
+      }
+      .dp-weekdays {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .dp-calendar-weekday {
+        margin-right: 0;
+        width: 35px;
+      }
+      .dp-calendar-day {
+        width: 35px;
+        height: 35px;
+        margin-right: 0;
+      }
+      .dp-calendar-week {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  #bookingEdit {
+    .date-picker {
+      .dp-popup {
+        background: none;
+      }
+      dp-time-select {
+        position: absolute;
+        top: 11px;
+        left: -6px;
+        border-radius: 4px;
+        box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+        width: 100vw;
+        &::before {
+          content: '';
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          background-color: $dark-gray-2;
+          transform: rotate(45deg);
+          top: -4px;
+          left: 44px;
+        }
+      }
+      .dp-time-select-display-hours,
+      .dp-time-select-display-meridiem,
+      .dp-time-select-display-minutes,
+      .dp-time-select-separator {
+        @include font-style($color: $light-gray-2, $size: 18px);
+      }
+      .dp-time-select-control-down,
+      .dp-time-select-control-up {
+        background-color: $dark-gray-2;
+        border: none;
+        &:before {
+          border-color: $light-gray-2;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      .dp-time-select-controls {
+        border-radius: 4px;
+        background-color: $dark-gray-2;
+        padding: 20px;
+      }
+      width: 100%;
+      .dp-picker-input {
+        height: 56px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      dp-day-calendar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+      .dp-day-calendar-container {
+        height: 100%;
+      }
+      .dp-calendar-wrapper {
+        padding: 0 5px;
+        margin-top: 50px;
+      }
+      .dp-weekdays {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+      }
+      .dp-calendar-weekday {
+        margin-right: 0;
+        width: 35px;
+      }
+      .dp-calendar-day {
+        width: 35px;
+        height: 35px;
+        margin-right: 0;
+      }
+      .dp-calendar-week {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  #addBooking {
+    .date-picker {
+      .dp-day-calendar-container {
+        padding-bottom: 0;
+      }
+      .dp-calendar-wrapper {
+        padding: 0;
+      }
+      .dp-calendar-nav-container {
+        padding: 20px 20px;
+      }
+      .dp-weekdays {
+        padding: 0;
+        justify-content: space-around;
+      }
+      .dp-calendar-weekday {
+        margin-right: 0;
+      }
+      .dp-calendar-day {
+        width: 40px;
+        height: 40px;
       }
     }
   }

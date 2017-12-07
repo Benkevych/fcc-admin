@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Subscription } from 'rxjs/Subscription';
+import { ActionsService } from '../../../actions.service';
 @Component({
   selector: 'app-booking-status',
   templateUrl: './booking-status.component.html',
   styleUrls: ['./booking-status.component.scss']
 })
 export class BookingStatusComponent implements OnInit {
+  statusState = false;
+  bookingStatusStateSubscription: Subscription;
+  constructor(private actions: ActionsService) {
+    this.bookingStatusStateSubscription = this.actions.getBookingStatusState().subscribe(obj => { this.statusState = obj.state });
 
-  constructor() { }
+  }
 
   ngOnInit() {
   }
-  toggleBookingStatus(action) {
-    if (action == "show") {
-      document.getElementById("bookingStatusMenu").style.left = "0";
-    }
-    else {
-      document.getElementById("bookingStatusMenu").style.left = "100%";
-    }
+  closeBookingStatus() {
+    this.actions.toggleBookingStatusState(false);
   }
 
 }

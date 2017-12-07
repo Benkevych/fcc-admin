@@ -4,8 +4,8 @@
   width: 342px;
   height: 100%;
   position: relative;
-  overflow: hidden;
-  display: none;
+  overflow: auto;
+  z-index: 100;
 }
 
 @media #{$mobile} {

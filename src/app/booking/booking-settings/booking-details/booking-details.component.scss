@@ -6,7 +6,6 @@
   left: calc(342px + 74px);
   width: calc(100vw - 342px - 74px);
   height: calc(100vh - 74px);
-  display: none;
 }
 
 .booking-details {
@@ -20,7 +19,34 @@
   box-sizing: border-box;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  &_floor {
+    padding: 122px 30px;
+    height: calc(100vh - 74px);
+  }
+  &__content {
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+  }
+  &__header,
+  &__footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 96px;
+    background-color: $dark-gray-4;
+    padding: 26px 30px;
+    box-sizing: border-box;
+  }
+  &__footer {
+    top: unset;
+    bottom: 0;
+    cursor: pointer;
+  }
   &__title {
     padding-left: 34px;
     padding-right: 34px;
@@ -28,14 +54,13 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
     &:before {
-      content: '';
+      color: $golden;
       position: absolute;
+      font-size: 20px;
       width: 20px;
       height: 20px;
       left: 0;
-      top: 10px;
-      background-image: url("/assets/icons/badge.svg");
-      background-size: 20px 20px;
+      top: 13px;
     }
   }
   &__close {
@@ -44,9 +69,16 @@
     width: 20px;
     height: 20px;
     right: 0;
-    top: 10px;
-    background-image: url("/assets/icons/close.svg");
-    background-size: 20px 20px;
+    font-size: 20px;
+    top: 13px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: $light-gray-3;
+    &_floor {
+      top: 35px;
+      right: 30px;
+    }
   }
   &__name {
     @include font-style($color: $light-gray-2, $size: 18px)
@@ -63,14 +95,11 @@
     position: relative;
     padding-left: 22px;
     &:before {
-      content: '';
       position: absolute;
       width: 20px;
       height: 20px;
-      left: 0;
-      background-image: url("/assets/icons/person.svg");
-      background-position: center;
-      background-repeat: no-repeat;
+      left: 0px;
+      line-height: 20px;
     }
   }
   &__buttons {
@@ -99,41 +128,38 @@
       border: 2px solid $mint;
       background-color: $gray;
       @include font-style($color: $mint);
+      height: 52px;
     }
     &_status {
       background-color: $mint;
       text-align: left;
       padding-left: 60px;
       position: relative;
+      font-weight: 400;
       &:before {
-        content: '';
+        font-size: 18px;
         position: absolute;
-        left: 20px;
-        top: 20px;
+        left: 22px;
+        top: 19px;
         width: 18px;
         height: 18px;
-        background-image: url("/assets/icons/book.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
       }
       &:after {
-        content: '';
+        font-family: 'fcc-icons';
+        content: '\e908';
         position: absolute;
-        right: 13px;
+        right: 19px;
         top: 20px;
         width: 15px;
         height: 15px;
-        background-image: url("/assets/icons/drop-down-white.svg");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        transform: rotate(-90deg);
+        font-size: 15px;
       }
     }
     &:focus {
       outline: none;
     }
     &:last-child {
-      margin-bottom: 0;
+      margin-bottom: 5px;
     }
   }
   &__owner {
@@ -152,9 +178,17 @@
   }
 }
 
+@media #{$tablet} {
+  .booking-details {
+    height: calc(100vh - 56px);
+  }
+}
+
 @media #{$mobile} {
   .booking-details {
-    overflow-y: scroll;
+    overflow-y: auto;
     border-right: none;
+    width: 100vw;
+    height: calc(100vh - 96px);
   }
 }

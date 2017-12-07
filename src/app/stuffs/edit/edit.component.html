@@ -1,6 +1,6 @@
-<div id="staffEdit" class="staff-edit">
+<div [ngStyle]="{'display':stuffEditState == true?'flex':'none'}" id="staffEdit" class="staff-edit">
   <div class="staff-edit__title">
-    <div class="staff-edit__thumbnail">
+    <div class="staff-edit__thumbnail icon-camera">
       <img src="/assets/avatars/staff6.png" alt="">
     </div>
     <div>
@@ -8,9 +8,9 @@
       <div class="staff-edit__name">Thomas Sims</div>
     </div>
     <div class="staff-edit__buttons">
-      <div class="staff-edit__action-btn staff-edit__action-btn_lock"></div>
-      <div class="staff-edit__action-btn staff-edit__action-btn_delete"></div>
-      <div (click)="hideStaffEdit()" class="staff-edit__save-btn">Save</div>
+      <button class="staff-edit__action-btn staff-edit__action-btn_lock icon-key"></button>
+      <button class="staff-edit__action-btn staff-edit__action-btn_delete icon-delete"></button>
+      <button (click)="hideStaffEdit()" class="staff-edit__save-btn">Save</button>
     </div>
   </div>
   <div class="staff-edit__content">

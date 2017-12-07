@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./step-account.component.scss']
 })
 export class StepAccountComponent implements OnInit {
-
+  state = false;
   constructor() { }
 
   ngOnInit() {
   }
   showConfirm() {
-    document.getElementById("bookingConfirm").style.display = "block";
+    this.state = true;
   }
+
 }

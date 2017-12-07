@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   background-color: $dark-gray-3;
-  display: none;
+  z-index: 9999;
   &__header {
     position: relative;
     width: 100%;
@@ -38,6 +38,7 @@
     justify-content: center;
   }
   &__content {
+    margin-top: -90px;
     width: 670px;
     display: flex;
     flex-direction: column;
@@ -48,7 +49,7 @@
     flex-direction: column;
     width: 100%;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: auto;
     box-shadow: 0 2px 0 0 $dark-gray-6;
   }
   &__input {

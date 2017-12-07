@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SchedulerComponent } from '../../scheduler/scheduler.component';
 
 @Component({
   selector: 'app-timeline',
@@ -11,10 +12,5 @@ export class TimelineComponent implements OnInit {
 
   ngOnInit() {
   }
-  showBookingMenu() {
-    document.getElementById("timelineMenu").style.display = "block";
-  }
-  showAddBookingMenu() {
-    document.getElementById("NewBookingMenu").style.display = "flex";
-  }
+
 }

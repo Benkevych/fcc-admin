@@ -1,40 +1,31 @@
-<div id="menu" class="menu">
+<div [ngStyle]="{'left':mobileMenuState?'0':'-100%'}" (window:resize)="onResize($event)" id="menu" class="menu">
   <div class="menu__main-menu">
     <div class="menu__mobile-header">
       <div class="menu__mobile-header-title">Menu</div>
-      <div class="menu__mobile-header-close"></div>
+      <button (click)="closeMenu()" class="menu__mobile-header-close icon-close"></button>
     </div>
-    <a routerLinkActive="menu__active-item">
-      <img src="/assets/icons/dashboard.svg" alt="Dashboard">
+    <a (click)="closeMenu()" class="icon-dashboard" routerLinkActive="menu__active-item">
       <div class="menu__item-text">Dashboard</div>
     </a>
-    <a routerLink="/booking" routerLinkActive="menu__active-item">
-      <img src="/assets/icons/booking.svg" alt="Booking">
+    <a (click)="closeMenu()" class="icon-booking" routerLink="/booking" routerLinkActive="menu__active-item">
       <div class="menu__item-text">Booking</div>
     </a>
-    <a routerLink="/guests" routerLinkActive="menu__active-item">
-      <img src="/assets/icons/guests.svg" alt="Guests">
+    <a (click)="closeMenu()" class="icon-guests" routerLink="/guests" routerLinkActive="menu__active-item">
       <div class="menu__item-text">Guests</div>
     </a>
-    <a routerLink="/stuffs" routerLinkActive="menu__active-item">
-      <img src="/assets/icons/stuffs.svg" alt="Stuffs">
+    <a (click)="closeMenu()" class="icon-stuffs" routerLink="/stuffs" routerLinkActive="menu__active-item">
       <div class="menu__item-text">Stuffs</div>
     </a>
-    <a routerLink="/settings" routerLinkActive="menu__active-item">
-      <img src="/assets/icons/settings.svg" alt="Settings">
+    <a (click)="closeMenu()" class="icon-settings" routerLink="/settings" routerLinkActive="menu__active-item">
       <div class="menu__item-text">Settings</div>
     </a>
-    <div (click)="showLogin()">login</div>
   </div>
   <div class="menu__sub-menu">
-    <a routerLink="/notifications" routerLinkActive="menu__active-item">
-      <img src="/assets/icons/bell.svg" alt="Notifications">
+    <a (click)="closeMenu()" class="icon-bell badge" routerLink="/notifications" routerLinkActive="menu__active-item">
     </a>
-    <a routerLinkActive="menu__active-item">
-      <img src="/assets/icons/profile.svg" alt="Profile">
+    <a (click)="closeMenu()" class="icon-profile" routerLinkActive="menu__active-item">
     </a>
-    <a routerLink="/logout" routerLinkActive="menu__active-item">
-      <img src="/assets/icons/logout.svg" alt="Logout">
+    <a (click)="showLogin()" class="icon-logout" (click)="closeMenu()" routerLink="/logout" routerLinkActive="menu__active-item">
     </a>
   </div>
 </div>

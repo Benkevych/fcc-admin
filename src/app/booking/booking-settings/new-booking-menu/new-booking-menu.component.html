@@ -1,4 +1,4 @@
-<div id="NewBookingMenu" class="new-booking">
+<div class="new-booking">
   <div class="new-booking__title">
     <div class="new-booking__table">
       Table 30
@@ -6,9 +6,8 @@
     <div class="new-booking__time">
       Available at 07:30 PM
     </div>
-    <div (click)="toggleNewBookingMenu('hide')" class="new-booking__close">
-
-    </div>
+    <button (click)="closeNewBookingMenu()" class="new-booking__close icon-close">
+    </button>
   </div>
   <div class="new-booking__buttons">
     <button (click)="showAddBooking()" class="new-booking__button new-booking__button_green" type="button" name="add-booking">Add a Booking</button>

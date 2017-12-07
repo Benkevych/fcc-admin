@@ -5,7 +5,7 @@
   padding: 26px 23px 27px 29px;
   box-sizing: border-box;
   position: fixed;
-  overflow: hidden;
+  overflow: auto;
   top: 74px;
   left: calc(74px + 342px);
   width: calc(100% - 74px - 342px);
@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: auto;
     img {
       width: 100%;
     }
@@ -69,43 +69,17 @@
     padding-left: 43px;
     position: relative;
     &:before {
-      content: '';
       width: 20px;
       height: 20px;
       position: absolute;
       left: 0;
       top: 11px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      font-size: 20px;
+      line-height: 20px;
+      color: $gray-8;
     }
     &:first-child {
       margin-top: 0;
-    }
-    &_name {
-      &:before {
-        background-image: url("/assets/icons/info-name.svg");
-      }
-    }
-    &_email {
-      &:before {
-        background-image: url("/assets/icons/info-email.svg");
-      }
-    }
-    &_role {
-      &:before {
-        background-image: url("/assets/icons/info-role.svg");
-      }
-    }
-    &_phone {
-      &:before {
-        background-image: url("/assets/icons/info-phone.svg");
-      }
-    }
-    &_acc-name {
-      &:before {
-        background-image: url("/assets/icons/info-acc-name.svg");
-      }
     }
   }
   &__staff-info-item-name {
@@ -120,12 +94,12 @@
 
 @media #{$mobile} {
   .staff-view {
-    display: none;
     position: fixed;
-    top: 50px;
+    top: 55px;
     left: 0;
     width: 100vw;
     padding: 10px 5px;
+    height: calc(100vh - 55px);
     &__title {
       padding-bottom: 10px;
       justify-content: space-around;
@@ -136,7 +110,12 @@
       cursor: pointer;
       width: 20px;
       height: 20px;
-      background-image: url("/assets/icons/close.svg");
+      font-size: 20px;
+      line-height: 20px;
+      color: $gray-8;
+      border: none;
+      background: none;
+      padding: 0;
     }
     &__buttons {
       margin-top: 5px;

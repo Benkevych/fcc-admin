@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ActionsService } from '../../actions.service';
 @Component({
   selector: 'app-settings-list',
   templateUrl: './settings-list.component.html',
@@ -7,20 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private actions: ActionsService) { }
 
   ngOnInit() {
   }
   showFloorPackageSettings() {
-    document.getElementById("floorMenu").style.display = "flex";
-    document.getElementById("floorPackageView").style.display = "flex";
+    this.actions.toggleFloorPackageState(true);
   }
   showShiftPackageSettings() {
-    document.getElementById("shiftMenu").style.display = "flex";
-    document.getElementById("shiftView").style.display = "flex";
+    this.actions.toggleShiftPackageState(true);
   }
   showRulesSettings() {
-    document.getElementById("rulesMenu").style.display = "flex";
-    document.getElementById("rulesView").style.display = "flex";
+    this.actions.toggleRulesState(true);
   }
 }

@@ -1,26 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActionsService } from '../../../actions.service';
 @Component({
   selector: 'app-new-booking-menu',
   templateUrl: './new-booking-menu.component.html',
   styleUrls: ['./new-booking-menu.component.scss']
 })
 export class NewBookingMenuComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private actions: ActionsService) { }
   ngOnInit() {
   }
-  toggleNewBookingMenu(action) {
-    if (action == "show") {
-      document.getElementById("NewBookingMenu").style.display = "flex";
-    }
-    else {
-      document.getElementById("NewBookingMenu").style.display = "none";
-    }
+  closeNewBookingMenu() {
+    this.actions.toggleNewBookingState(false);
   }
   showAddBooking() {
-    document.getElementById("addBooking").style.display = "block";
-
+    this.actions.toggleAddBookingState(true);
   }
 }

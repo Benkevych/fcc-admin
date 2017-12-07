@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~styles/fonts";
+@import "~styles/fcc-icons.scss";
 @import "~styles/variables";
 @import "~styles/base";
 @import "~styles/datepicker";
@@ -11,13 +12,36 @@ html {
   height: 100vh;
 }
 
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $dark-gray;
+}
+
+::-webkit-resizer,
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
 app-root,
 body {
+  line-height: unset !important;
+  font-weight: 400 !important;
   margin: 0;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: $gray;
+  background-color: $gray !important;
+  -webkit-font-smoothing: unset !important;
   @include font-style($color: $gray-3, $size: 16px);
 }
 
@@ -27,8 +51,270 @@ app-general {
   width: calc(100% - 74px);
 }
 
+#scheduler {
+  .sch-event {
+    height: 45px !important;
+    margin: 5px 0px;
+    border-radius: 100px;
+    border: none !important;
+    background-color: transparent !important;
+    &:hover {
+      border-color: transparent;
+    }
+    .eventBorder {
+      position: absolute;
+      padding: 0px 5px;
+      content: '';
+      width: calc(100% + 10px);
+      height: 55px;
+      border-radius: 100px;
+      top: -5px;
+      left: -5px;
+      border: 2px solid #C1CCE0;
+      display: none;
+    }
+    .event {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 20px 0 25px;
+    }
+  }
+  .sch-event-selected {
+    border-color: transparent;
+    box-shadow: none;
+    overflow: visible;
+    .eventBorder {
+      display: block;
+    }
+  }
+  .sch-event-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include font-style($color: $white, $size: 16px);
+  }
+  .x-box-inner {
+    height: 58px !important;
+  }
+  .x-grid-group-hd {
+    // border: none !important;
+    background-color: $dark-gray-12;
+    height: 44px;
+    border-color: $gray-11;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .x-grid-group-title {
+    background: none !important;
+    padding: 0 !important;
+    text-transform: uppercase;
+    @include font-style($color: $light-gray-3, $size: 13px, $weight: 400);
+  }
+  .x-grid-scroll-container {
+    top: 58px !important;
+  }
+  .x-grid-inner-locked .x-column-header-last {
+    height: 58px;
+  }
+  .x-column-header {
+    border-width: 0px !important;
+  }
+  .x-grid-locked-split .x-grid-inner-normal {
+    left: 140px !important;
+    width: 100% !important;
+  }
+  .x-splitter {
+    display: none;
+  }
+  .sch-event {
+    opacity: 1 !important;
+  }
+  .x-grid-locking-body {
+    border-width: 0px !important;
+  }
+  .x-grid-cell-inner {
+    z-index: 0;
+  }
+  .x-grid-cell-last {
+    .x-grid-cell-inner {
+      color: $dark-gray-11 !important;
+      text-align: right !important;
+    }
+  }
+  .x-column-header-last {
+    .x-column-header-text {
+      color: $dark-gray-11 !important;
+      text-align: center;
+    }
+  }
+  .x-grid-with-col-lines .x-grid-cell {
+    border-width: 0px !important;
+  }
+  .sch-schedulerview {
+    .blocked {
+      background-color: #1C1F23;
+      opacity: 0.71;
+      position: relative;
+      &::before {
+        font-family: 'fcc-icons';
+        content: '\e90e';
+        color: $gray-12;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        font-size: 24px;
+        line-height: 24px;
+        left: 10px;
+        top: 15px;
+      }
+    }
+  }
+  .x-box-inner,
+  .x-grid-scroll-container,
+  .x-grid-scrollbar,
+  .x-grid-scroll-body {
+    background-color: $gray;
+  }
+  .x-dd-drag-current {
+    .x-dd-drag-ghost {
+      opacity: 1 !important;
+      .sch-event-selected {
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.40);
+        &:before {
+          position: absolute;
+          right: calc(100% + 1px);
+          top: -10000px;
+          width: 200000px;
+          height: 200000px;
+          content: '';
+          background-color: #121416;
+          opacity: 0.6;
+        }
+        &:after {
+          position: absolute;
+          left: calc(100% + 1px);
+          top: -10000px;
+          width: 200000px;
+          height: 200000px;
+          content: '';
+          background-color: #121416;
+          opacity: 0.6;
+          z-index: -1;
+        }
+      }
+    }
+  }
+  .x-grid-item {
+    background-color: unset !important;
+    border-color: $gray-11;
+  }
+  .sch-timelineview .x-grid-item-container {
+    background-color: unset !important;
+    background-image: url("~assets/images/timeline-bg.png");
+    background-size: 50px;
+    background-repeat: repeat;
+    border-color: $gray-11;
+  }
+  .sch-column-header {
+    background-color: $dark-gray-10;
+    display: flex;
+    padding: 15px 15px !important;
+    border-right: 1px solid $gray-11;
+  }
+  .sch-simple-timeheader {
+    @include font-style($color: $light-gray-3, $size: 13px, $weight: 400);
+    padding: 0 !important;
+  }
+  .sch-header-row {
+    height: 58px;
+    tr {
+      display: flex;
+      height: 58px;
+    }
+  }
+  .sch-column-line {
+    border-color: $gray-11;
+  }
+  .x-grid-item .x-grid-cell-inner {
+    display: flex;
+    align-items: center;
+    @include font-style($color: $light-gray-3, $size: 15px, $weight: 400);
+    padding-left: 24px;
+  }
+  .x-grid-scrollbar-clipper>.x-grid-view,
+  .x-grid-scrollbar-clipper>.x-tree-view,
+  .x-column-header-inner,
+  .x-border-layout-ct {
+    background-color: $dark-gray-10;
+  }
+  .x-column-header-text {
+    @include font-style($color: $light-gray-3, $size: 15px, $weight: 400);
+  }
+  .sch-column-line {
+    border-color: $gray-11;
+  }
+  .sch-horizontal .sch-timeline {
+    border-width: 0 0 0 2px !important;
+  }
+  .sch-header-indicator {
+    width: fit-content;
+    height: fit-content;
+    bottom: 10px;
+    margin: 0 !important;
+    margin-left: -25px !important;
+    border: none !important;
+    background-color: transparent;
+    transform: rotate(0deg) !important;
+    @include font-style($color: $dark-yellow, $size: 12px, $weight: 400);
+    border-radius: none !important;
+    box-shadow: none !important;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 21px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: $dark-yellow;
+      box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+  .x-grid-locked-split .x-grid-inner-normal {
+    border-color: $gray-11;
+  }
+  .sch-timeline {
+    border-style: solid;
+    border-color: $dark-yellow;
+  }
+  .icon {
+    opacity: 0.8;
+    width: 18px;
+    min-width: 18px;
+    height: 18px;
+    position: relative;
+    &:before {
+      top: 2px;
+      font-size: 18px;
+      position: absolute
+    }
+  }
+}
+
+.x-tip {
+  display: none !important;
+}
+
 #floorView {
-  overflow: hidden;
+  overflow: auto;
   .canvas-container {
     height: 100% !important;
   }
@@ -57,9 +343,6 @@ app-general {
   .mat-ink-bar {
     display: none !important;
   }
-  .mat-tab-body-content {
-    overflow: hidden;
-  }
   .mat-tab-body,
   .mat-tab-wrapper {
     min-height: 100%;
@@ -68,7 +351,7 @@ app-general {
     border-color: $gray-3 !important;
   }
   .mat-tab-group {
-    height: 100% !important;
+    height: calc(100% - 63px);
   }
   .mat-tab-label-container,
   .mat-tab-labels,
@@ -79,9 +362,12 @@ app-general {
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     height: 58px;
   }
+  .mat-tab-body-content {
+    height: 100%;
+  }
 }
 
-#floorMenu {
+#bookingList {
   .mat-tab-label {
     @include font-style($color: $gray-3, $size: 16px);
     padding: 21px 0;
@@ -116,12 +402,12 @@ app-general {
   }
   .mat-ink-bar {
     background-color: $mint !important;
+    width: 50% !important;
   }
 }
 
 #addBooking {
   .mat-tab-body-content,
-  .mat-tab-body-wrapper,
   .mat-tab-group {
     height: 100%;
   }
@@ -142,13 +428,13 @@ app-general {
     opacity: 1;
     position: relative;
     &:before {
-      content: '';
       position: absolute;
       top: 26px;
       width: 20px;
       height: 20px;
-      background-size: contain;
-      background-repeat: no-repeat;
+      line-height: 20px;
+      font-size: 20px;
+      font-family: 'fcc-icons';
     }
     &:focus {
       background-color: unset;
@@ -157,31 +443,39 @@ app-general {
   .mat-tab-label-active {
     @include font-style($color: $mint);
   }
+  .mat-tab-label-container {
+    display: -webkit-box;
+    justify-content: center;
+  }
+  .mat-tab-list {
+    max-width: fit-content;
+  }
   .mat-ink-bar {
     background-color: $mint !important;
+    width: 25% !important;
   }
   #mat-tab-label-0-0 {
     &:before {
       left: 51px;
-      background-image: url("/assets/icons/calendar.svg");
+      content: "\e912";
     }
   }
   #mat-tab-label-0-1 {
     &:before {
       left: 44px;
-      background-image: url("/assets/icons/info-guests.svg");
+      content: "\e92a";
     }
   }
   #mat-tab-label-0-2 {
     &:before {
       left: 50px;
-      background-image: url("/assets/icons/info-time.svg");
+      content: "\e917";
     }
   }
   #mat-tab-label-0-3 {
     &:before {
       left: 39px;
-      background-image: url("/assets/icons/profile.svg");
+      content: "\e92e";
     }
   }
 }
@@ -236,7 +530,7 @@ app-general {
     }
     .cal-hour-rows {
       height: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
     }
     .cal-days {
       border: none;
@@ -470,10 +764,6 @@ app-general {
     }
     .mat-tab-header {
       height: 48px;
-    }
-    .mat-tab-body-content {
-      height: 78vh;
-      overflow-y: scroll;
     }
   }
   #floorMenu {

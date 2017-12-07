@@ -50,7 +50,7 @@
       </div>
     </div>
   </div>
-  <div id="bookingConfirm" class="step-account__confirm">
+  <div [ngStyle]="{'display':state == true?'block':'none'}" id="bookingConfirm" class="step-account__confirm">
     <app-step-confirm></app-step-confirm>
   </div>
 </div>

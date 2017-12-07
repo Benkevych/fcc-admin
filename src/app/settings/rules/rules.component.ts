@@ -1,7 +1,12 @@
 import { Component, OnInit, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
 import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
+
+import { ActionsService } from '../../actions.service';
+import { Subscription } from 'rxjs/Subscription';
+
 import { Subject } from 'rxjs/Subject';
 import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarModule } from 'angular-calendar';
+
 
 const colors: any = {
   red: {
@@ -19,26 +24,23 @@ const colors: any = {
 };
 @Component({
   selector: 'app-rules',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './rules.component.html',
   styleUrls: ['./rules.component.scss']
 })
 export class RulesComponent implements OnInit {
 
-  ngOnInit() {
-  }
-  @ViewChild('modalContent') modalContent: TemplateRef<any>;
+
+  rulesState: boolean = false;
+  rulesStateSubscription: Subscription;
 
   view: string = 'month';
-
   viewDate: Date = new Date();
-
   modalData: {
     action: string;
     event: CalendarEvent;
   };
-
-  actions: CalendarEventAction[] = [
+  calactions: CalendarEventAction[] = [
     {
       label: '<i class="fa fa-fw fa-pencil"></i>',
       onClick: ({ event }: { event: CalendarEvent }): void => {
@@ -53,9 +55,7 @@ export class RulesComponent implements OnInit {
       }
     }
   ];
-
   refresh: Subject<any> = new Subject();
-
   events: CalendarEvent[] = [
     {
       start: startOfDay(new Date("October 3, 2017")),
@@ -81,10 +81,13 @@ export class RulesComponent implements OnInit {
       color: colors.red
     }
   ];
-
   activeDayIsOpen: boolean = true;
 
-  constructor() { }
+  constructor(private actions: ActionsService) {
+    this.rulesStateSubscription = this.actions.getRulesState().subscribe(obj => { this.rulesState = obj.state; console.log("Show calendar: " + this.rulesState) });
+  }
+  ngOnInit() {
+  }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

@@ -1,8 +1,8 @@
 <div class="booking">
-  <app-new-booking-menu></app-new-booking-menu>
+  <app-new-booking-menu [ngStyle]="{'display':newBookingState == true?'block':'none'}"></app-new-booking-menu>
   <app-booking-settings></app-booking-settings>
   <app-table-assign></app-table-assign>
-  <app-booking-list></app-booking-list>
-  <app-timeline id="timelineView" class="booking__timeline"></app-timeline>
-  <app-floors id="floorView" class="booking__floor"></app-floors>
+  <app-booking-list [ngStyle]="{'display':bookingsListState == true?'block':'none'}"></app-booking-list>
+  <app-timeline [ngStyle]="{'display':view == 'timeline'?'block':'none'}" id="timelineView" class="booking__timeline"></app-timeline>
+  <app-floors [ngStyle]="{'display':view == 'floor'?'flex':'none'}" id="floorView" class="booking__floor"></app-floors>
 </div>

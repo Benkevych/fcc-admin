@@ -66,29 +66,19 @@
     display: inline-block;
     position: relative;
     &:before {
-      content: '';
       width: 16px;
       height: 16px;
       position: absolute;
       left: 17px;
       top: 11px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
+      font-size: 16px;
+      line-height: 16px;
     }
     &_add-btn {
       @include font-style($color: $mint);
       background-color: $dark-gray-3;
       border: 1px solid $dark-gray-4;
       cursor: pointer;
-      &:before {
-        background-image: url("~/assets/icons/plus-mint.svg");
-      }
-    }
-    &_window-seat {
-      &:before {
-        background-image: url("~/assets/icons/tag-window-seat.svg");
-      }
     }
   }
   &__confirm-btn {

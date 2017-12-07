@@ -62,6 +62,39 @@
   }
 }
 
+#settingsDropdown {
+  .dropdown {
+    margin-right: 15px;
+    .form-control {
+      margin-right: 0;
+    }
+  }
+  .dropdown-menu {
+    z-index: 100;
+    position: absolute;
+    background-color: $gray;
+    border-radius: 4px;
+    box-shadow: 0 10px 29px rgba(0, 0, 0, 0.25);
+    top: 47px;
+    list-style-type: none;
+    padding: 0;
+    min-width: 181px;
+    width: 181px;
+    margin: 0;
+    overflow: auto;
+    overflow-x: auto;
+    max-height: 500px;
+    li {
+      &:last-child {
+        a {
+          border-bottom: none;
+          border-radius: 0 0 4px 4px;
+        }
+      }
+    }
+  }
+}
+
 #addItem {
   .dropdown {
     .form-control {
@@ -99,6 +132,7 @@
   }
 }
 
+.settings-dropdown,
 .header-dropdown {
   .dropdown {
     &:focus {
@@ -135,6 +169,7 @@
       min-width: 300px;
       max-height: unset !important;
       margin: 0;
+      z-index: 999;
       overflow-x: visible !important;
       li {
         &:last-child {
@@ -163,6 +198,22 @@
       }
     }
   }
+}
+
+.header-dropdown-settings {
+  .dropdown {
+    .dropdown-menu {
+      top: 46px;
+      overflow: hidden;
+      width: calc(100% - 15px);
+      min-width: calc(100% - 15px);
+      max-width: calc(100% - 15px);
+    }
+  }
+}
+
+.settings-dropdown {
+  margin-right: 10px;
 }
 
 .header-dropdown-add {
@@ -206,6 +257,7 @@
       padding: 0;
       width: 300px;
       max-height: unset !important;
+      z-index: 999;
       margin: 0;
       overflow-x: visible !important;
       li {
@@ -278,7 +330,7 @@
       padding: 0;
       min-width: 100%;
       margin: 0;
-      overflow-x: scroll;
+      overflow-x: auto;
       max-height: 500px;
       li {
         &:last-child {
@@ -339,12 +391,13 @@
 }
 
 @media #{$mobile} {
+  .settings-dropdown,
   .header-dropdown {
+    margin-top: 10px;
     .dropdown {
       .form-control {
         width: 100%;
         box-sizing: border-box;
-        margin-top: 10px;
       }
       .dropdown-menu {
         position: fixed;
@@ -352,9 +405,12 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
     }
+  }
+  .settings-dropdown {
+    margin-top: 0;
   }
   #bookingEdit {
     .dropdown {
@@ -364,7 +420,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: unset;
       }
     }
@@ -384,7 +440,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: unset;
       }
     }
@@ -399,12 +455,13 @@
 }
 
 @media #{$tablet} {
+  .settings-dropdown,
   .header-dropdown {
+    margin-top: 10px;
     .dropdown {
       .form-control {
         width: 100%;
         box-sizing: border-box;
-        margin-top: 10px;
       }
       .dropdown-menu {
         position: fixed;
@@ -412,10 +469,28 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
       }
     }
   }
+  .settings-dropdown {
+    margin-top: 0;
+  }
+  #bookingEdit {
+    .dropdown {
+      .dropdown-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: auto;
+        max-height: unset;
+      }
+    }
+  }
+  #floorPackageView,
+  #generalSettings,
   .header-dropdown-add {
     .dropdown {
       .form-control {
@@ -429,8 +504,15 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: unset;
+      }
+    }
+  }
+  #floorPackageView {
+    .dropdown {
+      .form-control {
+        margin-top: 0px;
       }
     }
   }

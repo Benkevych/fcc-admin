@@ -47,6 +47,10 @@ import { TableAssignComponent } from './booking/booking-settings/table-assign/ta
 import { ShiftPackageMenuComponent } from './settings/shift-package-menu/shift-package-menu.component';
 import { FloorPackageMenuComponent } from './settings/floor-package-menu/floor-package-menu.component';
 import { RulesMenuComponent } from './settings/rules-menu/rules-menu.component';
+import { SchedulerComponent } from './scheduler/scheduler.component';
+
+import { HeaderService } from './header.service';
+import { ActionsService } from './actions.service';
 
 @NgModule({
   declarations: [
@@ -86,7 +90,8 @@ import { RulesMenuComponent } from './settings/rules-menu/rules-menu.component';
     TableAssignComponent,
     ShiftPackageMenuComponent,
     FloorPackageMenuComponent,
-    RulesMenuComponent
+    RulesMenuComponent,
+    SchedulerComponent
   ],
   imports: [
     BrowserModule,
@@ -101,7 +106,7 @@ import { RulesMenuComponent } from './settings/rules-menu/rules-menu.component';
     MatSlideToggleModule,
     CalendarModule.forRoot()
   ],
-  providers: [AppComponent],
+  providers: [AppComponent, HeaderService, ActionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

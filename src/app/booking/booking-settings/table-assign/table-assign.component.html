@@ -1,8 +1,8 @@
-<div id="tableAssignMenu" class="table-assign">
+<div [ngStyle]="{'display':tableAssignState == true ?'block':'none'}" class="table-assign">
   <div class="table-assign__title">
     <div class="table-assign__text">Assigned</div>
     <div class="table-assign__table">Table 5</div>
-    <div (click)="toggleTableAssignMenu('hide')" class="table-assign__close"></div>
+    <div (click)="closeTableAssignMenu()" class="table-assign__close"></div>
   </div>
   <div class="table-assign__staffs">
     <div class="table-assign__staffs-item">

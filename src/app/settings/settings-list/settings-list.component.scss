@@ -5,8 +5,8 @@
   width: 340px;
   background-color: $gray;
   border-right: 2px solid $dark-gray-6;
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow: auto;
+  overflow-y: auto;
   position: relative;
   &__item {
     cursor: pointer;
@@ -17,37 +17,17 @@
       background-color: $dark-gray-2;
     }
     &:before {
-      content: '';
       position: absolute;
       top: 32px;
       left: 29px;
       width: 20px;
       height: 20px;
-      background-size: contain;
-      background-repeat: no-repeat;
+      line-height: 20px;
+      font-size: 20px;
+      color: $gray-8;
     }
     &_active {
       background-color: $dark-gray-2;
-    }
-    &_general {
-      &:before {
-        background-image: url("/assets/icons/settings-general.svg");
-      }
-    }
-    &_rules {
-      &:before {
-        background-image: url("/assets/icons/settings-rules.svg");
-      }
-    }
-    &_shift {
-      &:before {
-        background-image: url("/assets/icons/settings-shift.svg");
-      }
-    }
-    &_floor {
-      &:before {
-        background-image: url("/assets/icons/settings-floor.svg");
-      }
     }
   }
   &__item-name {

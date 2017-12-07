@@ -1,26 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActionsService } from '../../actions.service';
+import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'app-shift-package-menu',
   templateUrl: './shift-package-menu.component.html',
   styleUrls: ['./shift-package-menu.component.scss']
 })
 export class ShiftPackageMenuComponent implements OnInit {
-
-  constructor() { }
+  shiftPackageState: boolean;
+  shiftPackageStateSubscription: Subscription;
+  shiftPackageEditState: boolean;
+  shiftPackageEditStateSubscription: Subscription;
+  constructor(private actions: ActionsService) {
+    this.shiftPackageStateSubscription = this.actions.getShiftPackageState().subscribe(obj => { this.shiftPackageState = obj.state });
+    this.shiftPackageEditStateSubscription = this.actions.getShiftPackageEditState().subscribe(obj => { this.shiftPackageEditState = obj.state });
+  }
 
   ngOnInit() {
   }
   showShiftEdit() {
-    document.getElementById("shiftEditMenu").style.display = "flex";
-    document.getElementById("shiftEdit").style.display = "flex";
+    this.actions.toggleShiftPackageEditState(true);
   }
   closeShiftEdit() {
-    document.getElementById("shiftEditMenu").style.display = "none";
-    document.getElementById("shiftEdit").style.display = "none";
+    this.actions.toggleShiftPackageEditState(false);
   }
   closeShiftPackageSettings() {
-    document.getElementById("shiftMenu").style.display = "none";
-    document.getElementById("shiftView").style.display = "none";
+    this.actions.toggleShiftPackageState(false);
   }
 }

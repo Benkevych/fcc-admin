@@ -8,7 +8,6 @@
   width: 100vw;
   z-index: 100;
   background-color: $dark-gray-3;
-  display: none;
   &__title {
     position: relative;
   }
@@ -28,14 +27,17 @@
     width: 20px;
     height: 20px;
     margin: 26px;
-    background-image: url("/assets/icons/close.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    padding: 0;
+    border: none;
+    background: none;
+    color: $gray-8;
+    font-size: 20px;
+    line-height: 20px;
   }
   &__container {
     width: 670px;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-right: auto;
     margin-left: auto;
     padding: 40px 0;
@@ -63,7 +65,7 @@
     &__container {
       width: 100%;
       height: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
       padding: 20px 5px;
       box-sizing: border-box;
     }
@@ -90,7 +92,7 @@
     &__container {
       width: 100%;
       height: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
       padding: 20px 5px;
       box-sizing: border-box;
     }

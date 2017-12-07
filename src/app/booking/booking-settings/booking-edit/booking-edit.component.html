@@ -1,4 +1,4 @@
-<div id="bookingEdit" class="booking-edit">
+<div [ngStyle]="{'display':bookingEditState == true ?'block':'none'}" id="bookingEdit" class="booking-edit">
   <div class="booking-edit__title">
     <div>
       <div class="booking-edit__name">
@@ -8,28 +8,28 @@
         Current booking details
       </div>
     </div>
-    <div (click)="closeEditMenu()" class="booking-edit__save-btn">
+    <button (click)="closeEditMenu()" class="booking-edit__save-btn">
       Save
-    </div>
+    </button>
   </div>
   <div class="booking-edit__content">
     <div class="booking-edit__row">
       <div class="booking-edit__input booking-edit__input_md">
         <div class="booking-edit__input-label">Date</div>
         <div class="booking-edit__input-dropdown">
-          <dp-date-picker [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
+          <dp-date-picker #date2 (opened)="closeOtherCalendars(date2)" [(ngModel)]="selectedDate" [placeholder]="'Date...'" [theme]="'date-picker'" [config]="datePickerConfig"></dp-date-picker>
         </div>
       </div>
       <div class="booking-edit__input booking-edit__input_md">
         <div class="booking-edit__input-label">Time</div>
         <div class="booking-edit__input-dropdown">
-          <dp-date-picker [(ngModel)]="selectedTime" [placeholder]="'Time...'" [theme]="'date-picker'" [mode]="'time'" [config]="timePickerConfig"></dp-date-picker>
+          <dp-date-picker #date3 (opened)="closeOtherCalendars(date3)" [(ngModel)]="selectedTime" [placeholder]="'Time...'" [theme]="'date-picker'" [mode]="'time'" [config]="timePickerConfig"></dp-date-picker>
         </div>
       </div>
       <div class="booking-edit__input booking-edit__input_md">
         <div class="booking-edit__input-label">Guests</div>
         <div class="booking-edit__input-dropdown">
-          <ng-select [allowClear]="true" [items]="guests" placeholder="Guests..."></ng-select>
+          <ng-select #select8 (opened)="closeOtherSelects(select8)" [allowClear]="true" [items]="guests" placeholder="Guests..."></ng-select>
         </div>
       </div>
 
@@ -37,20 +37,20 @@
     <div class="booking-edit__row">
       <div class="booking-edit__input booking-edit__input_lg">
         <div class="booking-edit__input-label">Status</div>
-        <div class="booking-edit__input-dropdown">
-          <ng-select class="booking-edit__status-select" [allowClear]="true" [items]="status" placeholder="Status..."></ng-select>
+        <div class="booking-edit__input-dropdown" [ngClass]="statusIcon">
+          <ng-select #select9 (opened)="closeOtherSelects(select9)" class="booking-edit__status-select" (selected)="statusSelected($event)" [allowClear]="false" [items]="status" placeholder="Status..."></ng-select>
         </div>
       </div>
       <div class="booking-edit__input booking-edit__input_sm">
         <div class="booking-edit__input-label">Assign Table</div>
         <div class="booking-edit__input-dropdown">
-          <ng-select [allowClear]="true" [items]="floors" placeholder="Floor..."></ng-select>
+          <ng-select #select10 (opened)="closeOtherSelects(select10)" [allowClear]="true" [items]="floors" placeholder="Floor..."></ng-select>
         </div>
       </div>
       <div class="booking-edit__input booking-edit__input_sm">
         <div class="booking-edit__input-label"></div>
         <div class="booking-edit__input-dropdown">
-          <ng-select [allowClear]="true" [items]="tables" placeholder="Table..."></ng-select>
+          <ng-select #select11 (opened)="closeOtherSelects(select11)" [allowClear]="true" [items]="tables" placeholder="Table..."></ng-select>
         </div>
       </div>
     </div>
@@ -58,13 +58,13 @@
       <div class="booking-edit__input booking-edit__input_md">
         <div class="booking-edit__input-label">Shift</div>
         <div class="booking-edit__input-dropdown">
-          <ng-select [allowClear]="true" [items]="shifts" placeholder="Shifts..."></ng-select>
+          <ng-select #select12 (opened)="closeOtherSelects(select12)" [allowClear]="true" [items]="shifts" placeholder="Shifts..."></ng-select>
         </div>
       </div>
       <div class="booking-edit__input booking-edit__input_md">
         <div class="booking-edit__input-label">Hours</div>
         <div class="booking-edit__input-dropdown">
-          <ng-select [allowClear]="true" [items]="hours" placeholder="Hours..."></ng-select>
+          <ng-select #select13 (opened)="closeOtherSelects(select13)" [allowClear]="true" [items]="hours" placeholder="Hours..."></ng-select>
         </div>
       </div>
       <div class="booking-edit__input booking-edit__input_md">
@@ -83,5 +83,4 @@
       </div>
     </div>
   </div>
-
 </div>

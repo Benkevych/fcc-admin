@@ -1,15 +1,15 @@
-<div id="floorPackageView" class="floor-package-view">
+<div [ngStyle]="{'display':floorPackageState == true?'flex':'none'}" id="floorPackageView" class="floor-package-view ">
 
-  <div class="floor-package-view__header">
-    <div class="floor-package-view__dropdown">
-      <ng-select [items]="floors" placeholder=""></ng-select>
-      <img class="floor-package-view__dropdown-arrow" src="/assets/icons/drop-down.svg" alt="">
+  <div class="floor-package-view__header ">
+    <div class="floor-package-view__dropdown ">
+      <ng-select [items]="floors " placeholder=" " (selected)="floorChange($event)" [active]="[activeFloor]"></ng-select>
+      <img class="floor-package-view__dropdown-arrow " src="/assets/icons/drop-down.svg " alt=" ">
     </div>
-    <div class="floor-package-view__zoom-btn floor-package-view__zoom-btn_plus"></div>
-    <div class="floor-package-view__zoom-btn floor-package-view__zoom-btn_minus"></div>
-    <div class="floor-package-view__close-btn"></div>
+    <button (click)="addTable()" class="floor-package-view__zoom-btn icon-plus"></button>
+    <button (click)="removeTable()" class="floor-package-view__zoom-btn icon-minus"></button>
+    <button class="floor-package-view__close-btn icon-close"></button>
   </div>
-  <div class="floor-package-view__view-container">
+  <div class="floor-package-view__view-container ">
     <canvas id="floorPackageCanvas"></canvas>
   </div>
 </div>

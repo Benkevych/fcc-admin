@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IDatePickerConfig } from 'ng2-date-picker';
 var moment = require('moment');
-var days = [moment("2017-10-25"), moment("2017-10-27")];
+var days = [moment({ days: '8' })];
 
 @Component({
   selector: 'app-step-date',
@@ -28,7 +28,7 @@ export class StepDateComponent implements OnInit {
     dayBtnFormat: 'D',
     timeSeparator: ':',
     multipleYearsNavigateBy: 10,
-    isDayDisabledCallback: function(e) {
+    isDayDisabledCallback: function (e) {
       return e.isSame(days[0]);
     }
 

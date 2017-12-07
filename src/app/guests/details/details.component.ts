@@ -32,6 +32,12 @@ const data: Element[] = [
   { id: "TPR93783", date: "Monday, Jul 8, 2017", time: "06:30 PM", guests: 4, status: "Finish", link: "#" },
   { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
   { id: "TPR09345", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
+  { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
+  { id: "TPR09345", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
+  { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
+  { id: "TPR09345", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
+  { id: "TPR26505", date: "Saturday, Apr 5, 2017", time: "08:00 PM", guests: 7, status: "Finish", link: "#" },
+  { id: "TPR00000", date: "Sunday, Mar 20, 2017", time: "07:45 PM", guests: 2, status: "Finish", link: "#" },
 ];
 
 

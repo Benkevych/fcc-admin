@@ -1,7 +1,7 @@
-<div id="addBooking" class="add-booking">
+<div [ngStyle]="{'display':state == true?'block':'none'}" id="addBooking" class="add-booking">
   <div class="add-booking__title">
     <div class="add-booking__title-text">Book a Table</div>
-    <div (click)="closeAddBooking()" class="add-booking__close-btn"></div>
+    <button (click)="closeAddBooking()" class="add-booking__close-btn icon-close"></button>
   </div>
   <mat-tab-group>
     <mat-tab label="Date">
